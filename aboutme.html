@@ -35,9 +35,9 @@
 				<section class="post">
 					<header class="major">
 						<h3>Welcome to my page!<br /></h3>
-						<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
-							<img src="images/Screenshot%202025-05-03%20111239.jpg" alt="Viviane Santos" style="max-width: 250px; border-radius: 12px;">
-							<div>
+						<div class="aboutme-container">
+							<img src="images/Screenshot%202025-05-03%20111239.jpg" alt="Viviane Santos" class="aboutme-photo">
+							<div class="aboutme-text">
 								<p>I am Viviane Santos, an IT professional with over 10 years of experience, specializing in the ServiceNow platform and process automation. My passion for technology is driven by the constant search for innovative solutions that improve business efficiency and productivity. Throughout my career, I have developed a strong background in business analysis, functional analysis, and technical support. My focus is on understanding business needs and translating these requirements into technical solutions that add real value. I am recognized for my problem-solving ability, continuous learning, and effective communication across teams.</p>
 							</div>
 						</div>
@@ -74,6 +74,41 @@
 							width: 200px;
 							height: auto;
 							border-radius: 8px;
+						}
+
+						/* Flex layout for the About Me section */
+						.aboutme-container {
+							display: flex !important;
+							flex-direction: row !important;
+							align-items: flex-start !important;
+							gap: 30px !important;
+							margin-top: 20px;
+							flex-wrap: nowrap !important;
+						}
+
+						.aboutme-photo {
+							width: 250px !important;
+							height: auto !important;
+							border-radius: 12px !important;
+							flex-shrink: 0 !important;
+						}
+
+						.aboutme-text {
+							flex: 1 !important;
+							min-width: 0 !important;
+						}
+
+						/* Responsive layout for smaller screens */
+						@media (max-width: 900px) {
+							.aboutme-container {
+								flex-direction: column !important;
+								align-items: center !important;
+							}
+
+							.aboutme-photo {
+								width: 80% !important;
+								max-width: 300px !important;
+							}
 						}
 					</style>
 				</section>
