@@ -6,124 +6,128 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Personalize as imagens e a exibição */
+			.photo {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-right: 20px;
+			}
+			.about-me-content {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+			}
+			.about-me-text {
+				font-size: 1.2em;
+				line-height: 1.6;
+				font-family: 'Arial', sans-serif;
+				max-width: 800px;
+			}
+			.header-title {
+				font-size: 2.5em;
+				font-weight: bold;
+				color: #333;
+			}
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				margin-top: 20px;
+			}
+			.container .image {
+				width: 40%;
+				height: auto;
+				margin: 10px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="aboutme.html" class="logo">About me</a>
+			<!-- Header -->
+			<header id="header">
+				<a href="aboutme.html" class="logo">About me</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Projects</a></li>
+					<li class="active"><a href="aboutme.html">About me</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+					<li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+				<section class="post">
+					<header class="major">
+						<div class="about-me-content">
+							<img src="images/viviane.jpg" alt="Viviane Santos" class="photo">
+							<div class="about-me-text">
+								<h3 class="header-title">Welcome to my page!</h3>
+								<p>Hello, I am Viviane Santos, an IT professional with over 10 years of experience, specializing in the ServiceNow platform and process automation. My passion for technology is driven by the constant search for innovative solutions that improve business efficiency and productivity.</p>
+								<p>Throughout my career, I have developed a strong background in business analysis, functional analysis, and technical support. My focus is on understanding business needs and translating these requirements into technical solutions that add real value. I am recognized for my problem-solving ability, continuous learning, and effective communication across teams.</p>
+								<p>I am always looking for new challenges and opportunities to apply my skills to new projects and areas of innovation. If you have an idea or project you would like to discuss, I would be happy to connect!</p>
+							</div>
+						</div>
 					</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li class="active"><a href="aboutme.html">About me</a></li>
+					<header class="major">
+						<h3>My Certifications</h3>
+					</header>
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<!-- Post -->
-						<section class="post">
-							<header class="major">
-								<h3>ABOUT ME<br /></h3>
-								<p>Professional with over 10 years of experience in technology, focused in configuration and process automation on the ServiceNow platform. Strong background in business analysis, functional analysis, and technical support. Skilled at translating business needs into technical solutions and recognized for problem-solving, continuous learning, and effective cross-functional communication.</p>
-							</header>
-							<header class="major">
-								<h3>CERTIFICATIONS<br />
-								</h3>
-							</header>
-							<div class="container">
-								<a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" class="image" target="_blank"><img src="images/AWSCloudPractitioner.png" alt=""/></a>
-								<a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" class="image" target="_blank"><img src="images/AWSSolutionsArchitect.png" alt=""/></a>
-								<style>
-									.container {
-										display: flex;
-										align-items: center;
-										justify-content: center;
-									}
-									.image {
-										float: left;
-										width: 40%;
-  										height: 40%;
-									}
-								</style>
-							</div>
-							
-							<div class="container">
-								<a href="https://aws.amazon.com/certification/certified-developer-associate/" class="image" target="_blank"><img src="images/AWSDeveloper.png" alt=""/></a>
-								<a href="https://aws.amazon.com/certification/certified-sysops-admin-associate/" class="image" target="_blank"><img src="images/AWSSysOpsAdministrator.png" alt=""/></a>
-								<style>
-									.container {
-										display: flex;
-										align-items: center;
-										justify-content: center;
-									}
-									.image {
-										float: left;
-										width: 40%;
-  										height: 40%;
-									}
-								</style>
-							</div>
-							<div class="container">
-								<a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification" class="image" target="_blank"><img src="images/Azure%20Z900.jpg" alt=""/></a>
-								<style>
-									.container {
-										display: flex;
-										align-items: center;
-										justify-content: center;
-									}
-									.image {
-										float: left;
-										width: 40%;
-  										height: 40%;
-									}
-								</style>
-							</div>
+					<div class="container">
+						<!-- Add your certification images here -->
+						<a href="https://www.servicenow.com" class="image" target="_blank"><img src="images/certification1.jpg" alt="ServiceNow Certification"></a>
+						<a href="https://azure.microsoft.com" class="image" target="_blank"><img src="images/certification2.jpg" alt="Azure Certification"></a>
+						<!-- More certifications can be added -->
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Email</h3>
-								<p><a href="#">viviane.dsantos.it@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://github.com/viviasantos" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-				<div id="copyright">
-					<ul><li>&copy;Viviane Santos</li></ul>
-				</div>
-
+					
+				</section>
 			</div>
 
+			<!-- Footer -->
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt">
+						<h3>Email</h3>
+						<p><a href="#">viviane.dsantos.it@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="https://github.com/viviasantos" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
+
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul><li>&copy;Viviane Santos</li></ul>
+			</div>
+
+		</div>
+
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
