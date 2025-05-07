@@ -40,92 +40,41 @@
 					</nav>
 
 				<!-- Main -->
-<div id="main">
-
-  <!-- Featured Post -->
-  <article class="post featured">
-    <header class="major">
-      <span class="date">May 7, 2025</span>
-      <h3>
-        <a href="https://github.com/seurepositorio/ServiceNow-REST-API-Incident-Extractor" target="_blank">
-          🔧 ServiceNow REST API Incident Extractor
-        </a>
-      </h3>
-
-      <p><strong>Description:</strong> This Python project connects to the ServiceNow REST API to retrieve incident records and export them into an Excel file using <code>pandas</code>. It demonstrates how to securely access, process, and export data from a ServiceNow instance.</p>
-
-      <p><strong>✅ USER STORY 2</strong></p>
-      <ul>
-        <li><strong>Type:</strong> ServiceNow as REST Provider (external system is REST Client)</li>
-        <li><strong>Method:</strong> GET</li>
-        <li><strong>Description:</strong> Allow an external system to get incident details from ServiceNow.</li>
-      </ul>
-      <p><em>User Story:</em> As an integration developer, I want an external system to be able to fetch open incidents from ServiceNow so we can display them in a table.</p>
-
-      <p><strong>🚀 What This Project Does:</strong></p>
-      <ul>
-        <li>Connects to the ServiceNow Incident Table using the REST API.</li>
-        <li>Authenticates with basic credentials.</li>
-        <li>Sends a GET request with custom query filters.</li>
-        <li>Parses the JSON response into a pandas DataFrame.</li>
-        <li>Extracts relevant fields (e.g., incident_number, state, sys_updated_on).</li>
-        <li>Exports the data to an <code>.xlsx</code> file.</li>
-        <li>Handles pagination to retrieve more than 100 records if needed.</li>
-      </ul>
-
-      <p><strong>🛠 Tools & Technologies Used:</strong></p>
-      <ul>
-        <li>🔗 ServiceNow REST API – For accessing incident data</li>
-        <li>📡 REST API Explorer – For building and testing the endpoint</li>
-        <li>🐍 Python 3 – Core scripting language</li>
-        <li>📦 <code>requests</code>, <code>pandas</code> – For API communication and data handling</li>
-        <li>💻 Visual Studio Code – IDE for development</li>
-        <li>📁 Output – Excel file (<code>.xlsx</code>) containing incident records</li>
-      </ul>
-
-      <p><strong>📋 Steps to Reproduce:</strong></p>
-      <ol>
-        <li>Log into your ServiceNow instance and ensure you have access to the Incident table.</li>
-        <li>Use the REST API Explorer to test the GET endpoint with filters (e.g., <code>state!=6</code> for open incidents).</li>
-        <li>Copy the generated URL and parameters.</li>
-        <li>Write the Python script:
-          <ul>
-            <li>Use <code>requests</code> to send the GET request</li>
-            <li>Handle authentication securely</li>
-            <li>Parse the JSON response using <code>pandas</code></li>
-            <li>Export to Excel with <code>df.to_excel("incidents.xlsx")</code></li>
-          </ul>
-        </li>
-        <li>Run the script in VS Code and verify the generated Excel file.</li>
-      </ol>
-
-      <p><strong>📂 Directory Structure (Example):</strong></p>
-      <pre><code>/ServiceNow-REST-API-Incident-Extractor
-├── /restapi-projects
-│   ├── restapi-getincidents.py         # Main Python script
-│   ├── incidents.xlsx                  # Output file
-├── .venv/                              # Virtual environment
-├── requirements.txt                    # Required libraries
-└── README.md                           # Project documentation
-</code></pre>
-    </header>
-
-    <a href="images/servicenow_project.png" class="image main">
-      <img src="images/servicenow_project.png" alt="ServiceNow REST API Extractor" />
-    </a>
-
-    <p>The image above illustrates how the integration with the ServiceNow REST API works, from authentication and filtered retrieval to exporting data into a clean Excel report. This pipeline can be integrated into larger systems to automate status reporting or incident management dashboards.</p>
-
-    <ul class="actions special">
-      <li>
-        <a href="https://github.com/seurepositorio/ServiceNow-REST-API-Incident-Extractor" class="button large" target="_blank">
-          Repository
-        </a>
-      </li>
-    </ul>
-  </article>
-
-</div>
+					<div id="main">
+						<!-- Featured Post -->
+						<article class="post featured">
+							<header class="major">
+								<span class="date">Jan 30, 2025</span>
+								<h3><a href="https://github.com/felipedds/azure-data-pipeline">Azure Data Lakehouse Pipeline</a></h3>
+								<ul>
+									<b>Description:</b> This project showcases the implementation of a modern data lakehouse architecture using Azure Data Factory, Azure Databricks, and Delta Lake. The pipeline follows a structured Bronze, Silver, and Gold layered approach to optimize data governance, transformation, and analytics.<br>
+									<b>Objectives:</b> 
+									<ul>
+										- Automate data ingestion from SQL Server and GitHub using Azure Data Factory.<br>
+										- Implement a structured data lake using Azure Data Lake Gen2, ensuring efficient storage and processing.<br>
+										- Perform data transformations with Azure Databricks, processing data incrementally and structuring it into a Star Schema for analytics.<br>
+										- Secure data using Azure AD and Key Vault, ensuring proper authentication and governance.<br>
+										- Enable data visualization and insights using Power BI, allowing real-time reporting.<br>
+									</ul>
+									<b>Technologies Used:</b> 
+									<ul>
+										- Azure Data Factory (Data Ingestion & Orchestration)<br>
+										- Azure Databricks (Data Transformation)<br>
+										- Azure Data Lake Gen2 (Storage)<br>
+										- Delta Lake (Data Optimization & Transactions)<br>
+										- Power BI (Visualization & Reporting)<br>
+										- Azure AD & Key Vault (Security & Governance)<br>
+									</ul>
+								</ul>
+							</header>
+							
+							<a href="#" class="image main"><img src="images/de_project_2.png" alt="Azure Data Pipeline"/></a>
+							<p>The image illustrates the end-to-end data pipeline, starting from data ingestion using Azure Data Factory to a structured lakehouse architecture in Azure Data Lake Gen2. The transformation follows the Bronze, Silver, and Gold layer approach, optimizing data quality and analytics.</p>
+							<p>This approach ensures that raw data is collected in the Bronze layer, processed into structured tables in the Silver layer, and transformed into analytical models (Star Schema) in the Gold layer, stored in Delta Lake for efficient querying.</p>
+							<ul class="actions special">
+								<li><a href="https://github.com/felipedds/azure-data-pipeline" class="button large" target="_blank">Repository</a></li>
+							</ul>
+						</article>
 						<article class="post featured">
 							<header class="major">
 								<span class="date">Jan 05, 2025</span>
