@@ -45,34 +45,41 @@
 						<article class="post featured">
 							<header class="major">
 								<span class="date">Jan 30, 2025</span>
-								<h3><a href="https://github.com/felipedds/azure-data-pipeline">Azure Data Lakehouse Pipeline</a></h3>
+								<h3><a href="https://github.com/viviasantos/restapi-projects">ServiceNow REST API Incident Extractor</a></h3>
 								<ul>
-									<b>Description:</b> This project showcases the implementation of a modern data lakehouse architecture using Azure Data Factory, Azure Databricks, and Delta Lake. The pipeline follows a structured Bronze, Silver, and Gold layered approach to optimize data governance, transformation, and analytics.<br>
-									<b>Objectives:</b> 
+									<b>Description:</b> This Python project connects to the ServiceNow REST API to retrieve incident records and export them into an Excel file using pandas. It demonstrates how to securely access, process, and export data from a ServiceNow instance..<br>
+									
+									<b>🚀 ✅ USER STORY:</b> 
 									<ul>
-										- Automate data ingestion from SQL Server and GitHub using Azure Data Factory.<br>
-										- Implement a structured data lake using Azure Data Lake Gen2, ensuring efficient storage and processing.<br>
-										- Perform data transformations with Azure Databricks, processing data incrementally and structuring it into a Star Schema for analytics.<br>
-										- Secure data using Azure AD and Key Vault, ensuring proper authentication and governance.<br>
-										- Enable data visualization and insights using Power BI, allowing real-time reporting.<br>
+									As an integration developer, I want an external system to be able to fetch open incidents from ServiceNow so we can display them in a table. </b>
+			
+									<b>🚀 What This Project Does:</b> 
+									<ul>
+										- Connects to the ServiceNow Incident Table using the REST API.<br>
+										- Authenticates with basic credentials.<br>
+										- Sends a GET request with custom query filters.<br>
+										- Parses the JSON response into a pandas DataFrame.<br>
+										- Extracts relevant fields (e.g., incident_number, state, sys_updated_on).<br>
+										- Exports the data to an .xlsx file.<br>
+										- Handles pagination to retrieve more than 100 records if needed.<br>
 									</ul>
-									<b>Technologies Used:</b> 
+									<b>🛠 Tools & Technologies Used:</b> 
 									<ul>
-										- Azure Data Factory (Data Ingestion & Orchestration)<br>
-										- Azure Databricks (Data Transformation)<br>
-										- Azure Data Lake Gen2 (Storage)<br>
-										- Delta Lake (Data Optimization & Transactions)<br>
-										- Power BI (Visualization & Reporting)<br>
-										- Azure AD & Key Vault (Security & Governance)<br>
+										- 🔗 ServiceNow REST API – For accessing incident data.<br>
+										- 📡 REST API Explorer – For building and testing the endpoint.<br>
+										- 🐍 Python 3 – Core scripting language.<br>
+										- 📦 requests, pandas – requests for API communication/pandas for data manipulation/export<br>
+										- 💻 Visual Studio Code – IDE for development.<br>
+										- 📁 Output: .xlsx file containing incident records.<br>
 									</ul>
 								</ul>
 							</header>
 							
-							<a href="#" class="image main"><img src="images/de_project_2.png" alt="Azure Data Pipeline"/></a>
+							<a href="#" class="image main"><img src="images/de_project_2.png" alt="📂 Directory Structure (Example)"/></a>
 							<p>The image illustrates the end-to-end data pipeline, starting from data ingestion using Azure Data Factory to a structured lakehouse architecture in Azure Data Lake Gen2. The transformation follows the Bronze, Silver, and Gold layer approach, optimizing data quality and analytics.</p>
 							<p>This approach ensures that raw data is collected in the Bronze layer, processed into structured tables in the Silver layer, and transformed into analytical models (Star Schema) in the Gold layer, stored in Delta Lake for efficient querying.</p>
 							<ul class="actions special">
-								<li><a href="https://github.com/felipedds/azure-data-pipeline" class="button large" target="_blank">Repository</a></li>
+								<li><a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">Repository</a></li>
 							</ul>
 						</article>
 						<article class="post featured">
