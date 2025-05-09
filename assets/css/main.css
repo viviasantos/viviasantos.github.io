@@ -4703,7 +4703,7 @@ input, select, textarea {
 /* Grid responsiva para os cards dos projetos */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards por linha */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -4712,7 +4712,7 @@ input, select, textarea {
 
 /* Estilos para os cartões de projetos */
 .project-card {
-  height: 320px; /* Altura fixa igual para todos */
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -4728,12 +4728,18 @@ input, select, textarea {
   transform: translateY(-5px);
 }
 
-/* Imagens dentro dos cards */
+/* Imagem padrão para todos os cards */
 .project-card img {
   width: 100%;
-  height: 140px; /* Altura fixa para imagens */
+  height: 140px;
   object-fit: cover;
   display: block;
+}
+
+/* Se a imagem quebrar, mostra o placeholder */
+.project-card img:empty,
+.project-card img:not([src]) {
+  content: url("https://via.placeholder.com/300x140?text=Project+Image");
 }
 
 /* Título */
@@ -4754,7 +4760,7 @@ input, select, textarea {
   font-size: 0.95rem;
   line-height: 1.3;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Máximo de 3 linhas */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -4785,4 +4791,5 @@ input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
 
