@@ -4707,7 +4707,8 @@ input, select, textarea {
 
 .project-card img {
   width: 100%;
-  height: auto;
+  height: 220px;           /* Altura fixa para manter todas iguais */
+  object-fit: cover;       /* Corta e ajusta sem distorcer */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
