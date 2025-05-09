@@ -1,77 +1,219 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viviane Santos - REST API Project</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body class="is-preload">
+<html>
+	<head>
+		<title>Viviane Santos - Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <div id="wrapper" class="fade-in">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Projects</a>
-        </header>
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Viviane Santos<br />
+						PORTFOLIO</h1>
+						<p>ServiceNow Administrator & IT Business Analyst | CAD & CSA Certified | Agile & Scrum Practitioner<br /><a href=""></a></p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li><a href="index.html">Project 1 - REST API</a></li>
-                <li><a href="project2.html">Project 2 - CRUD Business Rule</a></li>
-            </ul>
-        </nav>
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Projects</a>
+					</header>
 
-        <!-- Main Content -->
-        <div id="main">
-            <article class="post featured">
-                <header class="major">
-                    <span class="date">Jan 30, 2025</span>
-                    <h3>ServiceNow REST API Incident Extractor</h3>
-                    <p>Python script to connect to the ServiceNow REST API, retrieve incident records, and export them to an Excel file.</p>
-                    <ul>
-                        <li>Python script connects to the ServiceNow API.</li>
-                        <li>Retrieves incident data based on defined filters.</li>
-                        <li>Exports incident data to an Excel file (.xlsx).</li>
-                    </ul>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+                                                        <li><a href="index.html">Projects</a></li>
+							<li><a href="aboutme.html">About me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/visants" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+						</ul>
+					</nav>
 
-                    <h4>Project Structure:</h4>
-                    <pre>
-                        /restapi-projects
-                        ├── restapi-getincidents.py  # Main Python script
-                        ├── incidents.xlsx           # Output file
-                        ├── .venv/                   # Virtual environment
-                        ├── requirements.txt         # Required libraries
-                        └── README.md                # Project documentation
-                    </pre>
+				<!-- Main -->
+					<div id="main">
+						<!-- Featured Post -->
+						<article class="post featured">
+							<header class="major">
+								<span class="date">Jan 30, 2025</span>
+								<h3><a href="https://github.com/viviasantos/restapi-projects">ServiceNow REST API Incident Extractor</a></h3>
+								<ul>
+                                                            <div style="text-align: left;">									
+									<b>Description:</b> This Python project connects to the ServiceNow REST API to retrieve incident records and export them into an Excel file using pandas. It demonstrates how to securely access, process, and export data from a ServiceNow instance..<br>
+								        </ul>
+                                                            <div style="text-align: left;">	
+                                                            <b>🚀 ✅ USER STORY:</b> As an integration developer, I want an external system to be able to fetch open incidents from ServiceNow so we can display them in a table.<br>
+                                                            <br></ul>
 
-                    <h4>Tools & Technologies:</h4>
-                    <ul>
-                        <li>Python 3</li>
-                        <li>requests, pandas libraries</li>
-                        <li>ServiceNow REST API</li>
-                        <li>GitHub for project management</li>
-                    </ul>
+                                                           <b>🚀 What This Project Does:</b>
+                                                           <ul>
+                                                           - Connects to the ServiceNow Incident Table using the REST API.<br>
+                                                           - Authenticates with basic credentials.<br>
+                                                           - Sends a GET request with custom query filters.<br>
+                                                           - Parses the JSON response into a pandas DataFrame.<br>
+                                                           - Extracts relevant fields (e.g., incident_number, state, sys_updated_on).<br>
+                                                           - Exports the data to an .xlsx file.<br>
+                                                           - Handles pagination to retrieve more than 100 records if needed.<br>
+                                                           </ul>
 
-                    <a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">View Repository</a>
-                </header>
-            </article>
-        </div>
+                                                         <b>🛠 Tools & Technologies Used:</b>
+                                                         <ul>
+                                                          - 🔗 ServiceNow REST API – For accessing incident data.<br>
+                                                          - 📡 REST API Explorer – For building and testing the endpoint.<br>
+                                                          - 🐍 Python 3 – Core scripting language.<br>
+                                                          - 📦 requests, pandas – requests for API communication/pandas for data manipulation/export<br>
+                                                          - 💻 Visual Studio Code – IDE for development.<br>
+                                                          - 📁 Output: .xlsx file containing incident records.<br>
+                                                          </ul>
 
-        <!-- Footer with pagination -->
-        <footer>
-            <div class="pagination">
-                <a href="index.html" class="page active">1</a>
-                <a href="project2.html" class="page">2</a>
-            </div>
-        </footer>
+                                                           </div>
+							   </ul>
+							</header>
 
-    </div>
+                                                   <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
+                                                   <a href="#" class="image main">
+                                                   <img src="images/image-project1.jpg" alt="📂 Directory Structure (Example)" style="margin-top: 0;" />
+                                                   </a>
+							<ul class="actions special">
+							<li><a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">Repository</a></li>
+							</ul>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
+                                                       </article>
+							
+						<!-- Posts -->
+							<!-- 
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">April 24, 2017</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 22, 2017</span>
+										<h2><a href="#">Primis eget<br />
+										imperdiet lorem</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
+							-->
 
-</body>
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">4</a>
+									<a href="#" class="page">5</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Email</h3>
+								<p><a href="#">viviane.dsantos.it@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Viviane Santos</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
