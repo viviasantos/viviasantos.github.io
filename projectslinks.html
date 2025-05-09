@@ -1,37 +1,101 @@
-.project-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Viviane Santos - Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
 
-.card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-}
+      <!-- Intro -->
+      <div id="intro">
+        <h1>Viviane Santos<br />
+        PORTFOLIO</h1>
+        <p>ServiceNow Administrator & IT Business Analyst | CAD & CSA Certified | Agile & Scrum Practitioner<br /><a href=""></a></p>
+        <ul class="actions">
+          <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+        </ul>
+      </div>
 
-.card-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Projects</a>
+      </header>
 
-.card h3 {
-  padding: 10px;
-  font-size: 18px;
-  color: #333;
-}
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="aboutme.html">About me</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/visants" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+        </ul>
+      </nav>
 
-.card p {
-  padding: 10px;
-  color: #666;
-  font-size: 14px;
-}
+      <!-- Main -->
+      <div id="main">
+        <!-- Projetos -->
+        <div class="project-cards">
+          <div class="card">
+            <a href="project1.html">
+              <img src="images/project1-thumbnail.jpg" alt="Project 1" class="card-image" />
+              <h3>ServiceNow REST API Incident Extractor</h3>
+              <p>Connects to ServiceNow REST API and exports incident data to an Excel file.</p>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="project2.html">
+              <img src="images/project2-thumbnail.jpg" alt="Project 2" class="card-image" />
+              <h3>ServiceNow Business Rule - CRUD Operations</h3>
+              <p>Automates Create, Read, Update, and Delete operations in ServiceNow Incident Table.</p>
+            </a>
+          </div>
+
+          <!-- Adicione mais cards conforme necessário -->
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <section class="split contact">
+          <section class="alt">
+            <h3>Email</h3>
+            <p><a href="mailto:viviane.dsantos.it@gmail.com">viviane.dsantos.it@gmail.com</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+              <li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
+            </ul>
+          </section>
+        </section>
+      </footer>
+
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul><li>&copy; Viviane Santos</li></ul>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
