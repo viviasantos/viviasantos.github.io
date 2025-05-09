@@ -4712,7 +4712,7 @@ input, select, textarea {
 
 /* Estilos para os cartões de projetos */
 .project-card {
-  height: 320px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -4722,24 +4722,12 @@ input, select, textarea {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   text-align: left;
+  padding: 1rem 0; /* adiciona padding para compensar a imagem removida */
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Imagem padrão para todos os cards */
+/* Removemos a imagem e o espaço que ela ocupava */
 .project-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Se a imagem quebrar, mostra o placeholder */
-.project-card img:empty,
-.project-card img:not([src]) {
-  content: url("https://via.placeholder.com/300x140?text=Project+Image");
+  display: none !important;
 }
 
 /* Título */
@@ -4751,6 +4739,7 @@ input, select, textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  border-bottom: none; /* garante que não tenha linha */
 }
 
 /* Texto */
@@ -4791,5 +4780,6 @@ input, select, textarea {
     grid-template-columns: 1fr;
   }
 }
+
 
 
