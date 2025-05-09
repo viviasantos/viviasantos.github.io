@@ -4700,19 +4700,21 @@ input, select, textarea {
   margin-bottom: 2rem;
 }
 
+/* Grid responsiva para os cards dos projetos */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 cards por linha */
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
 }
 
+/* Estilos para os cartões de projetos */
 .project-card {
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   text-align: left;
 }
@@ -4736,4 +4738,31 @@ input, select, textarea {
 .project-card p {
   margin: 0 1rem 1rem;
   color: #666;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha para telas menores */
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas ainda menores */
+  }
+
+  #projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 card por linha para telas muito pequenas */
+  }
 }
