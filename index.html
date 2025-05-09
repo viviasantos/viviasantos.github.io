@@ -42,26 +42,28 @@
       <!-- Main -->
       <div id="main">
         <!-- Projetos -->
-        <div class="project-cards">
-          <div class="card">
-            <a href="project1.html">
-              <img src="images/project1-thumbnail.jpg" alt="Project 1" class="card-image" />
-              <h3>ServiceNow REST API Incident Extractor</h3>
-              <p>Connects to ServiceNow REST API and exports incident data to an Excel file.</p>
-            </a>
+        <section id="projects">
+          <h2>My Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <a href="project1.html">
+                <img src="images/project1-thumbnail.jpg" alt="Project 1">
+                <h3>REST API Incident Extractor</h3>
+                <p>Export incident data from ServiceNow to Excel.</p>
+              </a>
+            </div>
+
+            <div class="project-card">
+              <a href="project2.html">
+                <img src="images/project2-thumbnail.jpg" alt="Project 2">
+                <h3>Business Rule - CRUD Ops</h3>
+                <p>Automates create, read, update, and delete in ServiceNow.</p>
+              </a>
+            </div>
+
+            <!-- Adicione mais cards conforme necessário -->
           </div>
-
-          <div class="card">
-            <a href="project2.html">
-              <img src="images/project2-thumbnail.jpg" alt="Project 2" class="card-image" />
-              <h3>ServiceNow Business Rule - CRUD Operations</h3>
-              <p>Automates Create, Read, Update, and Delete operations in ServiceNow Incident Table.</p>
-            </a>
-          </div>
-
-          <!-- Adicione mais cards conforme necessário -->
-
-        </div>
+        </section>
 
         <!-- Postagens -->
         <section id="posts">
@@ -75,7 +77,6 @@
             <li><a href="#">Nov 29, 2024 - <span>Title of Post</span></a></li>
           </ul>
         </section>
-
       </div>
 
       <!-- Footer -->
