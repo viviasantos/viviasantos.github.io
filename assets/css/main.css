@@ -4690,21 +4690,51 @@ input, select, textarea {
 
 
 /* === ESTILO PARA AS LISTAS DE PROJETOS === */
-ul {
-  list-style-type: disc;
-  padding-left: 1.5em;
-  margin: 0; /* Remove margem adicional que pode causar separação extra */
+.project-section {
+  padding: 2em;
 }
 
-li {
-  margin-bottom: 10px; /* Espaçamento entre os itens da lista */
-  border-bottom: none; /* Garante que não haja borda abaixo dos itens */
+.project-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.project-list {
+  list-style: none; /* Remove os pontinhos */
+  padding-left: 0;
+  margin: 0 0 1.5em 0;
+}
+
+.project-list li {
+  margin: 0.3em 0;
+  font-size: 0.95em;
+}
+
+.project-list a {
+  text-decoration: none;
+  color: #3498db;
+  transition: color 0.2s;
+}
+
+.project-list a:hover {
+  color: #21618c;
 }
 
 /* === OPÇÕES RESPONSIVAS PARA TELAS MENORES === */
 @media (max-width: 768px) {
-  ul {
-    padding-left: 1em; /* Ajuste no padding da lista para telas menores */
+  .project-section {
+    padding: 1em;
+  }
+
+  .project-section h2 {
+    font-size: 1.3em;
+  }
+
+  .project-list li {
+    font-size: 0.9em;
   }
 }
 
