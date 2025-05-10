@@ -4689,16 +4689,24 @@ input, select, textarea {
 	}
 
 
+/* === ESTILO PADRÃO PARA TEXTO === */
+body {
+  font-family: Arial, sans-serif; /* Defina uma fonte padrão para garantir uniformidade */
+  font-size: 1em;
+  line-height: 1.6;
+}
+
 /* === LISTA DE PROJETOS === */
 .project-section {
   padding: 2em;
+  margin-left: 20px; /* Ajuste do alinhamento dos projetos */
 }
 
 .project-section h2 {
   font-size: 1.5em;
   margin-bottom: 0.5em;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Caixa alta */
   color: #333;
 }
 
@@ -4710,7 +4718,7 @@ input, select, textarea {
 
 .project-list li {
   margin: 0.3em 0;
-  font-size: 0.95em; /* Tamanho da fonte dos itens de projeto */
+  font-size: 1em; /* Mesmo tamanho da fonte do texto do blog */
 }
 
 .project-list a {
@@ -4735,6 +4743,7 @@ input, select, textarea {
   font-size: 1.5em; /* O mesmo tamanho do título de projetos */
   margin-bottom: 0.8em;
   font-weight: 600;
+  text-transform: uppercase; /* Caixa alta */
   color: #333;
 }
 
@@ -4746,7 +4755,7 @@ input, select, textarea {
 
 .posts-list li {
   margin: 0.3em 0;
-  font-size: 0.95em; /* Igual ao tamanho de fonte dos projetos */
+  font-size: 1em; /* Mesmo tamanho da fonte dos projetos */
 }
 
 .posts-list a {
@@ -4780,6 +4789,7 @@ section::after {
 @media (max-width: 768px) {
   .project-section {
     padding: 1em;
+    margin-left: 10px; /* Alinhamento ajustado para telas menores */
   }
 
   .project-section h2 {
@@ -4787,7 +4797,7 @@ section::after {
   }
 
   .project-list li {
-    font-size: 0.9em;
+    font-size: 0.95em; /* Ajuste o tamanho da fonte para telas menores */
   }
 
   #posts {
@@ -4796,13 +4806,14 @@ section::after {
   }
 
   #posts h2 {
-    font-size: 1.3em; /* Ajuste do título do blog em telas pequenas */
+    font-size: 1.3em;
   }
 
   .posts-list li {
-    font-size: 0.9em; /* Ajuste para os itens de lista do blog em telas pequenas */
+    font-size: 0.95em;
   }
 }
+
 
 
 
