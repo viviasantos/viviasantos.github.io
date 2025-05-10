@@ -4723,11 +4723,11 @@ input, select, textarea {
   color: #21618c;
 }
 
-/* === ESTILO PARA A SEÇÃO DE BLOG === */
+/* === ESTILO PARA A SEÇÃO DE BLOG AJUSTADO === */
 #posts {
-  background-color: #f9f9f9; /* ← Se existir, remova ou comente isso */
-  padding: 2em;              /* ← Opcional manter ou ajustar */
-  border-top: 1px solid #ccc; /* ← Remova se quiser visual limpo */
+  background-color: transparent; /* Fundo igual ao da página */
+  padding: 2em;
+  border-top: none; /* Remove a linha */
 }
 
 /* === OPÇÕES RESPONSIVAS PARA TELAS MENORES === */
