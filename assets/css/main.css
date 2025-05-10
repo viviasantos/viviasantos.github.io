@@ -4710,7 +4710,7 @@ input, select, textarea {
 
 .project-list li {
   margin: 0.3em 0;
-  font-size: 0.95em;
+  font-size: 0.95em; /* Tamanho da fonte dos itens de projeto */
 }
 
 .project-list a {
@@ -4729,6 +4729,34 @@ input, select, textarea {
   padding: 2em;
   border-top: none;
   margin-top: 0;
+}
+
+#posts h2 {
+  font-size: 1.5em; /* O mesmo tamanho do título de projetos */
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  color: #333;
+}
+
+.posts-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.posts-list li {
+  margin: 0.3em 0;
+  font-size: 0.95em; /* Igual ao tamanho de fonte dos projetos */
+}
+
+.posts-list a {
+  text-decoration: none;
+  color: #3498db;
+  transition: color 0.2s;
+}
+
+.posts-list a:hover {
+  color: #21618c;
 }
 
 /* === REMOVER LINHA VISUAL ABAIXO DO WELCOME === */
@@ -4765,6 +4793,14 @@ section::after {
   #posts {
     padding: 1.5em;
     margin-top: 1.5em;
+  }
+
+  #posts h2 {
+    font-size: 1.3em; /* Ajuste do título do blog em telas pequenas */
+  }
+
+  .posts-list li {
+    font-size: 0.9em; /* Ajuste para os itens de lista do blog em telas pequenas */
   }
 }
 
