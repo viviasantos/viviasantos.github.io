@@ -4723,6 +4723,14 @@ input, select, textarea {
   color: #21618c;
 }
 
+/* === ESTILO PARA A SEÇÃO DE BLOG === */
+#posts {
+  background-color: #f9f9f9;
+  padding: 2em;
+  border-radius: 8px;
+  margin-top: 2em;
+}
+
 /* === OPÇÕES RESPONSIVAS PARA TELAS MENORES === */
 @media (max-width: 768px) {
   .project-section {
@@ -4736,7 +4744,13 @@ input, select, textarea {
   .project-list li {
     font-size: 0.9em;
   }
+
+  #posts {
+    padding: 1.5em;
+    margin-top: 1.5em;
+  }
 }
+
 
 
 
