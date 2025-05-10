@@ -4699,7 +4699,7 @@ body {
 /* === LISTA DE PROJETOS === */
 .project-section {
   padding: 2em;
-  margin-left: 20px; /* Ajuste do alinhamento dos projetos */
+  margin-left: 20px; /* Ajuste da margem dos projetos para a esquerda */
 }
 
 .project-section h2 {
@@ -4735,8 +4735,8 @@ body {
 #posts {
   background-color: transparent;
   padding: 2em;
-  border-top: none;
   margin-top: 0;
+  margin-left: 20px; /* Alinha o blog à mesma margem dos projetos */
 }
 
 #posts h2 {
@@ -4773,6 +4773,7 @@ body {
   border-bottom: none !important;
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+  margin-left: 20px; /* Alinha a descrição 'Hey There' com a mesma margem do blog e projetos */
 }
 
 section {
@@ -4803,6 +4804,7 @@ section::after {
   #posts {
     padding: 1.5em;
     margin-top: 1.5em;
+    margin-left: 10px; /* Ajuste da margem para telas pequenas */
   }
 
   #posts h2 {
@@ -4812,7 +4814,12 @@ section::after {
   .posts-list li {
     font-size: 0.95em;
   }
+
+  #welcome {
+    margin-left: 10px; /* Ajuste da margem para a seção de "Hey There" em telas pequenas */
+  }
 }
+
 
 
 
