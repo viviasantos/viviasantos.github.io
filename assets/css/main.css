@@ -4689,7 +4689,7 @@ input, select, textarea {
 	}
 
 
-/* === ESTILO PARA AS LISTAS DE PROJETOS === */
+/* === LISTA DE PROJETOS === */
 .project-section {
   padding: 2em;
 }
@@ -4703,7 +4703,7 @@ input, select, textarea {
 }
 
 .project-list {
-  list-style: none; /* Remove os pontinhos */
+  list-style: none;
   padding-left: 0;
   margin: 0 0 1.5em 0;
 }
@@ -4723,14 +4723,32 @@ input, select, textarea {
   color: #21618c;
 }
 
-/* === ESTILO PARA A SEÇÃO DE BLOG AJUSTADO === */
+/* === BLOG POSTS === */
 #posts {
-  background-color: transparent; /* Fundo igual ao da página */
+  background-color: transparent;
   padding: 2em;
-  border-top: none; /* Remove a linha */
+  border-top: none;
+  margin-top: 0;
 }
 
-/* === OPÇÕES RESPONSIVAS PARA TELAS MENORES === */
+/* === REMOVER LINHA VISUAL ABAIXO DO WELCOME === */
+#welcome {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+section {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+section::after {
+  display: none !important;
+  border: none !important;
+}
+
+/* === RESPONSIVO === */
 @media (max-width: 768px) {
   .project-section {
     padding: 1em;
