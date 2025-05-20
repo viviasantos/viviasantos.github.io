@@ -41,57 +41,101 @@
                 </ul>
             </nav>
 
-            <!-- Main Content -->
-            <div id="main">
-                <!-- Featured Post -->
-                <article class="post featured">
-                    <header class="major">
-                        <span class="date">Jan 30, 2025</span>
-                        <h3>ServiceNow REST API Incident Extractor</h3>
-                        <ul>
-                            <div style="text-align: left;">
-                                <b>Description:</b> This Python project connects to the ServiceNow REST API to retrieve incident records and export them into an Excel file using pandas. It demonstrates how to securely access, process, and export data from a ServiceNow instance.<br>
-                            <br></div>
-                            <div style="text-align: left;">
-                                <b>🚀 What This Project Does:</b>
-                                <ul>
-                                    - Connects to the ServiceNow Incident Table using the REST API.<br>
-                                    - Authenticates with basic credentials.<br>
-                                    - Sends a GET request with custom query filters.<br>
-                                    - Parses the JSON response into a pandas DataFrame.<br>
-                                    - Extracts relevant fields (e.g., incident_number, state, sys_updated_on).<br>
-                                    - Exports the data to an .xlsx file.</li>
-                                    - Handles pagination to retrieve more than 100 records if needed.<br>
-                                </ul>
-                            </div>
-
-                            <div style="text-align: left;">
-                                <b>🛠 Tools & Technologies Used:</b>
-                                <ul>
-                                    🔗 ServiceNow REST API – For accessing incident data.<br>
-                                    📡 REST API Explorer – For building and testing the endpoint.<br>
-                                    🐍 Python 3 – Core scripting language.<br>
-                                    📦 requests, pandas – requests for API communication/pandas for data manipulation/export.<br>
-                                    💻 Visual Studio Code – IDE for development.<br>
-                                    📁 Output: .xlsx file containing incident records.<br>
-                                </ul>
-                            </div>
-                        </ul>
-                    </header>
-
-                    <!-- Directory Structure Image -->
-                    <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
-                    <a href="#" class="image main">
-                        <img src="images/image-project1.jpg" alt="📂 Directory Structure (Example)" style="margin-top: 0;" />
-                    </a>
-                    
-                    <!-- Link to Repository -->
-                    <ul class="actions special">
-                        <li><a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">Repository</a></li>
+<!-- Main Content -->
+<div id="main">
+    <!-- Featured Post -->
+    <article class="post featured">
+        <header class="major">
+            <span class="date">Jan 30, 2025</span>
+            <h3>ServiceNow Incident Data Export to Excel (via REST API)</h3>
+            <ul>
+                <div style="text-align: left;">
+                    <b>Description:</b> This Python project connects to the ServiceNow REST API to retrieve incident records and export them into an Excel file using pandas. It demonstrates how to securely access, process, and export data from a ServiceNow instance.<br><br>
+                </div>
+                <div style="text-align: left;">
+                    <b>🚀 What This Project Does:</b>
+                    <ul>
+                        - Connects to the ServiceNow Incident Table using the REST API.<br>
+                        - Authenticates with basic credentials.<br>
+                        - Sends a GET request with custom query filters.<br>
+                        - Parses the JSON response into a pandas DataFrame.<br>
+                        - Extracts relevant fields (e.g., incident_number, state, sys_updated_on).<br>
+                        - Exports the data to an .xlsx file.<br>
+                        - Handles pagination to retrieve more than 100 records if needed.<br>
                     </ul>
-                </article>
+                </div>
+                <div style="text-align: left;">
+                    <b>🛠 Tools & Technologies Used:</b>
+                    <ul>
+                        🔗 ServiceNow REST API – For accessing incident data.<br>
+                        📡 REST API Explorer – For building and testing the endpoint.<br>
+                        🐍 Python 3 – Core scripting language.<br>
+                        📦 requests, pandas – requests for API communication/pandas for data manipulation/export.<br>
+                        💻 Visual Studio Code – IDE for development.<br>
+                        📁 Output: .xlsx file containing incident records.<br>
+                    </ul>
+                </div>
+            </ul>
+        </header>
 
-            </div>
+        <!-- Directory Structure Image -->
+        <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
+        <a href="#" class="image main">
+            <img src="images/image-project1.jpg" alt="📂 Directory Structure (Example)" style="margin-top: 0;" />
+        </a>
+
+        <!-- Link to Repository -->
+        <ul class="actions special">
+            <li><a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">Repository</a></li>
+        </ul>
+    </article>
+    <span class="date"></span>
+
+
+    <!-- New Project: ServiceNow to Jira via Webhook -->
+    <article class="post featured">
+        <header class="major">
+            <span class="date">May 20, 2025</span>
+            <h3>ServiceNow to Jira Integration via REST Message (P1 Incidents)</h3>
+            <ul>
+                <div style="text-align: left;">
+                    <b>Description:</b> This ServiceNow project uses a REST Message to send P1 incidents to an external system (like Jira). The data is sent as JSON to a simulated endpoint (Webhook.site) when a critical incident is created.<br><br>
+                </div>
+                <div style="text-align: left;">
+                    <b>🚀 What This Project Does:</b>
+                    <ul>
+                        - Sends incident data from ServiceNow to an external system using REST POST.<br>
+                        - Triggered automatically when a new P1 incident is inserted.<br>
+                        - JSON body includes incident number, short description, and priority.<br>
+                        - Tested using Webhook.site as a mock endpoint.<br>
+                    </ul>
+                </div>
+                <div style="text-align: left;">
+                    <b>🛠 Tools & Technologies Used:</b>
+                    <ul>
+                        🔗 ServiceNow REST Message – For sending REST POST requests.<br>
+                        ⚙️ Business Rule – Executes on After Insert for new incidents.<br>
+                        🌐 Webhook.site – For receiving and testing the payload.<br>
+                        💡 Variable substitution – Dynamic data injection into JSON body.<br>
+                        🖥️ ServiceNow Studio – Development and configuration.<br>
+                    </ul>
+                </div>
+            </ul>
+        </header>
+
+        <!-- Directory Structure Image -->
+        <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
+        <a href="#" class="image main">
+            <img src="images/image-project2.jpg" alt="📂 Directory Structure (Example)" style="margin-top: 0;" />
+        </a>
+
+        <!-- Link to Repository -->
+        <ul class="actions special">
+            <li><a href="https://github.com/viviasantos/restapi-projects" class="button large" target="_blank">Repository</a></li>
+        </ul>
+    </article>
+</div>
+
 
             <!-- Footer -->
             <footer id="footer">
