@@ -1,165 +1,92 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Creating User Stories</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
-
-        <!-- Wrapper -->
-        <div id="wrapper" class="fade-in">
-
-            <!-- Intro -->
-            <div id="intro">
-                <h1>Viviane Santos<br />
-                    PORTFOLIO</h1>
-                <p>ServiceNow Administrator & IT Business Analyst | CAD & CSA Certified | Agile & Scrum Practitioner<br />
-                    <a href=""></a>
-                </p>
-                <ul class="actions">
-                    <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-                </ul>
-            </div>
-
-            <!-- Header -->
-            <header id="header">
-                <a href="index.html" class="logo">Posts</a>
-            </header>
-
-            <!-- Nav -->
-            <nav id="nav">
-                <ul class="links">
-                    <li><a href="index.html">Posts</a></li>
-                    <li><a href="aboutme.html">About me</a></li>
-                </ul>
-                <ul class="icons">
-                    <li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/visants" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-                </ul>
-            </nav>
-
-            <!-- Main Content -->
-            <div id="main">
-                <!-- Featured Post -->
-                 <!-- thirt Project -->
-  <article class="post featured">
+<!-- Featured Post -->
+<article class="post featured">
   <header class="major">
-    <span class="date">Jun 3, 2025</span>
-    <h3>🟦 My Framework for System Automation Stories</h3>
+    <span class="date">Mar 02, 2025</span>
+    <h3>🟦 Creating User Stories for Automation Projects</h3>
+
     <div style="text-align: left;">
-      <p>User Stories are the fundamental communication tool between business and technology teams. Poorly written stories cause rework, misunderstandings, misaligned deliveries, and blockers. Well-crafted stories become valuable assets that guide incremental development and predictable deliveries—especially in system automation projects.
-      In this article, I share a validated structure I use to ensure clarity, value, and technical precision from backlog grooming to delivery.</p>
+      <p>User Stories are the communication bridge between business needs and technical teams. Poorly written stories create misunderstandings, delays, and rework. In contrast, well-structured stories clarify value, scope, and logic, leading to smoother deliveries—especially in automation-focused environments.</p>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 1. User Story Structure: Persona + Action + Purpose</b>
-      <p>The base template I follow is:</p>
-      <blockquote>As a [persona], I want to [action or feature], so that [business goal or benefit].</blockquote>
-      <p>This structure forces the story to be written from the end-user or stakeholder perspective, aligning with value-driven development principles.</p>
-      <p><i><b>Technical example:</i></p></b>
-      <blockquote>As a process coordinator, I want the performance report to be automatically generated every Friday at 6 PM, so that data is ready before Monday’s review meetings.</blockquote>
-      <p><b>Applied best practices:</b></p>
-        <li>Real persona: adds context and clarity.</li>
-        <li>Concrete action: avoids ambiguity (e.g., “automate” vs “generate and email report”).</li>
-        <li>Explicit purpose: ties the story to actual business value.</li>
+      <b>🔹 1. Template: Persona + Action + Purpose</b>
+      <p>The most effective format is:</p>
+      <blockquote>As a [persona], I want to [action or goal], so that [business value or reason].</blockquote>
+      <p>This formula ensures that the story reflects a real-world need, not just a technical task.</p>
+
+      <p><b><i>Example:</i></b></p>
+      <blockquote>As a process coordinator, I want the system to generate a weekly report every Friday at 6 PM, so I can use it during Monday’s performance review.</blockquote>
+
+      <p><b>Why this works:</b></p>
+      <ul>
+        <li><b>Persona:</b> Adds clarity and context.</li>
+        <li><b>Action:</b> Defines the expected behavior.</li>
+        <li><b>Purpose:</b> Connects to a business goal.</li>
+      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 2. Clear Acceptance Criteria</b>
-      <p>For automation stories, it’s critical to define acceptance criteria with clear logic and expected behaviors across scenarios. I use the Given / When / Then format from Gherkin (BDD) to make validation explicit and testable.</p>
-      <p><i><b></b>Practical example:</i></p></b>
+      <b>🔹 2. Acceptance Criteria using Gherkin</b>
+      <p>Automation stories must have logical, testable criteria. I use the Given/When/Then format to express the expected result clearly:</p>
+
       <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
 Given the weekly performance data is available,
-When the automation job runs at 6 PM on Friday,
-Then a consolidated PDF report is generated and stored in the designated repository,
-And an email with the report attached is sent to the process management group.
+When the automation runs at 6 PM on Friday,
+Then a PDF report is generated and emailed to managers,
+And a success log is recorded in the system.
       </pre>
-      <p><b>Technical benefits:</b></p>
-        <li>Creates objective, testable criteria.</li>
-        <li>Facilitates manual and automated QA.</li>
-        <li>Reduces ambiguity in conditional flows and edge cases.</li>
+
+      <p><b>Benefits:</b></p>
+      <ul>
+        <li>Reduces ambiguity in automation flows.</li>
+        <li>Improves test coverage.</li>
+        <li>Enables both manual and automated validation.</li>
+      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 3. Technical Backlog Refinement: Breaking Down Automation Stories</b>
-      <p>System automation is rarely delivered in a single sprint. Strategic story decomposition is essential to deliver incremental value and ensure technical feasibility. Here’s how I approach backlog refinement technically:</p>
-      <p><b>📌 Common story breakdowns for automation:</b></p>
-        <li>Story 1: Trigger capture (e.g., scheduled time, event, webhook)</li>
-        <li>Story 2: Processing logic (parsing, calculations, formatting)</li>
-        <li>Story 3: Output and destination (email, database, API, storage)</li>
-        <li>Story 4 (optional): Error handling and logging</li>
-    
-      <p><b>📌 Key patterns to maintain:</b></p>
-        <li>Stories with clear, testable acceptance criteria</li>
-        <li>Linking stories through epics or parent tasks</li>
-        <li>Mapping technical and data dependencies</li>
-        <li>Prioritizing by business value and complexity (Story Points)</li>
+      <b>🔹 3. Backlog Refinement Techniques</b>
+      <p>Most automation tasks should be split into smaller stories across sprints. Here’s a common breakdown:</p>
+
+      <ul>
+        <li><b>Story 1:</b> Trigger definition (e.g., schedule, event)</li>
+        <li><b>Story 2:</b> Data processing logic</li>
+        <li><b>Story 3:</b> Report generation and storage</li>
+        <li><b>Story 4:</b> Notification and error handling</li>
+      </ul>
+
+      <p><b>Good refinement practices:</b></p>
+      <ul>
+        <li>Keep stories testable and scoped.</li>
+        <li>Use Epics for grouping.</li>
+        <li>Estimate by complexity + value.</li>
+      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 4. Complete Example: Modular Automation User Story</b>
-      <p><b>Title:</b> Automate Weekly Report Generation and Distribution</p>
-      <p><b>Description:</b> As a process coordinator, I want the system to automatically generate and send consolidated reports every Friday at 6 PM, so the management team has data ready for weekly review meetings.</p>
-      <p><b>Acceptance Criteria (Gherkin):</b></p>
+      <b>🔹 4. Full Example</b>
+      <p><b>Title:</b> Automate Weekly Report Generation</p>
+      <p><b>Description:</b> As a process coordinator, I want the system to generate and email the weekly report every Friday at 6 PM, so I have the data ready for Monday’s review.</p>
+
+      <p><b>Acceptance Criteria:</b></p>
       <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
-Given that the weekly data is available in the database,
-When the automation process runs,
-Then the report must be generated as a PDF with the standard layout,
-And the file must be emailed to the management group,
-And a success or error log must be recorded in the system.
+Given the weekly data is available,
+When the automation job runs,
+Then the PDF report is generated,
+And the report is emailed to the team,
+And success/failure is logged for monitoring.
       </pre>
-      <p><b>Technical notes:</b></p>
-        <li>Scheduled job triggers execution</li>
-        <li>PDF export with predefined template</li>
-        <li>Automated email delivery with error fallback</li>
-        <li>Storage in S3 bucket for version control</li>
+
+      <p><b>Technical Notes:</b></p>
+      <ul>
+        <li>Scheduled trigger using cron job.</li>
+        <li>PDF generation from template.</li>
+        <li>Email with fallback retry.</li>
+        <li>Stored in cloud folder with versioning.</li>
+      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>✅ Conclusion</b>
-      <p>A well-structured User Story is not just a requirement—it’s a bridge between business value and technical execution. In system automations, where many deliveries lack a visual interface, clarity in story formulation ensures traceability, predictability, and frictionless delivery.</p>
-      <p>Adopting a structured, technical user story model—with robust acceptance criteria and modular backlog—boosts the team’s agile maturity and drastically reduces production failures.</p>
-    </div>
-  </header>
-</article>
-
-		</div>
-
-            <!-- Footer -->
-            <footer id="footer">
-                <section class="split contact">
-                    <section class="alt">
-                        <h3>Email</h3>
-                        <p><a href="mailto:viviane.dsantos.it@gmail.com">viviane.dsantos.it@gmail.com</a></p>
-                    </section>
-                    <section>
-                        <h3>Social</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-                            <li><a href="https://www.linkedin.com/in/visants/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-                        </ul>
-                    </section>
-                </section>
-            </footer>
-
-            <!-- Copyright -->
-            <div id="copyright">
-                <ul><li>&copy; Viviane Santos</li></ul>
-            </div>
-
-        </div>
-
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-
-    </body>
-</html>
+      <b>✅ Final Thoughts</b>
+      <p>Investing time in writing clear, structured stories boosts delivery confidence and reduces blockers. Especially for backend automations—where value isn't always visible—your story becomes the product interface.</p>
+      <p>Use real personas, strong acceptance logic, and technical breakdowns. The result? Aligned teams, faster sprints, and confident stakehol
