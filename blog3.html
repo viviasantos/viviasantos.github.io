@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Viviane Santos - Structure Scrum Ceremonies for Agile</title>
+        <title>Implementation of Scrum Methodology</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
@@ -41,98 +41,38 @@
                 </ul>
             </nav>
 
-<!-- Main Content -->
-<div id="main">
-    <!-- Featured Post -->
-    <article class="post featured">
-        <header class="major">
-            <span class="date">Jan 30, 2025</span>
-            <h3>⚡ How to Structure Scrum Ceremonies for Agile and Valuable Deliveries ⚡</h3>
-            <ul>
-                <div style="text-align: left;">
-                    <b>I want to share my experience implementing and leading Scrum ceremonies in short 2-week sprints. One of the biggest lessons I learned in practice is the importance of breaking down deliveries into small pieces that already add value to the client, so they don’t have to wait long and can quickly see real benefits.
-                       Besides that, using Scrum ceremonies brings clear gains: it improves team alignment, helps identify and mitigate risks, enhances communication, and keeps the focus on what really matters — delivering continuous and sustainable value.<br><br>
-                </div>
-                <div style="text-align: left;">
-                    <b> 1. Sprint Planning: Planning with Scrum Poker and Business Alignment</b>
-                    <ul>
-<div style="text-align: left;">
- <b>At the start of each sprint, I organize a planning meeting where we use Scrum Poker 🃏 to estimate tasks. This technique helps the team discuss and reflect on the complexity of each backlog item, promoting more accurate and collaborative estimates.<br>
- <b> Before this meeting, I do a prior alignment with the business team 🤝 to understand risks ⚠️, urgency ⏰, and impact 🚀 of the requests. This ensures we prioritize what really matters to the client and the business, and the team is aware of challenges to better plan the work.<br>
- <b> Talking with the team at this point is essential to clear doubts 💬, identify dependencies 🔗, and understand the effort needed for each delivery.<b>               
- </ul>
-                </div>
-                <div style="text-align: left;">
-                    <b>🛠 Tools & Technologies Used:</b>
-                    <ul>
-                        🔗 ServiceNow REST API – For accessing incident data.<br>
-                        📡 REST API Explorer – For building and testing the endpoint.<br>
-                        🐍 Python 3 – Core scripting language.<br>
-                        📦 requests, pandas – requests for API communication/pandas for data manipulation/export.<br>
-                        💻 Visual Studio Code – IDE for development.<br>
-                        📁 Output: .xlsx file containing incident records.<br>
-                    </ul>
-                </div>
-            </ul>
-        </header>
+            <!-- Main Content -->
+            <div id="main">
+                <!-- Featured Post -->
+                <article class="post featured">
+                    <header class="major">
+                        <span class="date">Jun 3, 2025</span>
+                        <h3>⚡ How to Structure Scrum Ceremonies for Agile and Valuable Deliveries ⚡</h3>
+                        <div style="text-align: left;">
+                            <p>I want to share my experience implementing and leading Scrum ceremonies in short 2-week sprints. One of the biggest lessons I learned in practice is the importance of breaking down deliveries into small pieces that already add value to the client, so they don’t have to wait long and can quickly see real benefits.</p>
+                            <p>Besides that, using Scrum ceremonies brings clear gains: it improves team alignment, helps identify and mitigate risks, enhances communication, and keeps the focus on what really matters — delivering continuous and sustainable value.</p>
+                       
+                        <h4>📝 1. Sprint Planning: Planning with Scrum Poker and Business Alignment</h4>
+                        <p>At the start of each sprint, I organize a planning meeting where we use <strong>Scrum Poker</strong> 🃏 to estimate tasks. This technique helps the team discuss and reflect on the complexity of each backlog item, promoting more accurate and collaborative estimates.</p>
+                        <p>Before this meeting, I do a prior alignment with the business team 🤝 to understand risks ⚠️, urgency ⏰, and impact 🚀 of the requests. This ensures we prioritize what really matters to the client and the business, and the team is aware of challenges to better plan the work.</p>
+                        <p>Talking with the team at this point is essential to clear doubts 💬, identify dependencies 🔗, and understand the effort needed for each delivery.</p>
 
-        <!-- Directory Structure Image -->
-        <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
-        <a href="#" class="image main">
-            <img src="images/image-project1.jpg" alt="📂 Directory Structure (Example)" style="margin-top: 0;" />
-        </a>
+                        <h4>🔄 2. Daily Scrum: Daily Communication to Remove Blockers</h4>
+                        <p>The Daily is a short meeting (usually 15 minutes ⏳) where each team member shares what they did, what they will do, and any blockers 🚧. It keeps the team synchronized and allows quick action to solve problems that could delay deliveries.</p>
 
-        <!-- Link to Repository -->
-        <ul class="actions special">
-            <li><a href="https://github.com/viviasantos/restapi-projects/tree/main/restapipy" class="button large" target="_blank">Repository</a></li>
-        </ul>
-    </article>
+                        <h4>🎯 3. Sprint Review: Showing Real Value to the Client</h4>
+                        <p>At the end of the sprint, I present the deliveries to the client or stakeholders 👥 to show the value created. This moment is key to get feedback 🗣️, adjust priorities, and make sure we are building something useful and relevant.</p>
 
+                        <h4>🔍 4. Sprint Retrospective: Continuous Process Improvement</h4>
+                        <p>After the Review, we hold a retrospective to discuss what went well ✅, what can improve 🔧, and define practical actions for the next sprint 🚀. This habit helps the team evolve continuously, increasing efficiency and delivery quality.</p>
 
-    <!-- New Project: ServiceNow to Jira via Webhook -->
-    <article class="post featured">
-        <header class="major">
-            <span class="date">May 20, 2025</span>
-            <h3>ServiceNow to Jira Integration via REST Message (P1 Incidents)</h3>
-            <ul>
-                <div style="text-align: left;">
-                    <b>Description:</b> This ServiceNow project uses a REST Message to send P1 incidents to an external system (like Jira). The data is sent as JSON to a simulated endpoint (Webhook.site) when a critical incident is created.<br><br>
-                </div>
-                <div style="text-align: left;">
-                    <b>🚀 What This Project Does:</b>
-                    <ul>
-                        - Sends incident data from ServiceNow to an external system using REST POST.<br>
-                        - Triggered automatically when a new P1 incident is inserted.<br>
-                        - JSON body includes incident number, short description, and priority.<br>
-                        - Tested using Webhook.site as a mock endpoint.<br>
-                    </ul>
-                </div>
-                <div style="text-align: left;">
-                    <b>🛠 Tools & Technologies Used:</b>
-                    <ul>
-                        🔗 ServiceNow REST Message – For sending REST POST requests.<br>
-                        ⚙️ Business Rule – Executes on After Insert for new incidents.<br>
-                        🌐 Webhook.site – For receiving and testing the payload.<br>
-                        💡 Variable substitution – Dynamic data injection into JSON body.<br>
-                        🖥️ ServiceNow Studio – Development and configuration.<br>
-                    </ul>
-                </div>
-            </ul>
-        </header>
-
-        <!-- Directory Structure Image -->
-        <h4 style="margin-bottom: 0;">📂 Directory Structure (Example)</h4>
-        <a href="#" class="image main">
-            <img src="images/RestApiwebhookimage.png" alt="📂 ServiceNow to Webhook (Jira Simulation)" style="margin-top: 0;" />
-        </a>
-
-        <!-- Link to Repository -->
-        <ul class="actions special">
-            <li><a href="https://github.com/viviasantos/restapi-projects/tree/main/restapiwebhook" class="button large" target="_blank">Repository</a></li>
-        </ul>
-    </article>
-</div>
-
+                        <h4>💡 Final Thoughts</h4>
+                        <p>Leading Scrum ceremonies focused on small deliveries that quickly add value completely changed my team’s dynamic. With careful planning, open communication, and constant feedback, we managed to speed up deliveries and increase client satisfaction.</p>
+                        <p>If you’re starting with Scrum or want to improve your agile process, I suggest investing time to structure these ceremonies with discipline and always aim for the balance between fast delivery and quality.</p>
+                    </header>
+                    </div>
+                </article>
+            </div>
 
             <!-- Footer -->
             <footer id="footer">
