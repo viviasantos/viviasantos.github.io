@@ -47,68 +47,93 @@
                  <!-- thirt Project -->
   <article class="post featured">
   <header class="major">
-    <span class="date">Feb 15, 2025</span>
-    <h3>Implementation of Scrum in IT Governance with ServiceNow</h3>
+    <span class="date">Jun 3, 2025</span>
+    <h3>🟦 A Good User Story Saves the Project: My Framework for System Automation Stories</h3>
     <div style="text-align: left;">
-      <b>Description:</b>  
-      This project guides you through the implementation of the Scrum methodology in the IT Governance area using the ServiceNow platform. It was designed to organize and accelerate the delivery of improvements and automations, while promoting agility, collaboration, and continuous value delivery through structured sprints.
+      <p>User Stories are the fundamental communication tool between business and technology teams. Poorly written stories cause rework, misunderstandings, misaligned deliveries, and blockers. Well-crafted stories become valuable assets that guide incremental development and predictable deliveries—especially in system automation projects.</p>
+      <p>In this article, I share a validated structure I use to ensure clarity, value, and technical precision from backlog grooming to delivery.</p>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
-      <b>🚀 What This Project Teaches:</b>
+      <b>🔹 1. User Story Structure: Persona + Action + Purpose</b>
+      <p>The base template I follow is:</p>
+      <blockquote>As a [persona], I want to [action or feature], so that [business goal or benefit].</blockquote>
+      <p>This structure forces the story to be written from the end-user or stakeholder perspective, aligning with value-driven development principles.</p>
+      <p><i>Technical example:</i></p>
+      <blockquote>As a process coordinator, I want the performance report to be automatically generated every Friday at 6 PM, so that data is ready before Monday’s review meetings.</blockquote>
+      <p><b>Applied best practices:</b></p>
       <ul>
-        - How to raise awareness and train your team in agile practices using Scrum.<br>
-        - How to map and model demand workflows in ServiceNow for better visibility.<br>
-        - How to structure and prioritize a product backlog using user stories.<br>
-        - How to define clear acceptance criteria for development requests.<br>
-        - How to organize and facilitate Scrum ceremonies (Planning, Daily, Review, Retrospective).<br>
-        - How to create sprint dashboards to track KPIs such as velocity and lead time.<br>
-        - How to collaborate with the Product Owner for continuous backlog refinement.<br>
+        <li>Real persona: adds context and clarity.</li>
+        <li>Concrete action: avoids ambiguity (e.g., “automate” vs “generate and email report”).</li>
+        <li>Explicit purpose: ties the story to actual business value.</li>
       </ul>
     </div>
 
-    <div style="text-align: left;">
-      <b>📊 Results Achieved:</b>
+    <div style="text-align: left; margin-top: 1rem;">
+      <b>🔹 2. Clear Acceptance Criteria (Gherkin Syntax)</b>
+      <p>For automation stories, it’s critical to define acceptance criteria with clear logic and expected behaviors across scenarios. I use the Given / When / Then format from Gherkin (BDD) to make validation explicit and testable.</p>
+      <p><i>Practical example:</i></p>
+      <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
+Given the weekly performance data is available,
+When the automation job runs at 6 PM on Friday,
+Then a consolidated PDF report is generated and stored in the designated repository,
+And an email with the report attached is sent to the process management group.
+      </pre>
+      <p><b>Technical benefits:</b></p>
       <ul>
-        - 📉 40% reduction in time to deliver platform improvements.<br>
-        - 🤝 Stronger team collaboration and shared product mindset.<br>
-        - 🗂️ Transparent backlog visible to the entire IT department.<br>
-        - 📄 Standardized user story and documentation process.<br>
+        <li>Creates objective, testable criteria.</li>
+        <li>Facilitates manual and automated QA.</li>
+        <li>Reduces ambiguity in conditional flows and edge cases.</li>
       </ul>
     </div>
 
-    <div style="text-align: left;">
-      <b>🛠 Tools & Technologies Used:</b>
+    <div style="text-align: left; margin-top: 1rem;">
+      <b>🔹 3. Technical Backlog Refinement: Breaking Down Automation Stories</b>
+      <p>System automation is rarely delivered in a single sprint. Strategic story decomposition is essential to deliver incremental value and ensure technical feasibility. Here’s how I approach backlog refinement technically:</p>
+      <p><b>📌 Common story breakdowns for automation:</b></p>
       <ul>
-        🧠 ServiceNow – Platform for automation and workflow configuration.<br>
-        📋 Jira – For backlog tracking and sprint management.<br>
-        🎨 Figma – Used to design visuals and process diagrams.<br>
-        📊 Excel / Power BI – For dashboard and KPI tracking.<br>
-        📚 knowledge base/ Notion – For documentation and knowledge sharing.<br>
+        <li>Story 1: Trigger capture (e.g., scheduled time, event, webhook)</li>
+        <li>Story 2: Processing logic (parsing, calculations, formatting)</li>
+        <li>Story 3: Output and destination (email, database, API, storage)</li>
+        <li>Story 4 (optional): Error handling and logging</li>
       </ul>
+      <p><b>📌 Key patterns to maintain:</b></p>
+      <ul>
+        <li>Stories with clear, testable acceptance criteria</li>
+        <li>Linking stories through epics or parent tasks</li>
+        <li>Mapping technical and data dependencies</li>
+        <li>Prioritizing by business value and complexity (Story Points)</li>
+      </ul>
+    </div>
+
+    <div style="text-align: left; margin-top: 1rem;">
+      <b>🔹 4. Complete Example: Modular Automation User Story</b>
+      <p><b>Title:</b> Automate Weekly Report Generation and Distribution</p>
+      <p><b>Description:</b><br />
+      As a process coordinator, I want the system to automatically generate and send consolidated reports every Friday at 6 PM, so the management team has data ready for weekly review meetings.</p>
+      <p><b>Acceptance Criteria (Gherkin):</b></p>
+      <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
+Given that the weekly data is available in the database,
+When the automation process runs,
+Then the report must be generated as a PDF with the standard layout,
+And the file must be emailed to the management group,
+And a success or error log must be recorded in the system.
+      </pre>
+      <p><b>Technical notes:</b></p>
+      <ul>
+        <li>Scheduled job triggers execution</li>
+        <li>PDF export with predefined template</li>
+        <li>Automated email delivery with error fallback</li>
+        <li>Storage in S3 bucket for version control</li>
+      </ul>
+    </div>
+
+    <div style="text-align: left; margin-top: 1rem;">
+      <b>✅ Conclusion</b>
+      <p>A well-structured User Story is not just a requirement—it’s a bridge between business value and technical execution. In system automations, where many deliveries lack a visual interface, clarity in story formulation ensures traceability, predictability, and frictionless delivery.</p>
+      <p>Adopting a structured, technical user story model—with robust acceptance criteria and modular backlog—boosts the team’s agile maturity and drastically reduces production failures.</p>
     </div>
   </header>
-
-  <h4 style="margin-bottom: 0;">📂 Visual Deliverables</h4>
-  <a href="#" class="image main">
-    <img src="images/scrum-training-slide.jpg" alt="Scrum Training Slide" style="margin-top: 0;" />
-  </a>
-  <a href="#" class="image main">
-    <img src="images/to-be-process-flow.jpg" alt="To-Be Process Flow" />
-  </a>
-  <a href="#" class="image main">
-    <img src="images/user-story-example.jpg" alt="User Story with Acceptance Criteria" />
-  </a>
-  <a href="#" class="image main">
-    <img src="images/sprint-dashboard.jpg" alt="Sprint Dashboard" />
-  </a>
-  <a href="#" class="image main">
-    <img src="images/sprint-backlog.jpg" alt="Sprint Backlog Screenshot" />
-  </a>
-
-  <ul class="actions special">
-    <li><a href="https://github.com/viviasantos/Scrum-Governance-ServiceNow" class="button large" target="_blank">Repository</a></li>
-  </ul>
 </article>
 
 		</div>
