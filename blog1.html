@@ -48,10 +48,10 @@
   <article class="post featured">
   <header class="major">
     <span class="date">Jun 3, 2025</span>
-    <h3>🟦 A Good User Story Saves the Project: My Framework for System Automation Stories</h3>
+    <h3>🟦 My Framework for System Automation Stories</h3>
     <div style="text-align: left;">
-      <p>User Stories are the fundamental communication tool between business and technology teams. Poorly written stories cause rework, misunderstandings, misaligned deliveries, and blockers. Well-crafted stories become valuable assets that guide incremental development and predictable deliveries—especially in system automation projects.</p>
-      <p>In this article, I share a validated structure I use to ensure clarity, value, and technical precision from backlog grooming to delivery.</p>
+      <p>User Stories are the fundamental communication tool between business and technology teams. Poorly written stories cause rework, misunderstandings, misaligned deliveries, and blockers. Well-crafted stories become valuable assets that guide incremental development and predictable deliveries—especially in system automation projects.
+      In this article, I share a validated structure I use to ensure clarity, value, and technical precision from backlog grooming to delivery.</p>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
@@ -59,20 +59,18 @@
       <p>The base template I follow is:</p>
       <blockquote>As a [persona], I want to [action or feature], so that [business goal or benefit].</blockquote>
       <p>This structure forces the story to be written from the end-user or stakeholder perspective, aligning with value-driven development principles.</p>
-      <p><i>Technical example:</i></p>
+      <p><i><b>Technical example:</i></p></b>
       <blockquote>As a process coordinator, I want the performance report to be automatically generated every Friday at 6 PM, so that data is ready before Monday’s review meetings.</blockquote>
       <p><b>Applied best practices:</b></p>
-      <ul>
         <li>Real persona: adds context and clarity.</li>
         <li>Concrete action: avoids ambiguity (e.g., “automate” vs “generate and email report”).</li>
         <li>Explicit purpose: ties the story to actual business value.</li>
-      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
       <b>🔹 2. Clear Acceptance Criteria</b>
       <p>For automation stories, it’s critical to define acceptance criteria with clear logic and expected behaviors across scenarios. I use the Given / When / Then format from Gherkin (BDD) to make validation explicit and testable.</p>
-      <p><i>Practical example:</i></p>
+      <p><i><b></b>Practical example:</i></p></b>
       <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
 Given the weekly performance data is available,
 When the automation job runs at 6 PM on Friday,
@@ -80,37 +78,31 @@ Then a consolidated PDF report is generated and stored in the designated reposit
 And an email with the report attached is sent to the process management group.
       </pre>
       <p><b>Technical benefits:</b></p>
-      <ul>
         <li>Creates objective, testable criteria.</li>
         <li>Facilitates manual and automated QA.</li>
         <li>Reduces ambiguity in conditional flows and edge cases.</li>
-      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
       <b>🔹 3. Technical Backlog Refinement: Breaking Down Automation Stories</b>
       <p>System automation is rarely delivered in a single sprint. Strategic story decomposition is essential to deliver incremental value and ensure technical feasibility. Here’s how I approach backlog refinement technically:</p>
       <p><b>📌 Common story breakdowns for automation:</b></p>
-      <ul>
         <li>Story 1: Trigger capture (e.g., scheduled time, event, webhook)</li>
         <li>Story 2: Processing logic (parsing, calculations, formatting)</li>
         <li>Story 3: Output and destination (email, database, API, storage)</li>
         <li>Story 4 (optional): Error handling and logging</li>
-      </ul>
+    
       <p><b>📌 Key patterns to maintain:</b></p>
-      <ul>
         <li>Stories with clear, testable acceptance criteria</li>
         <li>Linking stories through epics or parent tasks</li>
         <li>Mapping technical and data dependencies</li>
         <li>Prioritizing by business value and complexity (Story Points)</li>
-      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
       <b>🔹 4. Complete Example: Modular Automation User Story</b>
       <p><b>Title:</b> Automate Weekly Report Generation and Distribution</p>
-      <p><b>Description:</b><br />
-      As a process coordinator, I want the system to automatically generate and send consolidated reports every Friday at 6 PM, so the management team has data ready for weekly review meetings.</p>
+      <p><b>Description:</b> As a process coordinator, I want the system to automatically generate and send consolidated reports every Friday at 6 PM, so the management team has data ready for weekly review meetings.</p>
       <p><b>Acceptance Criteria (Gherkin):</b></p>
       <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
 Given that the weekly data is available in the database,
@@ -120,12 +112,10 @@ And the file must be emailed to the management group,
 And a success or error log must be recorded in the system.
       </pre>
       <p><b>Technical notes:</b></p>
-      <ul>
         <li>Scheduled job triggers execution</li>
         <li>PDF export with predefined template</li>
         <li>Automated email delivery with error fallback</li>
         <li>Storage in S3 bucket for version control</li>
-      </ul>
     </div>
 
     <div style="text-align: left; margin-top: 1rem;">
