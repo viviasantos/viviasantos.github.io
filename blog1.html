@@ -1,92 +1,82 @@
-<!-- Featured Post -->
-<article class="post featured">
-  <header class="major">
-    <span class="date">Mar 02, 2025</span>
-    <h3>🟦 Creating User Stories for Automation Projects</h3>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Blog</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
 
-    <div style="text-align: left;">
-      <p>User Stories are the communication bridge between business needs and technical teams. Poorly written stories create misunderstandings, delays, and rework. In contrast, well-structured stories clarify value, scope, and logic, leading to smoother deliveries—especially in automation-focused environments.</p>
-    </div>
+        <!-- Wrapper -->
+        <div id="wrapper" class="fade-in">
 
-    <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 1. Template: Persona + Action + Purpose</b>
-      <p>The most effective format is:</p>
-      <blockquote>As a [persona], I want to [action or goal], so that [business value or reason].</blockquote>
-      <p>This formula ensures that the story reflects a real-world need, not just a technical task.</p>
+            <!-- Intro -->
+            <div id="intro">
+                <h1>Viviane Santos<br />
+                    PORTFOLIO</h1>
+                <p>ServiceNow Administrator & IT Business Analyst | CAD & CSA Certified | Agile & Scrum Practitioner<br />
+                    <a href=""></a>
+                </p>
+                <ul class="actions">
+                    <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+                </ul>
+            </div>
 
-      <p><b><i>Example:</i></b></p>
-      <blockquote>As a process coordinator, I want the system to generate a weekly report every Friday at 6 PM, so I can use it during Monday’s performance review.</blockquote>
+            <!-- Header -->
+            <header id="header">
+                <a href="index.html" class="logo">Posts</a>
+            </header>
 
-      <p><b>Why this works:</b></p>
-      <ul>
-        <li><b>Persona:</b> Adds clarity and context.</li>
-        <li><b>Action:</b> Defines the expected behavior.</li>
-        <li><b>Purpose:</b> Connects to a business goal.</li>
-      </ul>
-    </div>
+            <!-- Nav -->
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Posts</a></li>
+                    <li><a href="aboutme.html">About me</a></li>
+                </ul>
+                <ul class="icons">
+                    <li><a href="https://github.com/viviasantos" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/visants" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+                </ul>
+            </nav>
 
-    <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 2. Acceptance Criteria using Gherkin</b>
-      <p>Automation stories must have logical, testable criteria. I use the Given/When/Then format to express the expected result clearly:</p>
+            <!-- Main Content -->
+            <div id="main">
+                <!-- Featured Post -->
+                <article class="post featured">
+                    <header class="major">
+                        <span class="date">Mar 2, 2025</span>
+                        <h3>📌 Creating User Stories: Tips for Beginners in IT Projects</h3>
+                        <div style="text-align: left;">
+                            <p>When I started working as a Business Analyst, one of the most challenging tasks was writing **clear and valuable user stories**. I used to write long technical descriptions that made sense only to developers and didn't provide real value to the business team.</p>
 
-      <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
-Given the weekly performance data is available,
-When the automation runs at 6 PM on Friday,
-Then a PDF report is generated and emailed to managers,
-And a success log is recorded in the system.
-      </pre>
+                            <p>After studying agile frameworks, talking with Product Owners, and reviewing many backlogs, I learned to write simpler and more effective stories using the classic format:</p>
 
-      <p><b>Benefits:</b></p>
-      <ul>
-        <li>Reduces ambiguity in automation flows.</li>
-        <li>Improves test coverage.</li>
-        <li>Enables both manual and automated validation.</li>
-      </ul>
-    </div>
+                            <p><strong>“As a [type of user], I want [a goal] so that [a benefit].”</strong></p>
 
-    <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 3. Backlog Refinement Techniques</b>
-      <p>Most automation tasks should be split into smaller stories across sprints. Here’s a common breakdown:</p>
+                            <h3>✏️ My Tips for Writing Better User Stories:</h3>
+                            <ul>
+                                <li><strong>Understand the user</strong>: Who will use the feature? What do they need? Ask "why" several times if necessary.</li>
+                                <li><strong>Keep it short and focused</strong>: One story = one goal. If you’re writing too much, it might be two or more stories.</li>
+                                <li><strong>Add acceptance criteria</strong>: Use bullet points to show what needs to be true for the story to be complete.</li>
+                            </ul>
 
-      <ul>
-        <li><b>Story 1:</b> Trigger definition (e.g., schedule, event)</li>
-        <li><b>Story 2:</b> Data processing logic</li>
-        <li><b>Story 3:</b> Report generation and storage</li>
-        <li><b>Story 4:</b> Notification and error handling</li>
-      </ul>
+                            <h3>✅ Example of a Good User Story:</h3>
+                            <blockquote>
+                                As a project manager,<br />
+                                I want to receive email notifications when a task is overdue,<br />
+                                so that I can take action and keep the project on track.
+                            </blockquote>
 
-      <p><b>Good refinement practices:</b></p>
-      <ul>
-        <li>Keep stories testable and scoped.</li>
-        <li>Use Epics for grouping.</li>
-        <li>Estimate by complexity + value.</li>
-      </ul>
-    </div>
+                            <h4>Acceptance Criteria:</h4>
+                            <ul>
+                                <li>Email is sent automatically when a task is 1 day overdue</li>
+                                <li>Message includes task name, project, and assigned person</li>
+                                <li>Email is sent only once per overdue task</li>
+                            </ul>
 
-    <div style="text-align: left; margin-top: 1rem;">
-      <b>🔹 4. Full Example</b>
-      <p><b>Title:</b> Automate Weekly Report Generation</p>
-      <p><b>Description:</b> As a process coordinator, I want the system to generate and email the weekly report every Friday at 6 PM, so I have the data ready for Monday’s review.</p>
-
-      <p><b>Acceptance Criteria:</b></p>
-      <pre style="background:#f0f0f0; padding:10px; border-radius:5px;">
-Given the weekly data is available,
-When the automation job runs,
-Then the PDF report is generated,
-And the report is emailed to the team,
-And success/failure is logged for monitoring.
-      </pre>
-
-      <p><b>Technical Notes:</b></p>
-      <ul>
-        <li>Scheduled trigger using cron job.</li>
-        <li>PDF generation from template.</li>
-        <li>Email with fallback retry.</li>
-        <li>Stored in cloud folder with versioning.</li>
-      </ul>
-    </div>
-
-    <div style="text-align: left; margin-top: 1rem;">
-      <b>✅ Final Thoughts</b>
-      <p>Investing time in writing clear, structured stories boosts delivery confidence and reduces blockers. Especially for backend automations—where value isn't always visible—your story becomes the product interface.</p>
-      <p>Use real personas, strong acceptance logic, and technical breakdowns. The result? Aligned teams, faster sprints, and confident stakehol
+                            <h3>📚 Final Thoughts</h3>
+                            <ul>
+                                <li>Clear user stories save time for developers and avoid miscommunication</li>
+                                <li>They also help tes
