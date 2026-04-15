@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Links - Viviane Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f3f1ed;
+  --surface:#fbfaf7;
+  --surface2:#f2efe9;
+  --border:#d9d5ce;
+  --border2:#bfb8ae;
+  --text:#111111;
+  --muted:#5f5a53;
+  --accent:#111111;
+  --green:#67d98f;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0,0,0,0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(0,0,0,0.03), transparent 24%),
+    var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.7;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,10,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #00000014;
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;
+  letter-spacing:0.05em;
+  color:#ffffff;
+}
+.nav-links{display:flex;gap:2rem;flex-wrap:wrap}
+.nav-links a{
+  color:#d9d9d9;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#ffffff}
+.wrap{max-width:1040px;margin:0 auto;padding:84px 2rem}
+.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.1em}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,5vw,62px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.section-line{flex:1;height:1px;background:var(--border)}
+.links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.link-card{
+  padding:1.5rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  text-decoration:none;
+  display:block;
+  transition:all .2s;
+  position:relative;
+  overflow:hidden;
+}
+.link-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--accent);transform:scaleX(0);transition:transform .3s;
+}
+.link-card:hover::before{transform:scaleX(1)}
+.link-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.link-card-icon{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.03);border:1px solid var(--border);
+  margin-bottom:0.9rem;overflow:hidden;
+}
+.link-card-icon svg{width:22px;height:22px;display:block;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.link-card-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
+.link-card-url{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace}
+footer{
+  border-top:1px solid var(--border);
+  padding:2rem;text-align:center;
+  color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .wrap{padding:48px 1rem 72px}
+  .links-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">VS.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="project.html">Projects</a>
+    <a href="notes.html">Blog</a>
+    <a href="links.html">Links</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="section-header">
+    <h1 class="section-title">Useful Links</h1>
+  </div>
+
+  <div class="links-grid">
+    <a href="https://github.com/" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"/><path d="M6 12h12"/><path d="M9 5l-4 7 4 7"/><path d="M15 5l4 7-4 7"/></svg>
+      </div>
+      <div class="link-card-name">GitHub</div>
+      <div class="link-card-url">github.com</div>
+    </a>
+    <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v10c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-10"/><path d="M4.5 10.5c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/><path d="M4.5 15.5c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/></svg>
+      </div>
+      <div class="link-card-name">Oracle SQL Language Reference</div>
+      <div class="link-card-url">docs.oracle.com</div>
+    </a>
+    <a href="https://nowlearning.servicenow.com/" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+      </div>
+      <div class="link-card-name">ServiceNow Learning</div>
+      <div class="link-card-url">nowlearning.servicenow.com</div>
+    </a>
+    <a href="https://www.atlassian.com/agile/about" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18l6-12 6 12"/><path d="M9 12h6"/><path d="M4 20h16"/></svg>
+      </div>
+      <div class="link-card-name">Atlassian Agile Coach</div>
+      <div class="link-card-url">atlassian.com/agile/about</div>
+    </a>
+    <a href="https://www.bizagi.com/" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8 6h8"/><path d="M7.3 7.8l3.2 6.4"/><path d="M16.7 7.8l-3.2 6.4"/></svg>
+      </div>
+      <div class="link-card-name">Bizagi</div>
+      <div class="link-card-url">bizagi.com</div>
+    </a>
+    <a href="https://powerbi.microsoft.com/" class="link-card" target="_blank" rel="noopener">
+      <div class="link-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19V11"/><path d="M10 19V7"/><path d="M14 19v-5"/><path d="M18 19V9"/></svg>
+      </div>
+      <div class="link-card-name">Power BI</div>
+      <div class="link-card-url">powerbi.microsoft.com</div>
+    </a>
+  </div>
+</div>
+
+<footer>2026 Viviane Santos - Business Analyst</footer>
+</body>
+</html>

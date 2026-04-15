@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceNow Scripting Sandbox - Viviane Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f3f1ed;--surface:#fbfaf7;--surface2:#f2efe9;--border:#d9d5ce;--border2:#bfb8ae;--text:#111111;--muted:#5f5a53;--accent:#67d98f;--accent2:#67d98f}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff;text-decoration:none}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;text-decoration:none;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.nav-back:hover{color:#ffffff}
+.nav-back:hover svg{transform:translateX(-3px)}
+.wrap{max-width:980px;margin:0 auto;padding:72px 2rem 100px;flex:1 0 auto}
+.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
+.project-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1rem}
+.project-title span{color:var(--accent)}
+.project-subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:760px}
+.section{padding-top:3rem}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--text);margin-bottom:1rem}
+.section h2{font-weight:700}
+.section p{color:var(--muted);font-size:15px;line-height:1.85;margin-bottom:1rem}
+.section strong{color:var(--text);font-weight:500}
+.callout{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--accent);border-radius:2px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:14px;color:var(--muted);line-height:1.75}
+.callout strong{color:var(--text)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:1.25rem}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:0.7rem}
+.card h3{font-weight:700}
+.card p{margin:0;color:var(--muted)}
+.list{padding-left:1.15rem;margin:1rem 0 0;display:flex;flex-direction:column;gap:0.45rem}
+.list li{color:#2f8b57;line-height:1.7}
+.list li::marker{color:var(--accent)}
+.stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
+.stack-item{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:0.9rem 1rem}
+.stack-item-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.stack-item-desc{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace}
+.project-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.project-tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
+.ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
+.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;text-decoration:none;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.btn-primary{background:var(--accent);color:#f3f1ed;font-weight:500}
+.btn-primary:hover{background:#222222;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 80px}.stack-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="project.html" class="nav-logo">VS.</a>
+  <a href="project.html" class="nav-back">
+    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Projects
+  </a>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="project-meta">
+      <span class="project-tag">ServiceNow</span>
+      <span class="dot"></span>
+      <span class="project-date">Mar 2025</span>
+      <span class="dot"></span>
+      <span class="project-date">JavaScript - GlideRecord - Scripting</span>
+    </div>
+
+    <h1 class="project-title">ServiceNow <span>Scripting Sandbox</span></h1>
+    <p class="project-subtitle">A personal sandbox for testing ServiceNow JavaScript ideas, script patterns, and reusable snippets. The repository works as a playground for validating logic before turning it into production-ready automation.</p>
+
+    <div class="grid-2" style="margin-top:2rem;">
+      <div class="card">
+        <h3>Problem</h3>
+        <p>Teams often need a safe place to test scripting ideas before applying them to live ITSM processes.</p>
+      </div>
+      <div class="card">
+        <h3>Solution</h3>
+        <p>I used the sandbox to experiment with JavaScript behavior, GlideRecord patterns, and reusable logic that can later be adapted into ServiceNow solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How it was built</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Script exploration</h3>
+        <p>The sandbox is organized as a space to test server-side scripting ideas, check logic behavior, and validate how different constructs perform in ServiceNow.</p>
+        <ul class="list">
+          <li>Tests JavaScript patterns in a controlled environment</li>
+          <li>Explores script logic before production use</li>
+          <li>Helps validate reusable snippet ideas</li>
+          <li>Supports faster iteration and cleaner implementation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Reusable patterns</h3>
+        <p>Code experiments are grouped to make it easier to reuse snippets later in rules, includes, or other ServiceNow automation layers.</p>
+        <ul class="list">
+          <li>Focuses on readable and repeatable code</li>
+          <li>Supports future automation use cases</li>
+          <li>Encourages testing before deployment</li>
+          <li>Helps turn small scripts into maintainable patterns</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Tools and technologies</h2>
+    <div class="stack-grid">
+      <div class="stack-item"><div class="stack-item-name">JavaScript</div><div class="stack-item-desc">Core scripting language</div></div>
+      <div class="stack-item"><div class="stack-item-name">GlideRecord</div><div class="stack-item-desc">Querying platform records</div></div>
+      <div class="stack-item"><div class="stack-item-name">ServiceNow Sandbox</div><div class="stack-item-desc">Safe environment for testing</div></div>
+      <div class="stack-item"><div class="stack-item-name">Reusable Snippets</div><div class="stack-item-desc">Small building blocks for automation</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What this project shows</h2>
+    <div class="callout"><strong>Business value:</strong> the sandbox shows how I think through logic, validate ideas safely, and prepare scripts for real business use without risking production processes.</div>
+    <p>It also reflects a habit that is useful in Business Analysis and automation work: test the idea, simplify the logic, and document the pattern so it can be reused later.</p>
+  </section>
+
+  <div class="project-tags">
+    <span class="project-tags-label">Tags</span>
+    <span class="ptag">ServiceNow</span><span class="ptag">JavaScript</span><span class="ptag">GlideRecord</span><span class="ptag">Sandbox</span><span class="ptag">Automation</span><span class="ptag">Scripting</span>
+  </div>
+
+  <div class="cta-row">
+    <a href="https://github.com/viviasantos/JavaScript-Projects/tree/main/servicenowscripts/scriptingsandbox" class="btn btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      View on GitHub
+    </a>
+    <a href="project.html" class="btn btn-outline">Back to Projects</a>
+  </div>
+
+  <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
+</div>
+</body>
+</html>
+
+
+
+
+

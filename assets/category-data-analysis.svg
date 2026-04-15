@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Data Analysis cover">
+  <defs>
+    <linearGradient id="daBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090612"/>
+      <stop offset="48%" stop-color="#14062a"/>
+      <stop offset="100%" stop-color="#04040a"/>
+    </linearGradient>
+    <linearGradient id="daGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a2cff"/>
+      <stop offset="45%" stop-color="#a51cff"/>
+      <stop offset="100%" stop-color="#22b6ff"/>
+    </linearGradient>
+    <linearGradient id="daCyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#33d6ff"/>
+      <stop offset="100%" stop-color="#4a7dff"/>
+    </linearGradient>
+    <filter id="blurSoft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blurHeavy" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#daBg)"/>
+  <circle cx="365" cy="290" r="220" fill="#7a2cff" opacity="0.16" filter="url(#blurHeavy)"/>
+  <circle cx="760" cy="260" r="180" fill="#1ea7ff" opacity="0.12" filter="url(#blurHeavy)"/>
+  <circle cx="540" cy="470" r="280" fill="#a51cff" opacity="0.08" filter="url(#blurSoft)"/>
+
+  <g opacity="0.95">
+    <rect x="95" y="140" width="205" height="265" rx="18" fill="#120720" stroke="#7e2cff" stroke-opacity="0.6" stroke-width="2"/>
+    <text x="130" y="208" fill="#c77bff" font-family="DM Mono, monospace" font-size="34" letter-spacing="2">SELECT</text>
+    <text x="130" y="256" fill="#c77bff" font-family="DM Mono, monospace" font-size="34" letter-spacing="2">FROM</text>
+    <text x="130" y="304" fill="#c77bff" font-family="DM Mono, monospace" font-size="34" letter-spacing="2">WHERE</text>
+    <line x1="130" y1="344" x2="260" y2="344" stroke="#c77bff" stroke-opacity="0.35" stroke-width="3"/>
+    <line x1="130" y1="362" x2="220" y2="362" stroke="#c77bff" stroke-opacity="0.2" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(475 102)">
+    <ellipse cx="120" cy="38" rx="120" ry="38" fill="#b52cff" opacity="0.18" filter="url(#blurSoft)"/>
+    <g>
+      <ellipse cx="120" cy="52" rx="120" ry="38" fill="#3b0a73" stroke="url(#daGlow)" stroke-width="4"/>
+      <path d="M0 52v74c0 21 54 38 120 38s120-17 120-38V52" fill="#190626" stroke="url(#daGlow)" stroke-width="4"/>
+      <ellipse cx="120" cy="126" rx="120" ry="38" fill="#180624" stroke="url(#daGlow)" stroke-width="4"/>
+      <path d="M0 126v74c0 21 54 38 120 38s120-17 120-38v-74" fill="#16051f" stroke="url(#daGlow)" stroke-width="4"/>
+      <ellipse cx="120" cy="200" rx="120" ry="38" fill="#14051f" stroke="url(#daGlow)" stroke-width="4"/>
+      <path d="M0 200v74c0 21 54 38 120 38s120-17 120-38v-74" fill="#12041a" stroke="url(#daGlow)" stroke-width="4"/>
+      <ellipse cx="120" cy="274" rx="120" ry="38" fill="#100218" stroke="url(#daGlow)" stroke-width="4"/>
+    </g>
+  </g>
+
+  <g filter="url(#blurSoft)" opacity="0.9">
+    <path d="M340 498c132-132 299-148 478-98 106 31 185 89 270 165" fill="none" stroke="#5517ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M385 548c112-99 242-123 385-87 91 23 160 65 242 132" fill="none" stroke="#13a5ff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="615" text-anchor="middle" fill="#f4eeff" font-family="Outfit, sans-serif" font-size="110" font-weight="500" letter-spacing="4">SQL</text>
+  <text x="600" y="662" text-anchor="middle" fill="#bda7ff" font-family="DM Mono, monospace" font-size="28" letter-spacing="9">POWER BI  DATABRICKS  DBT</text>
+</svg>

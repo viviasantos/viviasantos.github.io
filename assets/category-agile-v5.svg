@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Agile neon cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05020e"/>
+      <stop offset="55%" stop-color="#0a1230"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1feaff"/>
+      <stop offset="100%" stop-color="#2d73ff"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb11f"/>
+      <stop offset="50%" stop-color="#ff6a1f"/>
+      <stop offset="100%" stop-color="#6d40ff"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="190" cy="180" r="180" fill="#1feaff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="970" cy="210" r="180" fill="#ff6a1f" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="600" cy="500" r="290" fill="#2d73ff" opacity="0.08" filter="url(#soft)"/>
+
+  <g filter="url(#glow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M424 258c36-62 96-98 176-98 124 0 224 100 224 224 0 80-34 142-94 182" stroke="url(#blue)" stroke-width="14"/>
+    <path d="M720 566c-36 62-96 98-176 98-124 0-224-100-224-224 0-80 34-142 94-182" stroke="url(#pink)" stroke-width="14"/>
+    <path d="M664 208l48-48 18 54" stroke="url(#blue)" stroke-width="14"/>
+    <path d="M736 490l48 48-54 18" stroke="url(#pink)" stroke-width="14"/>
+    <path d="M528 274h86" stroke="#f4f7ff" stroke-width="8" opacity="0.8"/>
+    <path d="M554 332h86" stroke="#f4f7ff" stroke-width="8" opacity="0.8"/>
+    <path d="M516 392h86" stroke="#f4f7ff" stroke-width="8" opacity="0.8"/>
+    <path d="M554 450h86" stroke="#f4f7ff" stroke-width="8" opacity="0.8"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <path d="M354 534c112-86 232-110 356-74 92 26 170 74 248 144" fill="none" stroke="#1feaff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M406 568c98-68 194-86 292-60 76 20 138 52 214 110" fill="none" stroke="#ffb11f" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="622" text-anchor="middle" fill="#f4f7ff" font-family="Outfit, system-ui, sans-serif" font-size="104" font-weight="600" letter-spacing="2">Agile</text>
+</svg>

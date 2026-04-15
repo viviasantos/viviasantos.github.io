@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Data Analysis cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05030f"/>
+      <stop offset="48%" stop-color="#13062b"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1ef0ff"/>
+      <stop offset="100%" stop-color="#2f72ff"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#aa1dff"/>
+      <stop offset="100%" stop-color="#5f36ff"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb01f"/>
+      <stop offset="100%" stop-color="#ff6b2d"/>
+    </linearGradient>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="230" cy="200" r="170" fill="#aa1dff" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="950" cy="210" r="180" fill="#1ef0ff" opacity="0.09" filter="url(#soft)"/>
+  <circle cx="620" cy="510" r="300" fill="#5f36ff" opacity="0.08" filter="url(#soft)"/>
+
+  <g filter="url(#glow)">
+    <rect x="88" y="132" width="190" height="278" rx="24" fill="#0f0a1f" stroke="url(#violet)" stroke-width="3"/>
+    <path d="M122 204h122" stroke="#dca6ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 242h92" stroke="#dca6ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 280h108" stroke="#dca6ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 318h76" stroke="#dca6ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 356h96" stroke="#dca6ff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="156" cy="178" r="20" fill="none" stroke="url(#cyan)" stroke-width="8"/>
+    <path d="M188 176h48" stroke="url(#cyan)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(390 88)" filter="url(#glow)">
+    <ellipse cx="220" cy="44" rx="132" ry="42" fill="#b31cff" opacity="0.22" filter="url(#soft)"/>
+    <g>
+      <ellipse cx="220" cy="56" rx="132" ry="42" fill="#3d105d" stroke="url(#violet)" stroke-width="4"/>
+      <path d="M88 56v80c0 23 59 42 132 42s132-19 132-42V56" fill="#260a47" stroke="url(#violet)" stroke-width="4"/>
+      <ellipse cx="220" cy="136" rx="132" ry="42" fill="#220840" stroke="url(#violet)" stroke-width="4"/>
+      <path d="M88 136v80c0 23 59 42 132 42s132-19 132-42v-80" fill="#1d0737" stroke="url(#violet)" stroke-width="4"/>
+      <ellipse cx="220" cy="216" rx="132" ry="42" fill="#18062d" stroke="url(#violet)" stroke-width="4"/>
+      <path d="M88 216v80c0 23 59 42 132 42s132-19 132-42v-80" fill="#130423" stroke="url(#violet)" stroke-width="4"/>
+      <ellipse cx="220" cy="296" rx="132" ry="42" fill="#10031a" stroke="url(#violet)" stroke-width="4"/>
+    </g>
+  </g>
+
+  <g transform="translate(870 140)" filter="url(#glow)">
+    <rect x="0" y="0" width="150" height="150" rx="28" fill="#0c1020" stroke="url(#cyan)" stroke-width="3"/>
+    <path d="M34 114h28V58h-28z" fill="none" stroke="#24dfff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M70 114h28V38H70z" fill="none" stroke="#24dfff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M106 114h28V72h-28z" fill="none" stroke="#24dfff" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="34" cy="126" r="6" fill="#24dfff"/>
+    <circle cx="70" cy="126" r="6" fill="#24dfff"/>
+    <circle cx="106" cy="126" r="6" fill="#24dfff"/>
+    <path d="M22 24l14 14 14-14" stroke="#ffb01f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 24h24" stroke="#ffb01f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M22 132h106" stroke="#ffb01f" stroke-opacity="0.6" stroke-width="4"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <path d="M352 520c132-128 286-145 466-97 110 30 193 88 280 162" fill="none" stroke="#4b1cff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M394 562c112-98 243-119 388-82 90 23 161 63 241 128" fill="none" stroke="#24dfff" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="610" text-anchor="middle" fill="#f6efff" font-family="Outfit, system-ui, sans-serif" font-size="104" font-weight="600" letter-spacing="2">Data Analysis</text>
+</svg>

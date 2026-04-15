@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Data Analysis neon cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050312"/>
+      <stop offset="45%" stop-color="#12061f"/>
+      <stop offset="100%" stop-color="#03040a"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#29efff"/>
+      <stop offset="100%" stop-color="#2d6bff"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b31fff"/>
+      <stop offset="100%" stop-color="#5b38ff"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffbf2b"/>
+      <stop offset="100%" stop-color="#ff5d30"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="250" cy="190" r="180" fill="#b31fff" opacity="0.10" filter="url(#soft)"/>
+  <circle cx="930" cy="215" r="190" fill="#29efff" opacity="0.09" filter="url(#soft)"/>
+  <circle cx="610" cy="500" r="280" fill="#5b38ff" opacity="0.08" filter="url(#soft)"/>
+
+  <g filter="url(#glow)">
+    <rect x="86" y="135" width="200" height="282" rx="28" fill="#0d0a1c" stroke="url(#violet)" stroke-width="3"/>
+    <circle cx="138" cy="184" r="16" fill="none" stroke="url(#cyan)" stroke-width="8"/>
+    <path d="M166 184h88" stroke="#d9b2ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 230h140" stroke="#d9b2ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 272h116" stroke="#d9b2ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 314h128" stroke="#d9b2ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M122 356h84" stroke="#d9b2ff" stroke-width="8" stroke-linecap="round"/>
+
+    <path d="M372 184c76-48 154-72 236-72 82 0 160 24 236 72" fill="none" stroke="url(#cyan)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M374 268c76-48 154-72 234-72s158 24 234 72" fill="none" stroke="url(#violet)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M372 350c76-48 154-72 236-72 82 0 160 24 236 72" fill="none" stroke="url(#cyan)" stroke-width="12" stroke-linecap="round"/>
+
+    <circle cx="600" cy="248" r="78" fill="#17082b" stroke="url(#violet)" stroke-width="5"/>
+    <path d="M600 170v156" stroke="#29efff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M538 248h124" stroke="#29efff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M548 208l104 80" stroke="#ff6a31" stroke-width="10" stroke-linecap="round"/>
+    <path d="M652 208l-104 80" stroke="#ffbf2b" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="600" cy="248" r="18" fill="#f3efff"/>
+
+    <rect x="868" y="150" width="150" height="150" rx="30" fill="#0d1020" stroke="url(#cyan)" stroke-width="3"/>
+    <path d="M900 270V214h28v56z" fill="none" stroke="#29efff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M935 270V188h28v82z" fill="none" stroke="#29efff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M970 270v-42h28v42z" fill="none" stroke="#29efff" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M888 200l12-12 12 12" stroke="#ffbf2b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M888 230h30" stroke="#ffbf2b" stroke-width="7" stroke-linecap="round"/>
+    <path d="M888 258h30" stroke="#ffbf2b" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <path d="M356 532c120-126 264-145 408-102 98 29 178 83 280 162" fill="none" stroke="#29efff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M396 570c105-92 222-113 350-82 89 22 159 59 244 126" fill="none" stroke="#b31fff" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="612" text-anchor="middle" fill="#eef8ff" font-family="Outfit, system-ui, sans-serif" font-size="102" font-weight="600" letter-spacing="2">Data Analysis</text>
+</svg>

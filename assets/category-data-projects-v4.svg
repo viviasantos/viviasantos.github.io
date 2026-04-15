@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Data Projects neon cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05020f"/>
+      <stop offset="46%" stop-color="#14062a"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b519ff"/>
+      <stop offset="55%" stop-color="#8f1cff"/>
+      <stop offset="100%" stop-color="#2f6dff"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#25f0ff"/>
+      <stop offset="100%" stop-color="#2d6bff"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="180" cy="160" r="160" fill="#a71dff" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="980" cy="200" r="180" fill="#25f0ff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="620" cy="490" r="300" fill="#4b1cff" opacity="0.10" filter="url(#soft)"/>
+
+  <g filter="url(#glow)">
+    <rect x="88" y="150" width="200" height="280" rx="24" fill="#10051f" stroke="url(#violet)" stroke-width="3"/>
+    <path d="M126 214h122" stroke="#a55bff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M126 252h92" stroke="#a55bff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M126 290h112" stroke="#a55bff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M126 328h78" stroke="#a55bff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M126 366h96" stroke="#a55bff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M126 384h60" stroke="#a55bff" stroke-opacity="0.45" stroke-width="4" stroke-linecap="round"/>
+
+    <ellipse cx="610" cy="124" rx="124" ry="38" fill="#b11dff" opacity="0.28"/>
+    <ellipse cx="610" cy="124" rx="124" ry="38" fill="#40106f" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 124v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#2b0d50" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="216" rx="124" ry="38" fill="#260947" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 216v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#21073e" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="308" rx="124" ry="38" fill="#1b062f" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 308v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#160525" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="400" rx="124" ry="38" fill="#11031b" stroke="url(#violet)" stroke-width="4"/>
+
+    <path d="M370 506c98-74 219-108 360-108 115 0 218 24 310 74" fill="none" stroke="#25f0ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M402 560c105-66 228-92 368-92 116 0 216 20 302 64" fill="none" stroke="#7f2cff" stroke-width="8" stroke-linecap="round"/>
+
+    <rect x="814" y="156" width="168" height="168" rx="34" fill="#0d1020" stroke="url(#cyan)" stroke-width="3"/>
+    <circle cx="895" cy="240" r="62" fill="none" stroke="url(#cyan)" stroke-width="10"/>
+    <path d="M895 186v108" stroke="#25f0ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M841 240h108" stroke="#25f0ff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M854 207l82 66" stroke="#ffb11f" stroke-width="8" stroke-linecap="round"/>
+    <path d="M936 207l-82 66" stroke="#ffb11f" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="610" text-anchor="middle" fill="#eef8ff" font-family="Outfit, system-ui, sans-serif" font-size="102" font-weight="600" letter-spacing="2">Data Projects</text>
+</svg>

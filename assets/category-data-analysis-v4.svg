@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="Data Analysis neon cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05020f"/>
+      <stop offset="46%" stop-color="#12062a"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b519ff"/>
+      <stop offset="55%" stop-color="#8f1cff"/>
+      <stop offset="100%" stop-color="#2f6dff"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#25f0ff"/>
+      <stop offset="100%" stop-color="#2d6bff"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="180" cy="160" r="160" fill="#a71dff" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="620" cy="490" r="300" fill="#4b1cff" opacity="0.10" filter="url(#soft)"/>
+
+  <g filter="url(#glow)">
+    <rect x="88" y="150" width="200" height="280" rx="24" fill="#10051f" stroke="url(#violet)" stroke-width="3"/>
+    <text x="126" y="214" fill="#a55bff" font-family="DM Mono, monospace" font-size="24" letter-spacing="1.5">SELECT</text>
+    <text x="126" y="252" fill="#a55bff" font-family="DM Mono, monospace" font-size="24" letter-spacing="1.5">FROM</text>
+    <text x="126" y="290" fill="#a55bff" font-family="DM Mono, monospace" font-size="24" letter-spacing="1.5">WHERE</text>
+    <path d="M126 328h60" stroke="#a55bff" stroke-opacity="0.45" stroke-width="4" stroke-linecap="round"/>
+    <path d="M126 346h44" stroke="#a55bff" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
+
+    <ellipse cx="610" cy="124" rx="124" ry="38" fill="#b11dff" opacity="0.28"/>
+    <ellipse cx="610" cy="124" rx="124" ry="38" fill="#40106f" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 124v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#2b0d50" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="216" rx="124" ry="38" fill="#260947" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 216v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#21073e" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="308" rx="124" ry="38" fill="#1b062f" stroke="url(#violet)" stroke-width="4"/>
+    <path d="M486 308v92c0 22 56 40 124 40s124-18 124-40v-92" fill="#160525" stroke="url(#violet)" stroke-width="4"/>
+    <ellipse cx="610" cy="400" rx="124" ry="38" fill="#11031b" stroke="url(#violet)" stroke-width="4"/>
+
+  </g>
+
+  <text x="600" y="610" text-anchor="middle" fill="#eef8ff" font-family="Outfit, system-ui, sans-serif" font-size="102" font-weight="600" letter-spacing="2">Data Analysis</text>
+</svg>

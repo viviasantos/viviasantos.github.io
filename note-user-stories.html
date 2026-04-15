@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating User Stories - Viviane Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f3f1ed;--surface:#fbfaf7;--surface2:#f2efe9;--border:#d9d5ce;--border2:#bfb8ae;--text:#111111;--muted:#5f5a53;--accent:#67d98f;--accent2:#67d98f}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;flex:0 0 auto}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.nav-back:hover{color:#ffffff}
+.nav-back:hover svg{transform:translateX(-3px)}
+.wrap{width:100%;max-width:820px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
+.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
+.date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1rem}
+.subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:720px}
+.article{padding-top:2.5rem}
+.article h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--text);margin:2rem 0 0.75rem}
+.article p{color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:1rem}
+.lead{font-size:16px;color:var(--text);line-height:1.95;margin-bottom:1.25rem}
+.quote{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--accent);border-radius:2px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:var(--muted)}
+.quote strong{color:var(--text)}
+.list{padding-left:1.15rem;margin:1rem 0 0;display:flex;flex-direction:column;gap:0.45rem}
+.list li{color:#2f8b57;line-height:1.7}
+.list li::marker{color:var(--accent)}
+.tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
+.ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
+.cta{display:flex;gap:1rem;justify-content:flex-start;margin-top:2rem;flex-wrap:wrap;margin-bottom:4.5rem}
+.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
+@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 72px}.cta{justify-content:stretch}.btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="portfolio-v4.html" class="nav-logo">VS.</a>
+  <a href="portfolio-v4.html#blog" class="nav-back">
+    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Blog
+  </a>
+</nav>
+<div class="wrap">
+  <section class="hero">
+    <div class="meta"><span class="tag">Agile</span><span class="dot"></span><span class="date">Mar 02, 2025</span><span class="dot"></span><span class="date">Business Analysis</span></div>
+    <h1 class="title">Creating User Stories</h1>
+    <p class="subtitle">How I learned to turn long technical requests into short user stories with clear acceptance criteria.</p>
+  </section>
+
+  <main class="article">
+    <p class="lead">Writing user stories was not natural for me at the beginning. Over time, I learned that the best stories are simple, focused, and easy for both business and delivery teams to understand.</p>
+    <div class="quote"><strong>Core pattern:</strong> As a [type of user], I want [goal], so that [benefit].</div>
+
+    <h2>What helped me most</h2>
+    <p>I started by understanding the real user need before trying to describe the solution. That small shift made the stories shorter and much easier to review with stakeholders.</p>
+
+    <h2>How I structure a story</h2>
+    <p>I keep the story focused on the outcome, then add acceptance criteria that define what success looks like. That makes estimation and validation much easier for the team.</p>
+
+    <h2>What I avoid</h2>
+    <ul class="list">
+      <li>Too much solution detail too early</li>
+      <li>Vague requests that are hard to estimate</li>
+      <li>Large stories that really need to be split</li>
+    </ul>
+
+    <div class="tags"><span class="tags-label">Tags</span><span class="ptag">Agile</span><span class="ptag">User Stories</span><span class="ptag">Requirements</span><span class="ptag">Business Analysis</span></div>
+    <div class="cta"><a href="portfolio-v4.html#blog" class="btn btn-outline">Back to Blog</a></div>
+  </main>
+</div>
+<div class="footer-note">2026 Viviane Santos - Business Analyst</div>
+</body>
+</html>
+
+
+

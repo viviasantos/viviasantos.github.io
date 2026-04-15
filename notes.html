@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes - Viviane Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f3f1ed;
+  --surface:#fbfaf7;
+  --surface2:#f2efe9;
+  --border:#d9d5ce;
+  --border2:#bfb8ae;
+  --text:#111111;
+  --muted:#5f5a53;
+  --accent:#111111;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0,0,0,0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(0,0,0,0.03), transparent 24%),
+    var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.7;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,10,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #00000014;
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;
+  letter-spacing:0.05em;
+  color:#ffffff;
+}
+.nav-links{display:flex;gap:2rem;flex-wrap:wrap}
+.nav-links a{
+  color:#d9d9d9;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:#ffffff}
+.wrap{max-width:900px;margin:0 auto;padding:84px 2rem}
+.section-header{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.1em}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,5vw,62px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.section-line{flex:1;height:1px;background:var(--border)}
+.blog-list{display:flex;flex-direction:column;gap:0}
+.blog-item{
+  display:grid;
+  grid-template-columns:140px 1fr auto;
+  gap:1.5rem;
+  align-items:center;
+  padding:1.25rem 0;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  transition:padding-left .2s;
+  position:relative;
+}
+.blog-item:first-child{border-top:1px solid var(--border)}
+.blog-item:hover{padding-left:0.75rem}
+.blog-item-left{display:flex;flex-direction:column;gap:4px}
+.blog-item-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.blog-item-tag{
+  font-family:'DM Mono',monospace;font-size:10px;
+  text-transform:uppercase;letter-spacing:0.12em;
+  color:#2f8b57;
+  background:rgba(103,217,143,0.12);
+  border:1px solid rgba(103,217,143,0.32);
+  padding:2px 7px;border-radius:2px;
+  width:fit-content;
+}
+.blog-item-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;font-weight:400;
+  font-weight:700;
+  color:var(--text);line-height:1.35;
+  transition:color .2s;
+}
+.blog-item:hover .blog-item-title{color:var(--accent)}
+.blog-item-desc{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.6}
+.blog-item-arrow{
+  color:var(--muted);
+  transition:color .2s,transform .2s;
+  flex-shrink:0;
+}
+.blog-item-arrow svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.blog-item:hover .blog-item-arrow{color:var(--accent);transform:translateX(4px)}
+footer{
+  border-top:1px solid var(--border);
+  padding:2rem;text-align:center;
+  color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .wrap{padding:48px 1rem 72px}
+  .blog-item{grid-template-columns:1fr auto;gap:0.75rem}
+  .blog-item-left{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">VS.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="project.html">Projects</a>
+    <a href="notes.html">Blog</a>
+    <a href="links.html">Links</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="section-header">
+    <h1 class="section-title">Blog</h1>
+  </div>
+
+  <div class="blog-list">
+    <a href="note-user-stories.html" class="blog-item">
+      <div class="blog-item-left">
+        <span class="blog-item-date">Mar 02, 2025</span>
+        <span class="blog-item-tag">Agile</span>
+      </div>
+      <div>
+        <div class="blog-item-title">Creating User Stories</div>
+        <div class="blog-item-desc">How I learned to turn long technical requests into short user stories with clear acceptance criteria.</div>
+      </div>
+      <div class="blog-item-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    </a>
+    <a href="note-scrum-implementation.html" class="blog-item">
+      <div class="blog-item-left">
+        <span class="blog-item-date">Mar 04, 2025</span>
+        <span class="blog-item-tag">Scrum</span>
+      </div>
+      <div>
+        <div class="blog-item-title">Implementation of Scrum</div>
+        <div class="blog-item-desc">A short guide to introducing Scrum in a way that supports delivery without adding chaos.</div>
+      </div>
+      <div class="blog-item-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    </a>
+    <a href="note-scrum-ceremonies.html" class="blog-item">
+      <div class="blog-item-left">
+        <span class="blog-item-date">Mar 04, 2025</span>
+        <span class="blog-item-tag">Agile</span>
+      </div>
+      <div>
+        <div class="blog-item-title">Example to Structure Scrum Ceremonies</div>
+        <div class="blog-item-desc">A simple framework for keeping Scrum ceremonies focused, useful, and easy to follow.</div>
+      </div>
+      <div class="blog-item-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    </a>
+    <a href="note-github-basic-commands.html" class="blog-item">
+      <div class="blog-item-left">
+        <span class="blog-item-date">Apr 19, 2025</span>
+        <span class="blog-item-tag">GitHub</span>
+      </div>
+      <div>
+        <div class="blog-item-title">GitHub Basic Commands</div>
+        <div class="blog-item-desc">A quick reference to the Git workflow commands I use most often when keeping projects organised.</div>
+      </div>
+      <div class="blog-item-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    </a>
+  </div>
+</div>
+
+<footer>2026 Viviane Santos - Business Analyst</footer>
+</body>
+</html>

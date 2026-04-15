@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="ServiceNow cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050914"/>
+      <stop offset="50%" stop-color="#0b1732"/>
+      <stop offset="100%" stop-color="#02040a"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22e9ff"/>
+      <stop offset="100%" stop-color="#35a1ff"/>
+    </linearGradient>
+    <linearGradient id="magenta" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e11eff"/>
+      <stop offset="100%" stop-color="#5a3bff"/>
+    </linearGradient>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="280" cy="180" r="180" fill="#22e9ff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="980" cy="220" r="180" fill="#e11eff" opacity="0.09" filter="url(#soft)"/>
+  <circle cx="610" cy="500" r="300" fill="#35a1ff" opacity="0.07" filter="url(#soft)"/>
+
+  <g filter="url(#glow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="88" y="130" width="196" height="280" rx="26" fill="#0d1220" stroke="url(#cyan)" stroke-width="3"/>
+    <path d="M124 188h124" stroke="#9aefff" stroke-width="9"/>
+    <path d="M124 228h96" stroke="#9aefff" stroke-width="9"/>
+    <path d="M124 268h112" stroke="#9aefff" stroke-width="9"/>
+    <path d="M124 308h84" stroke="#9aefff" stroke-width="9"/>
+    <circle cx="156" cy="350" r="20" stroke="#22e9ff" stroke-width="8"/>
+    <path d="M156 330v-26" stroke="#22e9ff" stroke-width="8"/>
+    <path d="M190 350h28" stroke="#22e9ff" stroke-width="8"/>
+    <path d="M118 362h132" stroke="#22e9ff" stroke-opacity="0.35" stroke-width="4"/>
+
+    <path d="M380 196c76-52 153-78 235-78s159 26 235 78" stroke="url(#cyan)" stroke-width="12"/>
+    <path d="M380 274c76-52 153-78 235-78s159 26 235 78" stroke="url(#magenta)" stroke-width="12"/>
+    <path d="M380 352c76-52 153-78 235-78s159 26 235 78" stroke="url(#cyan)" stroke-width="12"/>
+    <path d="M380 430c76-52 153-78 235-78s159 26 235 78" stroke="url(#magenta)" stroke-width="12"/>
+    <circle cx="615" cy="250" r="72" stroke="url(#cyan)" stroke-width="10"/>
+    <circle cx="615" cy="250" r="20" stroke="url(#cyan)" stroke-width="8"/>
+
+    <rect x="860" y="150" width="156" height="156" rx="32" fill="#0c1220" stroke="url(#magenta)" stroke-width="3"/>
+    <path d="M900 184l34 34 60-60" stroke="#22e9ff" stroke-width="12"/>
+    <path d="M900 248l34 34 60-60" stroke="#22e9ff" stroke-width="12" opacity="0.75"/>
+
+    <path d="M874 390h122" stroke="#22e9ff" stroke-width="10"/>
+    <path d="M874 430h122" stroke="#22e9ff" stroke-width="10"/>
+    <path d="M874 470h122" stroke="#e11eff" stroke-width="10"/>
+    <path d="M874 510h74" stroke="#22e9ff" stroke-width="10"/>
+
+    <circle cx="1020" cy="388" r="24" stroke="#e11eff" stroke-width="8"/>
+    <circle cx="1068" cy="430" r="16" stroke="#22e9ff" stroke-width="8"/>
+    <circle cx="1018" cy="470" r="16" stroke="#22e9ff" stroke-width="8"/>
+    <circle cx="1068" cy="514" r="16" stroke="#e11eff" stroke-width="8"/>
+    <path d="M984 412c38 0 50 18 70 34" stroke="#22e9ff" stroke-width="8"/>
+    <path d="M1022 450c28 0 36 16 48 28" stroke="#e11eff" stroke-width="8"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <path d="M350 528c120-120 256-142 392-102 96 28 178 81 282 164" fill="none" stroke="#22e9ff" stroke-width="12" stroke-linecap="round"/>
+    <path d="M398 566c104-92 221-113 350-83 88 20 158 58 244 128" fill="none" stroke="#e11eff" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="610" text-anchor="middle" fill="#f7f7fb" font-family="Outfit, system-ui, sans-serif" font-size="104" font-weight="600" letter-spacing="1.5">ServiceNow</text>
+</svg>

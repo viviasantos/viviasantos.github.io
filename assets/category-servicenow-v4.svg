@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-label="ServiceNow neon cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05020e"/>
+      <stop offset="55%" stop-color="#09142f"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#20eaff"/>
+      <stop offset="100%" stop-color="#2d73ff"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea23ff"/>
+      <stop offset="100%" stop-color="#6d40ff"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="230" cy="180" r="180" fill="#20eaff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="950" cy="210" r="180" fill="#ea23ff" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="600" cy="500" r="290" fill="#2d73ff" opacity="0.08" filter="url(#soft)"/>
+
+  <g filter="url(#glow)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="340" y="170" width="520" height="250" rx="34" stroke="url(#cyan)" stroke-width="4" fill="#08101c"/>
+    <path d="M408 250l58-58 58 58" stroke="#20eaff" stroke-width="14"/>
+    <path d="M408 250h116" stroke="#20eaff" stroke-width="14"/>
+    <path d="M584 192h58" stroke="#ea23ff" stroke-width="14"/>
+    <path d="M614 162v60" stroke="#ea23ff" stroke-width="14"/>
+    <path d="M704 190l58 58-58 58" stroke="#ea23ff" stroke-width="14"/>
+    <path d="M764 248h76" stroke="#20eaff" stroke-width="14"/>
+    <path d="M764 306h76" stroke="#20eaff" stroke-width="14"/>
+    <path d="M764 364h76" stroke="#20eaff" stroke-width="14"/>
+    <path d="M408 342h330" stroke="#f5f7ff" stroke-width="8" opacity="0.7"/>
+  </g>
+
+  <g filter="url(#soft)">
+    <path d="M362 530c112-78 228-104 350-78 92 20 172 60 260 120" fill="none" stroke="#20eaff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M404 566c102-58 198-76 294-56 74 16 138 46 208 92" fill="none" stroke="#ea23ff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="600" y="620" text-anchor="middle" fill="#f4f7ff" font-family="Outfit, system-ui, sans-serif" font-size="104" font-weight="600" letter-spacing="1.5">ServiceNow</text>
+</svg>
