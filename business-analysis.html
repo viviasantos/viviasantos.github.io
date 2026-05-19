@@ -26,6 +26,44 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .coming-soon-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2f8b57;margin-bottom:0.55rem}
 .coming-soon h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;line-height:1.1;margin-bottom:0.55rem}
 .coming-soon p{color:var(--muted);font-size:14px;line-height:1.8;max-width:720px}
+.story-card{
+  margin-top:1.25rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1.1rem 1.2rem
+}
+.story-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:0.5rem
+}
+.story-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.85
+}
+.story-card .meta-line{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  margin-bottom:0.65rem
+}
+.story-card .formula{
+  margin-top:1rem;
+  background:#f5f3ee;
+  border:1px solid var(--border);
+  padding:0.85rem 0.95rem;
+  border-radius:2px;
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  color:#111;
+  line-height:1.75
+}
 .cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
 .btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;text-decoration:none;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
@@ -51,6 +89,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
       <div class="coming-soon-label">Em breve</div>
       <h2>More business analysis examples will appear here soon.</h2>
       <p>This section is reserved for dedicated business analysis material, separate from the blog notes. It will grow with examples, mini cases, and clear explanations of how I work.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Current example</h2>
+    <div class="story-card">
+      <div class="meta-line">Agile · User Stories · Business Analysis</div>
+      <h3>Creating User Stories</h3>
+      <p>A practical guide to writing user stories that are short, clear, and useful for both discovery and delivery.</p>
+      <div class="formula">
+        As a [user/persona], I want [goal], so that [benefit].
+      </div>
     </div>
   </section>
 

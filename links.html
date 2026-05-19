@@ -89,10 +89,10 @@ nav{
 .link-card-icon{
   width:42px;height:42px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.03);border:1px solid var(--border);
+  background:transparent;border:none;
   margin-bottom:0.9rem;overflow:hidden;
 }
-.link-card-icon svg{width:22px;height:22px;display:block;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.link-card-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .link-card-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
 .link-card-url{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace}
 footer{
@@ -128,49 +128,49 @@ footer{
   <div class="links-grid">
     <a href="https://github.com/" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"/><path d="M6 12h12"/><path d="M9 5l-4 7 4 7"/><path d="M15 5l4 7-4 7"/></svg>
+        <img src="assets/GIT_Link.jpg" alt="GitHub icon">
       </div>
       <div class="link-card-name">GitHub</div>
       <div class="link-card-url">github.com</div>
     </a>
     <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.5"/><path d="M4.5 5.5v10c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-10"/><path d="M4.5 10.5c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/><path d="M4.5 15.5c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5"/></svg>
+        <img src="assets/SQL_Link.jpg" alt="Oracle SQL icon">
       </div>
       <div class="link-card-name">Oracle SQL Language Reference</div>
       <div class="link-card-url">docs.oracle.com</div>
     </a>
     <a href="https://nowlearning.servicenow.com/" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        <img src="assets/ServiceNow_Link.jpg" alt="ServiceNow icon">
       </div>
       <div class="link-card-name">ServiceNow Learning</div>
       <div class="link-card-url">nowlearning.servicenow.com</div>
     </a>
     <a href="https://www.atlassian.com/agile/about" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18l6-12 6 12"/><path d="M9 12h6"/><path d="M4 20h16"/></svg>
+        <img src="assets/Agile_link.jpg" alt="Agile icon">
       </div>
       <div class="link-card-name">Atlassian Agile Coach</div>
       <div class="link-card-url">atlassian.com/agile/about</div>
     </a>
     <a href="https://www.bizagi.com/" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8 6h8"/><path d="M7.3 7.8l3.2 6.4"/><path d="M16.7 7.8l-3.2 6.4"/></svg>
+        <img src="assets/Bisagi_Link.jpg" alt="Bizagi icon">
       </div>
       <div class="link-card-name">Bizagi</div>
       <div class="link-card-url">bizagi.com</div>
     </a>
     <a href="https://powerbi.microsoft.com/" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19V11"/><path d="M10 19V7"/><path d="M14 19v-5"/><path d="M18 19V9"/></svg>
+        <img src="assets/Powerbi_Link.jpg" alt="Power BI icon">
       </div>
       <div class="link-card-name">Power BI</div>
       <div class="link-card-url">powerbi.microsoft.com</div>
     </a>
     <a href="https://www.datacamp.com/?utm_cid=805200711&utm_aid=155612384048&utm_campaign=220808_1-ps-brd~brd~branded-pure_2-b2c_3-emea_4-rtw_5-na_6-na_7-le_8-pdsh-go_9-b-e_10-na_11-na&utm_loc=9195655-&utm_mtd=e-c&utm_kw=data%20camp&utm_source=google&utm_medium=paid_search&utm_content=ps-other~emea-en~brd~pure~pure&gad_source=1&gad_campaignid=805200711&gbraid=0AAAAADQ9WsE0iQOhwZVCnA8KfOx_yak7r&gclid=Cj0KCQjwlLDQBhDjARIsAPlIefG4emyfKmBM-3BVs1-30JRk43Gir5rTPf1aVCg2BU328Rx_1kggS-waApxMEALw_wcB" class="link-card" target="_blank" rel="noopener">
       <div class="link-card-icon">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z"/><path d="M9 9h6v6H9z"/></svg>
+        <img src="assets/Datacamp_Link.jpg" alt="DataCamp icon">
       </div>
       <div class="link-card-name">DataCamp</div>
       <div class="link-card-url">datacamp.com</div>

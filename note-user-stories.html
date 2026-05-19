@@ -1,89 +1,503 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Creating User Stories - Viviane Santos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f3f1ed;--surface:#fbfaf7;--surface2:#f2efe9;--border:#d9d5ce;--border2:#bfb8ae;--text:#111111;--muted:#5f5a53;--accent:#67d98f;--accent2:#67d98f}
+:root{
+  --bg:#f3f1ed;
+  --surface:#fbfaf7;
+  --surface2:#f2efe9;
+  --border:#d9d5ce;
+  --border2:#bfb8ae;
+  --text:#111111;
+  --muted:#5f5a53;
+  --accent:#67d98f;
+  --accent-ink:#2f8b57;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0,0,0,0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(0,0,0,0.03), transparent 24%),
+    var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.7;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
 a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;flex:0 0 auto}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff}
-.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
-.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(10,10,10,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #00000014;
+  padding:0 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:56px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  color:#ffffff;
+}
+.nav-back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#d9d9d9;
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .2s
+}
+.nav-back svg{
+  width:14px;
+  height:14px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2;
+  transition:transform .2s
+}
 .nav-back:hover{color:#ffffff}
 .nav-back:hover svg{transform:translateX(-3px)}
-.wrap{width:100%;max-width:820px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
-.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
-.tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
-.date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.wrap{
+  width:100%;
+  max-width:1020px;
+  margin:0 auto;
+  padding:72px 2rem 88px;
+  flex:1 0 auto
+}
+.hero{
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border)
+}
+.meta{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  margin-bottom:1.25rem;
+  flex-wrap:wrap
+}
+.tag{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:#2f8b57;
+  background:rgba(103,217,143,0.12);
+  border:1px solid rgba(103,217,143,0.32);
+  padding:3px 9px;
+  border-radius:2px
+}
+.date{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--muted)
+}
 .dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
-.title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1rem}
-.subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:720px}
-.article{padding-top:2.5rem}
-.article h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--text);margin:2rem 0 0.75rem}
-.article p{color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:1rem}
-.lead{font-size:16px;color:var(--text);line-height:1.95;margin-bottom:1.25rem}
-.quote{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--accent);border-radius:2px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:var(--muted)}
-.quote strong{color:var(--text)}
-.list{padding-left:1.15rem;margin:1rem 0 0;display:flex;flex-direction:column;gap:0.45rem}
-.list li{color:#2f8b57;line-height:1.7}
+.title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,5.6vw,68px);
+  font-weight:700;
+  line-height:1.02;
+  letter-spacing:-0.03em;
+  margin-bottom:1rem
+}
+.subtitle{
+  font-size:17px;
+  color:var(--muted);
+  line-height:1.85;
+  max-width:780px
+}
+.hero-actions{
+  display:flex;
+  gap:0.85rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem
+}
+.btn{
+  padding:10px 18px;
+  border-radius:2px;
+  font-size:13px;
+  letter-spacing:0.06em;
+  cursor:pointer;
+  border:1px solid var(--border2);
+  font-family:'Outfit',sans-serif;
+  transition:all .2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:transparent;
+  color:var(--text)
+}
+.btn svg{
+  width:14px;
+  height:14px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2
+}
+.btn:hover{border-color:var(--accent);color:var(--accent-ink);transform:translateY(-1px)}
+.btn-primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#0f0f0f
+}
+.btn-primary:hover{background:#d6ffe2;color:#0f0f0f}
+.section{
+  padding-top:2.75rem
+}
+.section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.85rem
+}
+.section p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+  margin-bottom:1rem
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin-top:1rem
+}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1.2rem 1.25rem
+}
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.6rem
+}
+.card p{margin:0;color:var(--muted)}
+.formula{
+  background:linear-gradient(135deg, rgba(255,255,255,0.56), rgba(242,239,233,0.95));
+  border:1px solid var(--border2);
+  border-left:2px solid var(--accent);
+  border-radius:2px;
+  padding:1.15rem 1.25rem;
+  margin-top:1rem
+}
+.formula-label{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  margin-bottom:0.55rem
+}
+.formula code{
+  display:block;
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  color:#111;
+  background:#f5f3ee;
+  border:1px solid var(--border);
+  padding:0.85rem 0.95rem;
+  border-radius:2px;
+  line-height:1.7
+}
+.list{
+  padding-left:1.15rem;
+  margin:1rem 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:0.45rem
+}
+.list li{
+  color:#2f8b57;
+  line-height:1.7
+}
 .list li::marker{color:var(--accent)}
-.tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
-.tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
-.ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
-.cta{display:flex;gap:1rem;justify-content:flex-start;margin-top:2rem;flex-wrap:wrap;margin-bottom:4.5rem}
-.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
-@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 72px}.cta{justify-content:stretch}.btn{width:100%;justify-content:center}}
+.example{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:1rem;
+  margin-top:1rem
+}
+.example-box{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1.15rem 1.2rem
+}
+.example-box h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:0.55rem
+}
+.example-box p{margin:0;color:var(--muted)}
+.template-card{
+  background:linear-gradient(180deg, #ffffff 0%, #f7f4ef 100%);
+  border:1px solid var(--border2);
+  border-radius:2px;
+  padding:1.25rem;
+  margin-top:1rem
+}
+.template-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:0.4rem
+}
+.template-card p{
+  margin-bottom:0.9rem;
+  color:var(--muted)
+}
+.template-preview{
+  background:#111;
+  color:#f7f3eb;
+  border-radius:2px;
+  padding:1rem 1rem 1.1rem;
+  font-family:'DM Mono',monospace;
+  font-size:12px;
+  line-height:1.8;
+  overflow:auto;
+  white-space:pre-wrap;
+  margin-top:0.75rem
+}
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0.75rem;
+  margin-top:1rem
+}
+.check-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:0.95rem 1rem
+}
+.check-item strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:0.25rem
+}
+.check-item span{color:var(--muted);font-size:13px}
+.callout{
+  background:rgba(103,217,143,0.08);
+  border:1px solid rgba(103,217,143,0.22);
+  border-left:2px solid var(--accent);
+  border-radius:2px;
+  padding:1rem 1.15rem;
+  margin-top:1rem;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8
+}
+.callout strong{color:var(--text)}
+.tags{
+  display:flex;
+  gap:0.5rem;
+  flex-wrap:wrap;
+  margin-top:2.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--border)
+}
+.tags-label{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  align-self:center;
+  margin-right:0.25rem
+}
+.ptag{
+  background:rgba(103,217,143,0.12);
+  border:1px solid rgba(103,217,143,0.32);
+  padding:3px 10px;
+  border-radius:2px;
+  font-size:11px;
+  color:#2f8b57;
+  font-family:'DM Mono',monospace
+}
+.footer-note{
+  margin-top:auto;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  padding:1.5rem 1rem 2rem;
+  border-top:1px solid var(--border)
+}
+@media(max-width:900px){
+  .grid-2,.example,.checklist{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .wrap{padding:48px 1rem 72px}
+  .hero-actions .btn{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
 <nav>
-  <a href="portfolio-v4.html" class="nav-logo">VS.</a>
-  <a href="portfolio-v4.html#blog" class="nav-back">
+  <a href="notes.html" class="nav-logo">VS.</a>
+  <a href="notes.html" class="nav-back">
     <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Back to Blog
   </a>
 </nav>
 <div class="wrap">
   <section class="hero">
-    <div class="meta"><span class="tag">Agile</span><span class="dot"></span><span class="date">Mar 02, 2025</span><span class="dot"></span><span class="date">Business Analysis</span></div>
+    <div class="meta">
+      <span class="tag">Agile</span>
+      <span class="dot"></span>
+      <span class="date">Mar 02, 2025</span>
+      <span class="dot"></span>
+      <span class="date">Business Analysis</span>
+    </div>
     <h1 class="title">Creating User Stories</h1>
-    <p class="subtitle">How I learned to turn long technical requests into short user stories with clear acceptance criteria.</p>
+    <p class="subtitle">A practical guide to writing user stories that are short, clear, and useful for both discovery and delivery. The download is a branded Word file you can edit and reuse.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="assets/user-story-template.docx" download>
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
+        Download Word template
+      </a>
+      <a class="btn" href="#template">See the template</a>
+    </div>
   </section>
 
-  <main class="article">
-    <p class="lead">Writing user stories was not natural for me at the beginning. Over time, I learned that the best stories are simple, focused, and easy for both business and delivery teams to understand.</p>
-    <div class="quote"><strong>Core pattern:</strong> As a [type of user], I want [goal], so that [benefit].</div>
+  <section class="section">
+    <h2>What a good user story should do</h2>
+    <p>A strong user story helps the team understand the need before jumping into a solution. It should be easy to read, easy to discuss, and easy to split if it becomes too large.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Focus on the user need</h3>
+        <p>Start with who needs something and why it matters. That keeps the story tied to business value instead of technical detail.</p>
+      </div>
+      <div class="card">
+        <h3>Keep the scope small</h3>
+        <p>If the story contains multiple outcomes, split it. Smaller stories are easier to estimate, test, and deliver.</p>
+      </div>
+      <div class="card">
+        <h3>Make acceptance criteria clear</h3>
+        <p>Acceptance criteria define how everyone knows the story is done. They reduce ambiguity and help during validation.</p>
+      </div>
+      <div class="card">
+        <h3>Use business language</h3>
+        <p>The best stories are understandable by both business and delivery teams. Clear language helps avoid confusion later.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2>What helped me most</h2>
-    <p>I started by understanding the real user need before trying to describe the solution. That small shift made the stories shorter and much easier to review with stakeholders.</p>
+  <section class="section">
+    <h2>The simple formula</h2>
+    <p>This is the basic structure I use when I need a story that is easy to explain and review.</p>
+    <div class="formula">
+      <div class="formula-label">User story format</div>
+      <code>As a [type of user], I want [goal], so that [benefit].</code>
+    </div>
+    <div class="callout"><strong>Why it works:</strong> it forces you to think about the user, the goal, and the value. That makes the story more useful than a vague request or a hidden solution.</div>
+  </section>
 
-    <h2>How I structure a story</h2>
-    <p>I keep the story focused on the outcome, then add acceptance criteria that define what success looks like. That makes estimation and validation much easier for the team.</p>
-
-    <h2>What I avoid</h2>
+  <section class="section">
+    <h2>How I write acceptance criteria</h2>
+    <p>Acceptance criteria should describe the expected result in a measurable way. They are not the place for long explanations; they are the place for clarity.</p>
     <ul class="list">
-      <li>Too much solution detail too early</li>
-      <li>Vague requests that are hard to estimate</li>
-      <li>Large stories that really need to be split</li>
+      <li>Describe the conditions that must be true for the story to be accepted</li>
+      <li>Keep the criteria specific enough to test</li>
+      <li>Avoid mixing solution detail with the business outcome</li>
+      <li>Use criteria to support review, testing, and sign-off</li>
     </ul>
+  </section>
 
-    <div class="tags"><span class="tags-label">Tags</span><span class="ptag">Agile</span><span class="ptag">User Stories</span><span class="ptag">Requirements</span><span class="ptag">Business Analysis</span></div>
-    <div class="cta"><a href="portfolio-v4.html#blog" class="btn btn-outline">Back to Blog</a></div>
-  </main>
+  <section class="section">
+    <h2>Example story</h2>
+    <div class="example">
+      <div class="example-box">
+        <h3>Story</h3>
+        <p>As a customer service agent, I want to see the last five interactions with a client, so that I can answer questions faster and give better support.</p>
+      </div>
+      <div class="example-box">
+        <h3>Acceptance criteria</h3>
+        <p>1. The agent can view the last five interactions.</p>
+        <p>2. The interactions are displayed in reverse chronological order.</p>
+        <p>3. The story is considered complete when the data is visible and easy to understand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="template">
+    <h2>Template you can download</h2>
+    <p>This is the editable mask I use to speed up story writing. Download it, fill in the placeholders, and reuse it as a starting point for interviews, workshops, or project notes.</p>
+    <div class="template-card">
+      <h3>User Story Template</h3>
+      <p>Use this structure when you need a fast, clean starting point. The downloadable version includes Viviane Santos branding and the same layout style used across the portfolio.</p>
+      <div class="template-preview">Title:
+[Short name for the story]
+
+User story:
+As a [user/persona], I want [goal], so that [benefit].
+
+Context:
+[Why is this needed? What problem are we solving?]
+
+Acceptance criteria:
+- [Condition 1]
+- [Condition 2]
+- [Condition 3]
+
+Notes:
+[Dependencies, assumptions, or open questions]
+
+Priority:
+[High / Medium / Low]</div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="assets/user-story-template.docx" download>
+        <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg>
+        Download Word template
+      </a>
+      <a class="btn" href="notes.html">Back to Blog</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quick checklist before you finish a story</h2>
+    <div class="checklist">
+      <div class="check-item"><strong>Is the story readable?</strong><span>Someone should understand it in one quick read.</span></div>
+      <div class="check-item"><strong>Is the goal clear?</strong><span>The user need and business value should be obvious.</span></div>
+      <div class="check-item"><strong>Are the criteria testable?</strong><span>They should help validate whether the story is done.</span></div>
+      <div class="check-item"><strong>Is the scope small enough?</strong><span>Split it if it feels too large or too technical.</span></div>
+    </div>
+  </section>
+
+  <div class="tags">
+    <span class="tags-label">Tags</span>
+    <span class="ptag">Agile</span>
+    <span class="ptag">User Stories</span>
+    <span class="ptag">Requirements</span>
+    <span class="ptag">Business Analysis</span>
+    <span class="ptag">Template</span>
+  </div>
 </div>
 <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
 </body>
 </html>
-
-
-
