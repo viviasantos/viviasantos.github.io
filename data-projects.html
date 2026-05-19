@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SQL &amp; Data Projects - Viviane Santos</title>
+<title>Data Analysis - Viviane Santos</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,7 +19,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .wrap{max-width:1180px;margin:0 auto;padding:84px 2rem 88px}
 .hero-head{max-width:820px;margin-bottom:2rem}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:400;line-height:1;letter-spacing:-0.02em;margin-bottom:0.75rem}
+.section-group{margin-top:1.75rem}
+.section-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin:0 0 0.85rem 0.05rem}
+.section-note{color:var(--muted);font-size:14px;line-height:1.75;max-width:820px;margin-bottom:1rem}
 .project-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.85rem}
+.project-cards.two-col{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}
+.project-cards.single-exercise{grid-template-columns:1fr;max-width:380px}
 .project-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1rem 0.9rem;text-decoration:none;display:flex;flex-direction:column;gap:0.5rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s;min-height:110px}
 .project-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
 .project-card:hover{border-color:var(--border2);transform:translateY(-3px)}
@@ -31,6 +36,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .project-card-arrow{align-self:flex-end;color:var(--muted);transition:color .2s,transform .2s}
 .project-card-arrow svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
 .project-card:hover .project-card-arrow{color:var(--accent);transform:translateX(3px)}
+.cta-row{display:flex;justify-content:flex-start;margin-top:1.25rem}
+.btn{padding:10px 24px;border-radius:2px;font-size:13px;letter-spacing:0.06em;text-decoration:none;border:1px solid var(--border2);font-family:'Outfit',sans-serif;transition:all .2s;background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
 .footer-note{margin-top:3rem;border-top:1px solid var(--border);padding:2rem 0 0;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;text-align:center}
 @media(max-width:980px){.project-cards{grid-template-columns:1fr}}
 @media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 72px}}
@@ -51,31 +59,51 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 
 <div class="wrap">
   <div class="hero-head">
-    <h1 class="hero-title">Data Projects</h1>
+    <h1 class="hero-title">Data Analysis</h1>
   </div>
 
-  <div class="project-cards">
-    <a href="project-sql-foundations.html" class="project-card">
-      <div class="project-card-title">Restaurant Orders Analysis</div>
-      <div class="project-card-stack">
-        <span class="tag">MySQL</span><span class="tag">Data Exploration</span><span class="tag">Analytics</span>
-      </div>
-      <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </a>
-    <a href="project-sql-practice.html" class="project-card">
-      <div class="project-card-title">SQL Practice</div>
-      <div class="project-card-stack">
-        <span class="tag">SQL</span><span class="tag">Data Manipulation</span>
-      </div>
-      <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </a>
-    <a href="project-sql-powerbi.html" class="project-card">
-      <div class="project-card-title">SQL + Power BI End-to-End</div>
-      <div class="project-card-stack">
-        <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">End-to-End</span>
-      </div>
-      <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </a>
+  <div class="section-group">
+    <div class="section-label">Projects</div>
+    <div class="project-cards">
+      <a href="project-sql-foundations.html" class="project-card">
+        <div class="project-card-title">Orders Analysis</div>
+        <div class="project-card-stack">
+          <span class="tag">MySQL</span><span class="tag">Data Exploration</span><span class="tag">Analytics</span>
+        </div>
+        <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+      <a href="project-sql-powerbi.html" class="project-card">
+        <div class="project-card-title">Sales Dashboard</div>
+        <div class="project-card-stack">
+          <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">End-to-End</span>
+        </div>
+        <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+      <a href="project-healthcare-dashboard.html" class="project-card">
+        <div class="project-card-title">Healthcare Dashboard</div>
+        <div class="project-card-stack">
+          <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Healthcare</span>
+        </div>
+        <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section-group">
+    <div class="section-label">Practical Exercises</div>
+    <div class="project-cards single-exercise">
+      <a href="project-sql-practice.html" class="project-card">
+        <div class="project-card-title">SQL Practice</div>
+        <div class="project-card-stack">
+          <span class="tag">SQL</span><span class="tag">Data Manipulation</span>
+        </div>
+        <div class="project-card-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="project.html" class="btn">Back to Projects</a>
   </div>
 
   <div class="footer-note">2026 Viviane Santos - Business Analyst</div>

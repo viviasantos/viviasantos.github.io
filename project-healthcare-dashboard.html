@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SQL Practice - Viviane Santos</title>
+<title>Healthcare Dashboard - Viviane Santos</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,7 +17,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
 .nav-back:hover{color:#ffffff}
 .nav-back:hover svg{transform:translateX(-3px)}
-.wrap{max-width:980px;margin:0 auto;padding:72px 2rem 100px;flex:1 0 auto}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 2rem 100px;flex:1 0 auto}
 .hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
 .project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;flex-wrap:wrap}
 .project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
@@ -25,7 +25,34 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1rem}
 .project-title span{color:var(--accent)}
+.project-title .title-sep{
+  display:inline-block;
+  margin:0 0.18em;
+  color:var(--muted);
+  font-family:'Outfit',sans-serif;
+  font-weight:400;
+}
 .project-subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:760px}
+.dashboard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.dashboard-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  overflow:hidden;
+}
+.dashboard-card img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.dashboard-card figcaption{
+  padding:0.9rem 1rem 1rem;
+  color:var(--muted);
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  line-height:1.6;
+}
+.dashboard-note{margin-top:1rem;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.06em}
 .section{padding-top:3rem}
 .section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--text);margin-bottom:1rem}
 .section h2{font-weight:700}
@@ -73,24 +100,60 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 <div class="wrap">
   <section class="hero">
     <div class="project-meta">
-      <span class="project-tag">Data Analysis</span>
+      <span class="project-tag">Dashboard Case Study</span>
       <span class="dot"></span>
-      <span class="project-date">SQL Practice</span>
+      <span class="project-date">Power BI</span>
       <span class="dot"></span>
-      <span class="project-date">SQL - Data Manipulation</span>
+      <span class="project-date">SQL · Power Query · DAX</span>
     </div>
 
-    <h1 class="project-title">SQL <span>Practice</span></h1>
-    <p class="project-subtitle">A collection of hands-on SQL exercises and practice queries focused on filtering, grouping, aggregation, and joining tables to build analytical confidence.</p>
+    <h1 class="project-title">SQL Data Exploration Project <span class="title-sep">|</span> <span>Healthcare Dashboard</span></h1>
+    <p class="project-subtitle">A portfolio case study built from healthcare analytics data, where SQL handled the core queries, Power Query shaped the model inside Power BI, and DAX powered the KPI measures and visuals for decision support.</p>
 
     <div class="grid-2" style="margin-top:2rem;">
       <div class="card">
         <h3>Problem</h3>
-        <p>I needed a simple way to build SQL fluency and confidence by practicing the most common query patterns used in analytics work.</p>
+        <p>The raw healthcare data needed to be transformed into a clean reporting model that could highlight patient flow, service demand, performance trends, and operational metrics.</p>
       </div>
       <div class="card">
         <h3>Solution</h3>
-        <p>I created a set of practice queries that cover filtering, grouping, aggregation, and joins in a progressive way.</p>
+        <p>I wrote the core queries in SQL, used Power Query for data shaping inside Power BI, and built the dashboard with DAX measures for the KPIs and breakdowns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Dashboard pages</h2>
+    <div class="dashboard-grid">
+      <figure class="dashboard-card">
+        <img src="assets/image_healthcare1.jpg" alt="Healthcare dashboard first report screen">
+        <figcaption>Main dashboard view with the primary healthcare KPIs and summary visuals.</figcaption>
+      </figure>
+      <figure class="dashboard-card">
+        <img src="assets/image_healthcare2.jpg" alt="Healthcare dashboard second report screen">
+        <figcaption>Secondary page with a closer look at the operational and analytical breakdowns.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What the report shows</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Operational overview</h3>
+        <p>The report opens with the main KPIs: volume, performance, and activity measures that give a quick view of the healthcare operation.</p>
+      </div>
+      <div class="card">
+        <h3>Top and bottom patterns</h3>
+        <p>Ranking visuals make it easy to see which service lines perform best and which ones need attention.</p>
+      </div>
+      <div class="card">
+        <h3>Trend monitoring</h3>
+        <p>Daily and monthly trends show when demand peaks across the year, supporting planning and performance reviews.</p>
+      </div>
+      <div class="card">
+        <h3>Service mix</h3>
+        <p>Service visuals show the operational mix at a glance and make comparison easier during interviews.</p>
       </div>
     </div>
   </section>
@@ -99,43 +162,43 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
     <h2>How it was built</h2>
     <div class="grid-2">
       <div class="card">
-        <h3>Filtering and sorting</h3>
-        <p>I practiced the basics of narrowing datasets and ordering results to isolate what matters for analysis.</p>
+        <h3>Query the dataset in SQL</h3>
+        <p>I used SQL to prepare the dataset and shape the base fields that feed the reporting model.</p>
         <ul class="list">
-          <li>Use WHERE to focus on relevant records</li>
-          <li>Sort results with ORDER BY</li>
-          <li>Limit outputs for cleaner review</li>
-          <li>Build confidence in query structure</li>
+          <li>Load the source tables and validate the structure</li>
+          <li>Standardize fields for analysis</li>
+          <li>Remove inconsistencies and duplicates</li>
+          <li>Prepare a reporting-ready dataset</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Aggregation and grouping</h3>
-        <p>I used SQL to summarise data, calculate totals, and compare categories in a way that mirrors reporting work.</p>
+        <h3>Shape the model in Power Query</h3>
+        <p>Power Query handled the transformations inside Power BI so the model stayed clean and ready for analysis.</p>
         <ul class="list">
-          <li>Use COUNT, SUM, and AVG</li>
-          <li>Group data by relevant categories</li>
-          <li>Apply HAVING for grouped conditions</li>
-          <li>Support insight-driven analysis</li>
+          <li>Apply transformations inside Power BI</li>
+          <li>Refine data types and column logic</li>
+          <li>Prepare the model for analysis</li>
+          <li>Keep the reporting layer lean and reliable</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Joining tables</h3>
-        <p>Practice also included combining tables so I could connect related data points and analyse them together.</p>
+        <h3>Build KPI measures in DAX</h3>
+        <p>DAX powered the KPI cards, category splits, and ranking visuals used in the report.</p>
         <ul class="list">
-          <li>Join tables on shared keys</li>
-          <li>Compare values across datasets</li>
-          <li>Understand relational structure</li>
-          <li>Prepare for end-to-end analytics work</li>
+          <li>Calculate patient volume and service metrics</li>
+          <li>Build measures for totals and averages</li>
+          <li>Support top and bottom activity analysis</li>
+          <li>Power the dashboard visuals</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Analytical thinking</h3>
-        <p>The objective of the practice set was to build the muscle memory needed for real-world analysis tasks.</p>
+        <h3>Deliver the dashboard narrative</h3>
+        <p>The final output is a business-friendly dashboard that turns raw healthcare data into clear, actionable insights.</p>
         <ul class="list">
-          <li>Read the question before writing the query</li>
-          <li>Break analysis into steps</li>
-          <li>Check intermediate results</li>
-          <li>Translate output into insight</li>
+          <li>Executive dashboard design</li>
+          <li>Clear KPI structure</li>
+          <li>Data storytelling</li>
+          <li>Decision support for business users</li>
         </ul>
       </div>
     </div>
@@ -144,31 +207,31 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
   <section class="section">
     <h2>Tools and technologies</h2>
     <div class="stack-grid">
-      <div class="stack-item"><div class="stack-item-name">SQL</div><div class="stack-item-desc">Filtering, aggregation, joins</div></div>
-      <div class="stack-item"><div class="stack-item-name">MySQL</div><div class="stack-item-desc">Practice environment</div></div>
-      <div class="stack-item"><div class="stack-item-name">Data Manipulation</div><div class="stack-item-desc">Transforming data for analysis</div></div>
-      <div class="stack-item"><div class="stack-item-name">Query Logic</div><div class="stack-item-desc">Step-by-step analysis structure</div></div>
+      <div class="stack-item"><div class="stack-item-name">SQL</div><div class="stack-item-desc">Base queries and data preparation</div></div>
+      <div class="stack-item"><div class="stack-item-name">Power Query</div><div class="stack-item-desc">Data shaping inside Power BI</div></div>
+      <div class="stack-item"><div class="stack-item-name">DAX</div><div class="stack-item-desc">KPI measures and business logic</div></div>
+      <div class="stack-item"><div class="stack-item-name">Power BI</div><div class="stack-item-desc">Reporting, visuals, and storytelling</div></div>
     </div>
   </section>
 
   <section class="section">
-    <h2>What I learned</h2>
+    <h2>Why it matters</h2>
     <ul class="list">
-      <li>How to think in SQL before writing the query</li>
-      <li>How practice strengthens speed and accuracy</li>
-      <li>How joins and aggregations support analysis</li>
-      <li>How to turn exercises into interview-ready examples</li>
+      <li>How to move from raw data to reporting-ready outputs</li>
+      <li>How SQL, Power Query, and DAX work together in one reporting flow</li>
+      <li>How Power BI turns metrics into a clear business story</li>
+      <li>How to communicate data findings in a portfolio-friendly format</li>
     </ul>
-    <div class="callout"><strong>Business value:</strong> this practice set strengthens the SQL foundation needed for reporting, analysis, and future Power BI work.</div>
+    <div class="callout"><strong>Business value:</strong> this project shows a full analytics workflow from data preparation to dashboard delivery, with clear reporting for decision-making.</div>
   </section>
 
   <div class="project-tags">
     <span class="project-tags-label">Tags</span>
-    <span class="ptag">SQL</span><span class="ptag">MySQL</span><span class="ptag">Practice</span><span class="ptag">Data Manipulation</span><span class="ptag">Analytics</span>
+    <span class="ptag">SQL</span><span class="ptag">Power BI</span><span class="ptag">ETL</span><span class="ptag">Healthcare</span><span class="ptag">Dashboard</span><span class="ptag">End-to-End</span>
   </div>
 
   <div class="cta-row">
-    <a href="https://github.com/viviasantos/data-manipulation-practice/tree/master/SQL%2BPractice" class="btn btn-primary" target="_blank" rel="noopener">
+    <a href="https://github.com/viviasantos/data-manipulation-practice/tree/master/end-to-end_%20healthcare_data_analytics_project" class="btn btn-primary" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       View on GitHub
     </a>
@@ -179,6 +242,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 </div>
 </body>
 </html>
+
+
 
 
 

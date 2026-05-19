@@ -25,8 +25,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
 .title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1rem}
 .subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:720px}
+.quick-nav{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.quick-nav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+.quick-nav a:hover{border-color:var(--accent);color:var(--accent)}
 .article{padding-top:2.5rem}
-.article h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--text);margin:2rem 0 0.75rem}
+.article h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--text);margin:2rem 0 0.75rem}
+.article h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);margin:0 0 0.35rem}
 .article p{color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:1rem}
 .lead{font-size:16px;color:var(--text);line-height:1.95;margin-bottom:1.25rem}
 .quote{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--accent);border-radius:2px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:var(--muted)}
@@ -34,6 +38,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .list{padding-left:1.15rem;margin:1rem 0 0;display:flex;flex-direction:column;gap:0.45rem}
 .list li{color:#2f8b57;line-height:1.7}
 .list li::marker{color:var(--accent)}
+.section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.9rem;margin-top:1rem}
+.command-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:1rem 1rem 0.95rem}
+.command-card code{display:block;font-family:'DM Mono',monospace;font-size:13px;color:#111;background:#f5f3ee;border:1px solid var(--border);padding:0.7rem 0.8rem;border-radius:2px;margin:0.6rem 0}
+.command-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+.workflow{counter-reset:step;margin-top:1rem;display:grid;gap:0.85rem}
+.workflow-item{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:1rem 1rem 0.95rem;position:relative;padding-left:3rem}
+.workflow-item::before{counter-increment:step;content:counter(step);position:absolute;left:1rem;top:1rem;width:1.35rem;height:1.35rem;border-radius:50%;display:grid;place-items:center;background:rgba(103,217,143,0.14);border:1px solid rgba(103,217,143,0.32);color:#2f8b57;font-family:'DM Mono',monospace;font-size:11px}
+.workflow-item strong{display:block;margin-bottom:0.3rem;color:var(--text)}
+.workflow-item code{display:block;font-family:'DM Mono',monospace;font-size:12px;color:#111;background:#f5f3ee;border:1px solid var(--border);padding:0.5rem 0.7rem;border-radius:2px;margin-top:0.55rem}
+.tip{background:rgba(103,217,143,0.08);border:1px solid rgba(103,217,143,0.22);border-left:2px solid var(--accent);border-radius:2px;padding:1rem 1.15rem;margin-top:1rem;color:var(--muted);font-size:14px;line-height:1.8}
+.tip strong{color:var(--text)}
 .tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
 .ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
@@ -47,8 +62,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 </head>
 <body>
 <nav>
-  <a href="portfolio-v4.html" class="nav-logo">VS.</a>
-  <a href="portfolio-v4.html#blog" class="nav-back">
+  <a href="notes.html" class="nav-logo">VS.</a>
+  <a href="notes.html" class="nav-back">
     <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Back to Blog
   </a>
@@ -57,28 +72,103 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
   <section class="hero">
     <div class="meta"><span class="tag">GitHub</span><span class="dot"></span><span class="date">Apr 19, 2025</span><span class="dot"></span><span class="date">Version Control</span></div>
     <h1 class="title">GitHub Basic Commands</h1>
-    <p class="subtitle">A quick reference to the Git workflow commands I use most often when keeping projects organised.</p>
+    <p class="subtitle">A practical Git guide with the commands I use most often, explained in a way that is quick to scan and easy to remember.</p>
+    <div class="quick-nav">
+      <a href="#core">Core commands</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#tips">Tips</a>
+    </div>
   </section>
 
   <main class="article">
-    <p class="lead">A simple Git routine keeps your work history clean and makes it easier to collaborate, review, and recover changes.</p>
-    <div class="quote"><strong>Core workflow:</strong> check status, stage changes, commit clearly, then push to the remote repository.</div>
+    <p class="lead">A simple Git routine keeps your history clean and makes it easier to collaborate, review changes, and recover work when something goes wrong.</p>
+    <div class="quote"><strong>Memory trick:</strong> status tells you what changed, add prepares it, commit saves it, push shares it.</div>
 
-    <h2>Commands I use most</h2>
+    <h2 id="core">Core commands</h2>
+    <div class="section-grid">
+      <div class="command-card">
+        <h3>`git status`</h3>
+        <p>Checks what changed in the working directory and what is ready to be staged.</p>
+        <code>git status</code>
+      </div>
+      <div class="command-card">
+        <h3>`git add`</h3>
+        <p>Moves files into the staging area so they can be included in the next commit.</p>
+        <code>git add .</code>
+      </div>
+      <div class="command-card">
+        <h3>`git commit`</h3>
+        <p>Saves your staged changes as one clear snapshot with a message.</p>
+        <code>git commit -m "Describe the change"</code>
+      </div>
+      <div class="command-card">
+        <h3>`git push`</h3>
+        <p>Sends your local commits to GitHub so the remote repo stays updated.</p>
+        <code>git push origin main</code>
+      </div>
+      <div class="command-card">
+        <h3>`git pull`</h3>
+        <p>Downloads the latest changes from GitHub and merges them into your local branch.</p>
+        <code>git pull origin main</code>
+      </div>
+      <div class="command-card">
+        <h3>`git branch`</h3>
+        <p>Shows your branches or creates one for isolated work.</p>
+        <code>git branch
+git branch feature-name</code>
+      </div>
+      <div class="command-card">
+        <h3>`git log`</h3>
+        <p>Displays the commit history when you want to review what was changed.</p>
+        <code>git log --oneline</code>
+      </div>
+      <div class="command-card">
+        <h3>`git diff`</h3>
+        <p>Highlights the actual line-by-line edits before you commit them.</p>
+        <code>git diff</code>
+      </div>
+    </div>
+
+    <h2 id="workflow">Typical workflow</h2>
+    <div class="workflow">
+      <div class="workflow-item">
+        <strong>1. Check the state of your repo</strong>
+        Confirm what changed before you do anything else.
+        <code>git status</code>
+      </div>
+      <div class="workflow-item">
+        <strong>2. Review the diff if needed</strong>
+        Look at the exact edits so you know what will be committed.
+        <code>git diff</code>
+      </div>
+      <div class="workflow-item">
+        <strong>3. Stage only the files you want</strong>
+        Use add to prepare a clean commit.
+        <code>git add .</code>
+      </div>
+      <div class="workflow-item">
+        <strong>4. Commit with a message that explains the change</strong>
+        Keep the message short, specific, and readable later.
+        <code>git commit -m "Update dashboard layout"</code>
+      </div>
+      <div class="workflow-item">
+        <strong>5. Push to GitHub</strong>
+        Share the work so your remote repo stays in sync.
+        <code>git push origin main</code>
+      </div>
+    </div>
+
+    <h2 id="tips">Tips for interviews</h2>
+    <div class="tip"><strong>Say the purpose, not just the command:</strong> interviewers like when you explain why you used a command, not only its syntax.</div>
     <ul class="list">
-      <li><strong>git status</strong> - see what changed</li>
-      <li><strong>git add</strong> - stage files for commit</li>
-      <li><strong>git commit</strong> - save a meaningful snapshot</li>
-      <li><strong>git push</strong> - publish your changes</li>
-      <li><strong>git pull</strong> - bring the latest updates locally</li>
-      <li><strong>git branch</strong> - keep work organised</li>
+      <li>Use `git status` before every commit so you know exactly what is changing</li>
+      <li>Write commit messages that describe the reason, not only the file name</li>
+      <li>Pull before you push if you are working with a shared repository</li>
+      <li>Use branches when you want to test ideas without touching the main line</li>
     </ul>
 
-    <h2>Why this matters</h2>
-    <p>Good Git habits make a project easier to manage and help you work with confidence when changes are moving quickly.</p>
-
     <div class="tags"><span class="tags-label">Tags</span><span class="ptag">GitHub</span><span class="ptag">Git</span><span class="ptag">Commands</span><span class="ptag">Version Control</span></div>
-    <div class="cta"><a href="portfolio-v4.html#blog" class="btn btn-outline">Back to Blog</a></div>
+    <div class="cta"><a href="notes.html" class="btn btn-outline">Back to Blog</a></div>
   </main>
 </div>
 <div class="footer-note">2026 Viviane Santos - Business Analyst</div>

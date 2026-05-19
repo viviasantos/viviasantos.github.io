@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Sales Dashboard Case Study - Viviane Santos</title>
+<title>SQL Data Exploration Project | Sales Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -25,6 +25,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1rem}
 .project-title span{color:var(--accent)}
+.project-title .title-sep{
+  display:inline-block;
+  margin:0 0.18em;
+  color:var(--muted);
+  font-family:'Outfit',sans-serif;
+  font-weight:400;
+}
 .project-subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:760px}
 .dashboard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .dashboard-card{
@@ -83,8 +90,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 </head>
 <body>
 <nav>
-  <a href="project.html" class="nav-logo">VS.</a>
-  <a href="project.html" class="nav-back">
+  <a href="data-projects.html" class="nav-logo">VS.</a>
+  <a href="data-projects.html" class="nav-back">
     <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Back to Projects
   </a>
@@ -100,7 +107,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
       <span class="project-date">SQL · Power Query · DAX</span>
     </div>
 
-    <h1 class="project-title">Pizza Sales <span>Dashboard</span></h1>
+    <h1 class="project-title">SQL Data Exploration Project <span class="title-sep">|</span> <span>Sales Dashboard</span></h1>
     <p class="project-subtitle">A portfolio case study built from pizza sales data, where SQL handled the main queries, Power Query shaped the data inside Power BI, and DAX powered the KPI measures and visuals for analysis.</p>
 
     <div class="grid-2" style="margin-top:2rem;">
@@ -229,7 +236,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
       <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
       View on GitHub
     </a>
-    <a href="project.html" class="btn btn-outline">Back to Projects</a>
+    <a href="data-projects.html" class="btn btn-outline">Back to Projects</a>
   </div>
 
   <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
