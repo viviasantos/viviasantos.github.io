@@ -18,30 +18,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .nav-back:hover{color:#ffffff}
 .nav-back:hover svg{transform:translateX(-3px)}
 .wrap{max-width:980px;margin:0 auto;padding:72px 2rem 100px;flex:1 0 auto}
-.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.hero{padding-bottom:1.25rem}
 .project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;flex-wrap:wrap}
 .project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
 .project-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
 .dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1rem}
 .project-title span{color:var(--accent)}
-.project-subtitle{font-size:17px;color:var(--muted);line-height:1.85;max-width:760px}
-.section{padding-top:3rem}
-.section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--text);margin-bottom:1rem}
-.section h2{font-weight:700}
-.section h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text);margin:2rem 0 0.75rem}
+.project-subtitle{font-size:15px;color:var(--muted);line-height:1.8;max-width:640px}
+.mini-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.mini-tag{font-family:'DM Mono',monospace;font-size:11px;color:#2f8b57;background:rgba(103,217,143,0.1);border:1px solid rgba(103,217,143,0.24);padding:4px 10px;border-radius:999px}
+.section{padding-top:2rem}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--text);margin-bottom:0.85rem}
 .section p{color:var(--muted);font-size:15px;line-height:1.85;margin-bottom:1rem}
-.section strong{color:var(--text);font-weight:500}
-.callout{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--accent);border-radius:2px;padding:1.25rem 1.5rem;margin:1.5rem 0;font-size:14px;color:var(--muted);line-height:1.75}
-.callout strong{color:var(--text)}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:1.25rem}
-.card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:0.7rem}
-.card h3{font-weight:700}
-.card p{margin:0;color:var(--muted)}
-.list{padding-left:1.15rem;margin:1rem 0 0;display:flex;flex-direction:column;gap:0.45rem}
-.list li{color:#2f8b57;line-height:1.7}
-.list li::marker{color:var(--accent)}
+.soft-panel{background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.45));border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.25rem}
+.soft-panel + .soft-panel{margin-top:0.8rem}
+.soft-panel-title{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:0.45rem}
+.soft-panel p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.simple-list{margin:0.7rem 0 0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.55rem}
+.simple-list li{color:var(--text);line-height:1.7}
+.simple-list li::marker{color:var(--accent)}
 .stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
 .stack-item{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:0.9rem 1rem}
 .stack-item-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
@@ -50,14 +46,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .project-tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
 .ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
 .cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
-.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;text-decoration:none;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn{padding:10px 24px;border-radius:2px;font-size:13px;letter-spacing:0.06em;text-decoration:none;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 .btn-primary{background:var(--accent);color:#f3f1ed;font-weight:500}
 .btn-primary:hover{background:#222222;transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 .footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
-@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
 @media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 80px}.stack-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -77,94 +72,58 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
       <span class="dot"></span>
       <span class="project-date">SQL Practice</span>
       <span class="dot"></span>
-      <span class="project-date">SQL - Data Manipulation</span>
+      <span class="project-date">Exploratory Exercises</span>
     </div>
 
     <h1 class="project-title">SQL <span>Practice</span></h1>
-    <p class="project-subtitle">A collection of hands-on SQL exercises and practice queries focused on filtering, grouping, aggregation, and joining tables to build analytical confidence.</p>
+    <p class="project-subtitle">A small practice space for exploring SQL patterns, checking results, and building confidence with querying step by step.</p>
 
-    <div class="grid-2" style="margin-top:2rem;">
-      <div class="card">
-        <h3>Problem</h3>
-        <p>I needed a simple way to build SQL fluency and confidence by practicing the most common query patterns used in analytics work.</p>
-      </div>
-      <div class="card">
-        <h3>Solution</h3>
-        <p>I created a set of practice queries that cover filtering, grouping, aggregation, and joins in a progressive way.</p>
-      </div>
+    <div class="mini-tags">
+      <span class="mini-tag">Practice</span>
+      <span class="mini-tag">Exploration</span>
+      <span class="mini-tag">SQL</span>
+      <span class="mini-tag">MySQL</span>
     </div>
   </section>
 
   <section class="section">
-    <h2>How it was built</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Filtering and sorting</h3>
-        <p>I practiced the basics of narrowing datasets and ordering results to isolate what matters for analysis.</p>
-        <ul class="list">
-          <li>Use WHERE to focus on relevant records</li>
-          <li>Sort results with ORDER BY</li>
-          <li>Limit outputs for cleaner review</li>
-          <li>Build confidence in query structure</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Aggregation and grouping</h3>
-        <p>I used SQL to summarise data, calculate totals, and compare categories in a way that mirrors reporting work.</p>
-        <ul class="list">
-          <li>Use COUNT, SUM, and AVG</li>
-          <li>Group data by relevant categories</li>
-          <li>Apply HAVING for grouped conditions</li>
-          <li>Support insight-driven analysis</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Joining tables</h3>
-        <p>Practice also included combining tables so I could connect related data points and analyse them together.</p>
-        <ul class="list">
-          <li>Join tables on shared keys</li>
-          <li>Compare values across datasets</li>
-          <li>Understand relational structure</li>
-          <li>Prepare for end-to-end analytics work</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Analytical thinking</h3>
-        <p>The objective of the practice set was to build the muscle memory needed for real-world analysis tasks.</p>
-        <ul class="list">
-          <li>Read the question before writing the query</li>
-          <li>Break analysis into steps</li>
-          <li>Check intermediate results</li>
-          <li>Translate output into insight</li>
-        </ul>
-      </div>
+    <h2>Practice Log</h2>
+    <div class="soft-panel">
+      <div class="soft-panel-title">Query exploration</div>
+      <p>Trying out SQL patterns, checking outputs, and understanding how filtering, grouping, and joins behave in practice.</p>
+    </div>
+    <div class="soft-panel">
+      <div class="soft-panel-title">What I kept</div>
+      <p>Simple query patterns that are readable, repeatable, and easy to adapt when I need them later.</p>
     </div>
   </section>
 
   <section class="section">
-    <h2>Tools and technologies</h2>
-    <div class="stack-grid">
-      <div class="stack-item"><div class="stack-item-name">SQL</div><div class="stack-item-desc">Filtering, aggregation, joins</div></div>
-      <div class="stack-item"><div class="stack-item-name">MySQL</div><div class="stack-item-desc">Practice environment</div></div>
-      <div class="stack-item"><div class="stack-item-name">Data Manipulation</div><div class="stack-item-desc">Transforming data for analysis</div></div>
-      <div class="stack-item"><div class="stack-item-name">Query Logic</div><div class="stack-item-desc">Step-by-step analysis structure</div></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>What I learned</h2>
-    <ul class="list">
-      <li>How to think in SQL before writing the query</li>
-      <li>How practice strengthens speed and accuracy</li>
-      <li>How joins and aggregations support analysis</li>
-      <li>How to turn exercises into interview-ready examples</li>
+    <h2>Quick notes</h2>
+    <ul class="simple-list">
+      <li>It is intentionally exploratory, not a formal delivery project.</li>
+      <li>The goal is to practice logic, not to present a final business outcome.</li>
+      <li>It helps me test ideas before I use them in a more polished solution.</li>
     </ul>
-    <div class="callout"><strong>Business value:</strong> this practice set strengthens the SQL foundation needed for reporting, analysis, and future Power BI work.</div>
+  </section>
+
+  <section class="section">
+    <h2>Tools</h2>
+    <div class="soft-panel">
+      <p>SQL, MySQL, and data manipulation practice.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What this exercise shows</h2>
+    <div class="soft-panel">
+      <p><strong>Value:</strong> it shows how I think through logic, validate ideas safely, and build useful query habits without treating the work like a finished project.</p>
+    </div>
   </section>
 
   <div class="project-tags">
     <span class="project-tags-label">Tags</span>
-    <span class="ptag">SQL</span><span class="ptag">MySQL</span><span class="ptag">Practice</span><span class="ptag">Data Manipulation</span><span class="ptag">Analytics</span>
+    <span class="ptag">SQL</span><span class="ptag">MySQL</span><span class="ptag">Practice</span><span class="ptag">Exercises</span><span class="ptag">Exploration</span>
   </div>
 
   <div class="cta-row">
@@ -179,8 +138,3 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 </div>
 </body>
 </html>
-
-
-
-
-
