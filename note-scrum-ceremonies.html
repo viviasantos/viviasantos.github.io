@@ -20,6 +20,46 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .nav-back:hover svg{transform:translateX(-3px)}
 .wrap{width:100%;max-width:1020px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
 .hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr 0.85fr;
+  gap:1rem;
+  align-items:start;
+}
+.hero-main{
+  padding-right:0.5rem;
+}
+.hero-side{
+  display:grid;
+  gap:0.75rem;
+}
+.side-box{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1rem 1.05rem;
+}
+.side-label{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:var(--accent-ink);
+  margin-bottom:0.45rem;
+}
+.side-value{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+  line-height:1.05;
+  margin-bottom:0.35rem;
+  color:var(--text);
+}
+.side-note{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.75;
+}
 .meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
 .tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
 .date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
@@ -46,6 +86,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .callout-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:0.55rem}
 .callout p{margin:0;color:var(--muted);font-size:15px;line-height:1.85}
 .callout strong{color:var(--text)}
+.callout .pill-row{
+  margin-top:0.95rem;
+}
 .timeline{display:grid;gap:1rem;margin-top:1rem}
 .step{display:grid;grid-template-columns:56px 1fr;gap:1rem;align-items:start;background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:1.1rem 1.15rem}
 .step-no{width:56px;height:56px;border-radius:2px;background:var(--accent-green);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#0f0f0f}
@@ -65,6 +108,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .pill{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
 .footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
 @media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.table-row{grid-template-columns:1fr}.table-row > div{border-left:none;border-top:1px solid var(--border)}.table-row > div:first-child{border-top:none}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
 @media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 80px}.step{grid-template-columns:1fr}.step-no{width:48px;height:48px;font-size:22px}}
 </style>
 </head>
@@ -79,20 +123,42 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 
 <div class="wrap">
   <section class="hero">
-    <div class="meta">
-      <span class="tag">Presentation</span>
-      <span class="dot"></span>
-      <span class="date">Agile</span>
-      <span class="dot"></span>
-      <span class="date">Scrum · Ceremonies</span>
-    </div>
-    <h1 class="title">Scrum <span class="title-accent">Ceremonies</span></h1>
-    <p class="subtitle">
-      A practical guide to Scrum ceremonies, team size, and timeboxes, written to make the flow easy to teach, easy to remember, and easy to apply.
-    </p>
-    <div class="hero-actions">
-      <a href="#ceremonies" class="btn btn-primary">Open ceremony map</a>
-      <a href="#timeboxes" class="btn">See timeboxes</a>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <div class="meta">
+          <span class="tag">Presentation</span>
+          <span class="dot"></span>
+          <span class="date">Agile</span>
+          <span class="dot"></span>
+          <span class="date">Scrum · Ceremonies</span>
+        </div>
+        <h1 class="title">Scrum <span class="title-accent">Ceremonies</span></h1>
+        <p class="subtitle">
+          A practical guide to Scrum ceremonies, team size, and timeboxes, written to make the flow easy to teach, easy to remember, and easy to apply.
+        </p>
+        <div class="hero-actions">
+          <a href="#ceremonies" class="btn btn-primary">Open ceremony map</a>
+          <a href="#timeboxes" class="btn">See timeboxes</a>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="Project summary">
+        <div class="side-box">
+          <div class="side-label">Team size</div>
+          <div class="side-value">2 pizzas</div>
+          <div class="side-note">A small Scrum Team keeps communication light and decisions fast.</div>
+        </div>
+        <div class="side-box">
+          <div class="side-label">Daily Scrum</div>
+          <div class="side-value">15 min</div>
+          <div class="side-note">Short enough to stay focused, long enough to adapt the plan.</div>
+        </div>
+        <div class="side-box">
+          <div class="side-label">Timebox</div>
+          <div class="side-value">1 sprint</div>
+          <div class="side-note">All ceremonies work together inside the same delivery rhythm.</div>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -118,6 +184,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
     <div class="callout">
       <div class="callout-label">Portfolio note</div>
       <p><strong>Two-pizza rule:</strong> if the team cannot be fed by two pizzas, it is probably too large. Keeping the group compact reduces noise, speeds up decisions, and makes the ceremonies much easier to facilitate.</p>
+      <div class="pill-row">
+        <span class="pill">Small team</span>
+        <span class="pill">Clear purpose</span>
+        <span class="pill">Fast feedback</span>
+      </div>
     </div>
   </section>
 
