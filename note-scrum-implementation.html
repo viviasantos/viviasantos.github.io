@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,59 +7,477 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f0e9;--surface:#fbfaf7;--border:#d9d2c8;--border2:#c9c1b6;--text:#111111;--muted:#5f5a53;--green:#67d98f}
+:root{
+  --bg:#f3f1ed;
+  --surface:#fbfaf7;
+  --surface2:#f2efe9;
+  --border:#d9d5ce;
+  --border2:#bfb8ae;
+  --text:#111111;
+  --muted:#5f5a53;
+  --accent:#67d98f;
+  --accent-ink:#2f8b57;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(0,0,0,0.05), transparent 28%),
+    radial-gradient(circle at top right, rgba(0,0,0,0.03), transparent 24%),
+    var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.7;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
 a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff}
-.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
-.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
-.nav-back:hover{color:#ffffff}
-.nav-back:hover svg{transform:translateX(-3px)}
-.wrap{max-width:900px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
-.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px;display:inline-flex}
-.project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin:1rem 0 0.9rem}
-.coming-soon{margin-top:1.5rem;background:linear-gradient(135deg, rgba(255,255,255,0.55), rgba(242,239,233,0.9));border:1px dashed var(--border2);border-radius:2px;padding:1.25rem 1.35rem}
-.coming-soon-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2f8b57;margin-bottom:0.55rem}
-.coming-soon h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;line-height:1.1;margin-bottom:0.55rem}
-.coming-soon p{color:var(--muted);font-size:14px;line-height:1.8;max-width:720px}
-.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
-.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-outline:hover{border-color:var(--green);color:#2f8b57}
-.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
-@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 72px}.cta-row{justify-content:stretch}.btn{width:100%;justify-content:center}}
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(10,10,10,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #00000014;
+  padding:0 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:56px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  color:#ffffff;
+}
+.nav-links{display:flex;gap:2rem;flex-wrap:wrap}
+.nav-links a{
+  color:#d9d9d9;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  transition:color .2s
+}
+.nav-links a:hover{color:#ffffff}
+.wrap{
+  width:100%;
+  max-width:1020px;
+  margin:0 auto;
+  padding:72px 2rem 88px;
+  flex:1 0 auto
+}
+.hero{
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border)
+}
+.meta{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  margin-bottom:1.25rem;
+  flex-wrap:wrap
+}
+.tag{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:#2f8b57;
+  background:rgba(103,217,143,0.12);
+  border:1px solid rgba(103,217,143,0.32);
+  padding:3px 9px;
+  border-radius:2px
+}
+.date{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  color:var(--muted)
+}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
+.title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,5.6vw,68px);
+  font-weight:700;
+  line-height:1.02;
+  letter-spacing:-0.03em;
+  margin-bottom:1rem
+}
+.subtitle{
+  font-size:17px;
+  color:var(--muted);
+  line-height:1.85;
+  max-width:780px
+}
+.hero-actions{
+  display:flex;
+  gap:0.85rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem
+}
+.btn{
+  padding:10px 18px;
+  border-radius:2px;
+  font-size:13px;
+  letter-spacing:0.06em;
+  cursor:pointer;
+  border:1px solid var(--border2);
+  font-family:'Outfit',sans-serif;
+  transition:all .2s;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:transparent;
+  color:var(--text)
+}
+.btn:hover{border-color:var(--accent);color:var(--accent-ink);transform:translateY(-1px)}
+.btn-primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#0f0f0f
+}
+.btn-primary:hover{background:#d6ffe2;color:#0f0f0f}
+.section{
+  padding-top:2.75rem
+}
+.section h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.85rem
+}
+.section p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+  margin-bottom:1rem
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin-top:1rem
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+  margin-top:1rem
+}
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1.2rem 1.25rem
+}
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:0.6rem
+}
+.card p{margin:0;color:var(--muted)}
+.card ul{
+  margin:0.8rem 0 0;
+  padding-left:1.1rem;
+  color:var(--muted)
+}
+.card li{margin-bottom:0.35rem}
+.formula{
+  background:linear-gradient(135deg, rgba(255,255,255,0.56), rgba(242,239,233,0.95));
+  border:1px solid var(--border2);
+  border-left:2px solid var(--accent);
+  border-radius:2px;
+  padding:1.15rem 1.25rem;
+  margin-top:1rem
+}
+.formula-label{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  margin-bottom:0.55rem
+}
+.formula code{
+  display:block;
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  color:#111;
+  background:#f5f3ee;
+  border:1px solid var(--border);
+  padding:0.85rem 0.95rem;
+  border-radius:2px;
+  line-height:1.7;
+  white-space:pre-wrap
+}
+.list{
+  padding-left:1.15rem;
+  margin:1rem 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:0.45rem
+}
+.list li{
+  color:#2f8b57;
+  line-height:1.7
+}
+.list li::marker{color:var(--accent)}
+.example{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:1rem;
+  margin-top:1rem
+}
+.example-box{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:2px;
+  padding:1.15rem 1.2rem
+}
+.example-box h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:0.55rem
+}
+.example-box p{margin:0;color:var(--muted)}
+.template-card{
+  background:linear-gradient(180deg, #ffffff 0%, #f7f4ef 100%);
+  border:1px solid var(--border2);
+  border-radius:2px;
+  padding:1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.8rem
+}
+.template-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700
+}
+.template-card p{margin:0;color:var(--muted)}
+.template-card a{
+  display:inline-flex;
+  width:fit-content;
+  align-items:center;
+  gap:8px;
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:7px 11px;
+  border:1px solid var(--border2);
+  border-radius:2px;
+  transition:all .2s
+}
+.template-card a:hover{border-color:var(--accent);color:var(--accent-ink)}
+.footer-note{
+  margin-top:auto;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  padding:1.5rem 1rem 2rem;
+  border-top:1px solid var(--border)
+}
+.spacer{height:0.25rem}
+@media(max-width:920px){
+  .grid-2,.grid-3,.example{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .wrap{padding:48px 1rem 72px}
+  .hero-actions{justify-content:stretch}
+  .btn{width:100%;justify-content:center}
+}
 </style>
 </head>
 <body>
 <nav>
-  <a href="project.html" class="nav-logo">VS.</a>
-  <a href="agile-practices.html" class="nav-back">
-    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-    Back to Projects
-  </a>
+  <a href="index.html" class="nav-logo">VS.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="project.html">Projects</a>
+    <a href="notes.html">Blog</a>
+    <a href="links.html">Links</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
+
 <div class="wrap">
   <section class="hero">
-    <span class="project-tag">Scrum</span>
-    <h1 class="project-title">Implementation of Scrum</h1>
-    <div class="coming-soon">
-      <div class="coming-soon-label">Em breve</div>
-      <h2>More examples will appear here soon.</h2>
-      <p>This section is reserved for dedicated business analysis material, separate from the blog notes. It will grow with examples, mini cases, and clear explanations of how I work.</p>
+    <div class="meta">
+      <span class="tag">Scrum</span>
+      <span class="dot"></span>
+      <span class="date">Agile</span>
+      <span class="dot"></span>
+      <span class="date">Scrum · Implementation</span>
+    </div>
+    <h1 class="title">Scrum Implementation</h1>
+    <p class="subtitle">
+      A didactic project that shows how to structure and run a Scrum implementation in practice, with a focus on clarity, flow, and value delivery.
+    </p>
+    <div class="hero-actions">
+      <a href="#passo-a-passo" class="btn btn-primary">View step by step</a>
+      <a href="#downloads" class="btn">Download materials</a>
     </div>
   </section>
 
-  <div class="cta-row">
-    <a href="agile-practices.html" class="btn btn-outline">Back to Projects</a>
-  </div>
+  <section class="section" id="visao-geral">
+    <h2>Overview</h2>
+    <p>
+      In this project, theory is turned into a practical sequence: problem, backlog, prioritization, sprint,
+      execution, review, and retrospective. The goal is to show, clearly and professionally, how an agile delivery
+      is structured from start to finish.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Problema</h3>
+        <p>The starting point is a team that needs to organize demands, prioritize value, and visualize work clearly.</p>
+      </div>
+      <div class="card">
+        <h3>Solution</h3>
+        <p>Scrum acts as the main structure, Kanban supports flow visualization, and lightweight prioritization techniques keep execution focused.</p>
+      </div>
+      <div class="card">
+        <h3>Result</h3>
+        <p>The expected result is a small, validatable increment that is easy to demonstrate in a few minutes.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="section" id="passo-a-passo">
+    <h2>Step-by-step guide</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>1. Define the problem and goal</h3>
+        <p>
+          The work starts with a simple scenario and a SMART goal. This keeps the proposal concrete and avoids
+          diving into operational details too early.
+        </p>
+      </div>
+      <div class="card">
+        <h3>2. Create the initial backlog</h3>
+        <p>
+          Next, epics and user stories are structured using INVEST logic. Each item should be small, negotiable, valuable, and testable.
+        </p>
+      </div>
+      <div class="card">
+        <h3>3. Prioritize with MoSCoW</h3>
+        <p>
+          During prioritization, the backlog is split into Must, Should, Could, and Won't to keep the sprint realistic and value-driven.
+        </p>
+      </div>
+      <div class="card">
+        <h3>4. Plan the sprint</h3>
+        <p>
+          During planning, the goal, team capacity, selected items, and main risks are defined before the sprint starts.
+        </p>
+      </div>
+      <div class="card">
+        <h3>5. Execute with Kanban</h3>
+        <p>
+          During execution, visual columns, work-in-progress limits, and visible blockers are used for the whole team.
+        </p>
+      </div>
+      <div class="card">
+        <h3>6. Review and Retro</h3>
+        <p>
+          During the review, the increment is presented, feedback is gathered, and the retrospective closes the loop with lessons for the next sprint.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="frameworks">
+    <h2>Frameworks and methodologies</h2>
+    <div class="example">
+      <div class="example-box">
+        <h3>Scrum + Kanban</h3>
+        <p>
+          Scrum organizes work into sprints and events; Kanban helps visualize flow and keep focus on tasks that are actually in progress.
+        </p>
+        <div class="formula">
+          <div class="formula-label">Practical summary</div>
+          <code>Problem -> Backlog -> Prioritization -> Sprint -> Execution -> Review -> Retro</code>
+        </div>
+      </div>
+      <div class="example-box">
+        <h3>SMART + INVEST + MoSCoW</h3>
+        <p>
+          These three techniques make planning stronger: a well-defined goal, better stories, and prioritization without overload.
+        </p>
+        <ul class="list">
+          <li><a href="https://en.wikipedia.org/wiki/SMART_criteria" target="_blank" rel="noreferrer">SMART</a> for goals: specific, measurable, achievable, relevant, and time-bound.</li>
+          <li><a href="https://en.wikipedia.org/wiki/INVEST_(mnemonic)" target="_blank" rel="noreferrer">INVEST</a> for stories: independent, negotiable, valuable, estimable, small, and testable.</li>
+          <li><a href="https://en.wikipedia.org/wiki/MoSCoW_method" target="_blank" rel="noreferrer">MoSCoW</a> for prioritization: Must, Should, Could, and Won't.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="downloads">
+    <h2>Download materials</h2>
+    <p>
+      The files below can be downloaded and adapted for study, presentations, or as a practical reference.
+    </p>
+    <div class="grid-2">
+      <div class="template-card">
+        <h3>Scrum Implementation Guide</h3>
+        <p>Concise guide with goal, steps, frameworks, and checklist to support the method in practice.</p>
+        <a href="downloads/scrum_implementation_guide.docx" download>Download guide</a>
+      </div>
+      <div class="template-card">
+        <h3>Product Backlog</h3>
+        <p>Word template with epic, story, priority, effort, and acceptance criteria.</p>
+        <a href="downloads/product_backlog_template.docx" download>Download backlog</a>
+      </div>
+      <div class="template-card">
+        <h3>Sprint Planning</h3>
+        <p>Template for sprint goal, team capacity, selected items, and risks.</p>
+        <a href="downloads/sprint_planning_template.docx" download>Download planning</a>
+      </div>
+      <div class="template-card">
+        <h3>Definition of Done</h3>
+        <p>Objective checklist to validate when a story is truly ready.</p>
+        <a href="downloads/definition_of_done.docx" download>Download checklist</a>
+      </div>
+      <div class="template-card">
+        <h3>Retrospective</h3>
+        <p>Script for recording lessons learned, attention points, and improvement opportunities.</p>
+        <a href="downloads/retrospective_template.docx" download>Download retro</a>
+      </div>
+      <div class="template-card">
+        <h3>Kanban Board</h3>
+        <p>Lightweight structure for organizing To Do, Doing, Review, and Done with visual clarity.</p>
+        <a href="downloads/kanban_board_template.docx" download>Download board</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How to present this project</h2>
+    <div class="card">
+      <p>
+        The best way to present this project is to start with the problem, explain the prioritization logic,
+        show the sprint in progress, and close with retrospective learnings.
+      </p>
+      <ul class="list">
+        <li>The context comes before the solution so the problem stays clear.</li>
+        <li>The backlog evolves visibly and in an organized way until the increment is delivered.</li>
+        <li>The downloads work as practical support for study or portfolio use.</li>
+        <li>The closing highlights what was learned and what can improve in the next sprint.</li>
+      </ul>
+    </div>
+  </section>
   <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
 </div>
 </body>
 </html>
-
-
-

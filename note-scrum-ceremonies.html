@@ -19,7 +19,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 .nav-back:hover svg{transform:translateX(-3px)}
 .wrap{max-width:900px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
 .hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
 .project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px;display:inline-flex}
+.project-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin:1rem 0 0.9rem}
 .coming-soon{margin-top:1.5rem;background:linear-gradient(135deg, rgba(255,255,255,0.55), rgba(242,239,233,0.9));border:1px dashed var(--border2);border-radius:2px;padding:1.25rem 1.35rem}
 .coming-soon-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2f8b57;margin-bottom:0.55rem}
@@ -43,12 +46,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
 </nav>
 <div class="wrap">
   <section class="hero">
-    <span class="project-tag">Agile</span>
+    <div class="project-meta">
+      <span class="project-tag">Presentation</span>
+      <span class="dot"></span>
+      <span class="project-date">Agile</span>
+      <span class="dot"></span>
+      <span class="project-date">Scrum · Ceremonies</span>
+    </div>
     <h1 class="project-title">Example to Structure Scrum Ceremonies</h1>
     <div class="coming-soon">
       <div class="coming-soon-label">Em breve</div>
       <h2>More examples will appear here soon.</h2>
-      <p>This section is reserved for dedicated business analysis material, separate from the blog notes. It will grow with examples, mini cases, and clear explanations of how I work.</p>
     </div>
   </section>
 

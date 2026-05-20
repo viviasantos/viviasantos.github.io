@@ -1,0 +1,6 @@
+ID,Epic,User Story,Prioridade,Esforço,Status,Critério de Aceitação
+US-001,Cadastro,"Como usuário, quero me cadastrar para acessar o sistema.",Must,5,To Do,"Formulário valida campos obrigatórios e cria conta com sucesso."
+US-002,Login,"Como usuário, quero entrar no sistema para ver minhas tarefas.",Must,3,To Do,"Usuário autenticado com mensagem de erro em credenciais inválidas."
+US-003,Dashboard,"Como usuário, quero ver um painel com status das demandas.",Should,8,To Do,"Painel exibe contagem por status e última atualização."
+US-004,Notificações,"Como usuário, quero receber alertas quando algo mudar.",Could,5,To Do,"Notificação disparada quando a tarefa muda de status."
+US-005,Relatório,"Como gestor, quero exportar um relatório para acompanhar indicadores.",Could,8,To Do,"Arquivo exportado em formato CSV ou PDF."
