@@ -53,16 +53,21 @@ nav{
   letter-spacing:0.05em;
   color:#ffffff;
 }
-.nav-links{display:flex;gap:2rem;flex-wrap:wrap}
-.nav-links a{
+.nav-back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
   color:#d9d9d9;
   text-decoration:none;
-  font-size:13px;
+  font-size:12px;
+  font-family:'DM Mono',monospace;
   letter-spacing:0.08em;
   text-transform:uppercase;
   transition:color .2s
 }
-.nav-links a:hover{color:#ffffff}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.nav-back:hover{color:#ffffff}
+.nav-back:hover svg{transform:translateX(-3px)}
 .wrap{
   width:100%;
   max-width:1020px;
@@ -300,15 +305,11 @@ nav{
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo">VS.</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="project.html">Projects</a>
-    <a href="notes.html">Blog</a>
-    <a href="links.html">Links</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <a href="agile-practices.html" class="nav-logo">VS.</a>
+  <a href="agile-practices.html" class="nav-back">
+    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Projects
+  </a>
 </nav>
 
 <div class="wrap">
@@ -477,6 +478,9 @@ nav{
       </ul>
     </div>
   </section>
+  <div class="cta-row" style="margin-top:3rem;">
+    <a href="agile-practices.html" class="btn btn-outline">Back to Projects</a>
+  </div>
   <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
 </div>
 </body>
