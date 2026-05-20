@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -102,15 +102,9 @@ nav{
   font-size:11px;
   color:var(--muted)
 }
-.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
-.title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(42px,5.6vw,68px);
-  font-weight:700;
-  line-height:1.02;
-  letter-spacing:-0.03em;
-  margin-bottom:1rem
-}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
+.title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1;letter-spacing:-0.02em;margin-bottom:0.75rem;max-width:12ch}
+.title-accent{color:var(--accent-ink)}
 .subtitle{
   font-size:17px;
   color:var(--muted);
@@ -319,9 +313,9 @@ nav{
       <span class="dot"></span>
       <span class="date">Agile</span>
       <span class="dot"></span>
-      <span class="date">Scrum · Implementation</span>
+      <span class="date">Scrum Â· Implementation</span>
     </div>
-    <h1 class="title">Scrum Implementation</h1>
+    <h1 class="title">Scrum <span class="title-accent">Implementation</span></h1>
     <p class="subtitle">
       A didactic project that shows how to structure and run a Scrum implementation in practice, with a focus on clarity, flow, and value delivery.
     </p>
@@ -485,3 +479,7 @@ nav{
 </div>
 </body>
 </html>
+
+
+
+
