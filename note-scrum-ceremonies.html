@@ -1,39 +1,458 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Example to Structure Scrum Ceremonies - Viviane Santos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Scrum Ceremonies - Viviane Santos</title>
+<meta name="description" content="A practical didactic project about Scrum ceremonies, team size, timeboxes, and facilitation best practices." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f0e9;--surface:#fbfaf7;--border:#d9d2c8;--border2:#c9c1b6;--text:#111111;--muted:#5f5a53;--green:#67d98f}
+:root{
+  --bg:#f5f0e9;
+  --surface:#fbfaf7;
+  --surface2:#f1ece4;
+  --border:#d9d2c8;
+  --border2:#c8bfb3;
+  --text:#101010;
+  --muted:#5f5a53;
+  --accent:#0d7a5f;
+  --accent2:#244b7a;
+  --accent3:#b07f28;
+  --shadow:0 24px 60px rgba(17, 16, 16, 0.10);
+}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+body{
+  font-family:'Outfit',sans-serif;
+  background:
+    radial-gradient(circle at top left,rgba(13,122,95,.10),transparent 28%),
+    radial-gradient(circle at top right,rgba(36,75,122,.10),transparent 24%),
+    linear-gradient(180deg,#faf7ef 0%,#f5f0e9 50%,#f2ede6 100%);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.7;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
 a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff}
-.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(12,12,12,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:0 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:56px;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:.05em;
+  color:#fff;
+}
+.nav-back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#d9d9d9;
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  transition:color .2s;
+}
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
-.nav-back:hover{color:#ffffff}
+.nav-back:hover{color:#fff}
 .nav-back:hover svg{transform:translateX(-3px)}
-.wrap{max-width:900px;margin:0 auto;padding:72px 2rem 88px;flex:1 0 auto}
-.hero{padding-bottom:2rem;border-bottom:1px solid var(--border)}
-.project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
-.project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px;display:inline-flex}
-.project-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
-.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
-.project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin:1rem 0 0.9rem}
-.coming-soon{margin-top:1.5rem;background:linear-gradient(135deg, rgba(255,255,255,0.55), rgba(242,239,233,0.9));border:1px dashed var(--border2);border-radius:2px;padding:1.25rem 1.35rem}
-.coming-soon-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#2f8b57;margin-bottom:0.55rem}
-.coming-soon h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;line-height:1.1;margin-bottom:0.55rem}
-.coming-soon p{color:var(--muted);font-size:14px;line-height:1.8;max-width:720px}
-.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
-.btn{padding:10px 24px;border-radius:4px;font-size:13px;letter-spacing:0.06em;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
-.btn-outline:hover{border-color:var(--green);color:#2f8b57}
-.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
-@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 72px}.cta-row{justify-content:stretch}.btn{width:100%;justify-content:center}}
+.hero{
+  padding:34px 0 28px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px;
+  align-items:start;
+}
+.panel,
+.card,
+.step,
+.metric,
+.callout,
+.detail-box{
+  border:1px solid rgba(217,210,200,.96);
+  background:rgba(255,253,247,.94);
+  box-shadow:var(--shadow);
+}
+.panel{
+  border-radius:32px;
+  padding:34px;
+}
+.eyebrow{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+}
+.eyebrow::before{
+  content:"";
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--accent);
+}
+h1,h2,h3{
+  font-family:'Cormorant Garamond',serif;
+  line-height:1.06;
+  margin:0;
+}
+h1{
+  font-size:clamp(2.3rem,5vw,4.8rem);
+  margin-top:14px;
+  max-width:11ch;
+}
+.lead{
+  font-size:1.08rem;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:68ch;
+  margin-top:18px;
+}
+.hero-actions,
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-radius:999px;
+  padding:14px 18px;
+  font-weight:700;
+  letter-spacing:.01em;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),#12a178);
+  color:#fff;
+  box-shadow:0 16px 28px rgba(13,122,95,.22);
+}
+.btn-secondary{
+  background:transparent;
+  border:1px solid rgba(36,75,122,.24);
+  color:var(--accent2);
+}
+.btn-outline{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--border2);
+}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:28px;
+}
+.metric{
+  border-radius:20px;
+  padding:16px;
+  background:linear-gradient(180deg,rgba(13,122,95,.08),rgba(13,122,95,.03));
+  border:1px solid rgba(13,122,95,.14);
+}
+.metric strong{
+  display:block;
+  font-size:1.28rem;
+  margin-bottom:6px;
+}
+.metric span{
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.45;
+}
+.hero-side{
+  display:grid;
+  gap:12px;
+}
+.callout{
+  border-radius:28px;
+  padding:24px;
+}
+.callout-title{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.callout h3{
+  font-size:1.65rem;
+  margin-bottom:10px;
+}
+.callout p,
+.detail-box p{
+  color:var(--muted);
+}
+.quote{
+  margin-top:14px;
+  padding:14px 16px;
+  border-left:4px solid var(--accent3);
+  background:rgba(176,127,40,.08);
+  border-radius:0 16px 16px 0;
+  font-size:1rem;
+  line-height:1.7;
+}
+.detail-grid{
+  display:grid;
+  gap:12px;
+}
+.detail-box{
+  border-radius:22px;
+  padding:18px;
+}
+.detail-label{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--accent2);
+  margin-bottom:8px;
+}
+.section{
+  padding:6px 0 0;
+}
+.section-head{
+  margin-bottom:18px;
+}
+.section-head h2{
+  font-size:clamp(1.7rem,2.6vw,2.5rem);
+  margin-bottom:8px;
+}
+.section-head p{
+  color:var(--muted);
+  max-width:78ch;
+}
+.grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.card,
+.step{
+  border-radius:24px;
+  padding:20px;
+}
+.card h3,
+.step h3{
+  font-size:1.45rem;
+  margin-bottom:10px;
+}
+.card p,
+.step p{
+  color:var(--muted);
+}
+.mini-badge-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+.mini-badge{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(13,122,95,.10);
+  border:1px solid rgba(13,122,95,.18);
+  color:#2d7b5e;
+}
+.rule-row{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:16px;
+  align-items:stretch;
+}
+.rule-card{
+  border-radius:28px;
+  padding:24px;
+  border:1px solid rgba(217,210,200,.96);
+  background:linear-gradient(180deg,rgba(255,253,247,.98),rgba(242,239,233,.92));
+  box-shadow:var(--shadow);
+}
+.rule-card h3{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+.rule-card p{
+  color:var(--muted);
+}
+.rule-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+.pill{
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(36,75,122,.08);
+  border:1px solid rgba(36,75,122,.14);
+  color:var(--accent2);
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+}
+.table-shell{
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid rgba(217,210,200,.96);
+  background:rgba(255,253,247,.94);
+  box-shadow:var(--shadow);
+}
+.table-row{
+  display:grid;
+  grid-template-columns:1.2fr .9fr .9fr 1fr;
+  gap:0;
+  border-top:1px solid rgba(217,210,200,.8);
+}
+.table-row:first-child{border-top:none}
+.table-row > div{
+  padding:18px 18px;
+  border-left:1px solid rgba(217,210,200,.7);
+}
+.table-row > div:first-child{border-left:none}
+.table-head{
+  background:linear-gradient(180deg,rgba(13,122,95,.08),rgba(13,122,95,.03));
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--accent2);
+}
+.ceremony-name{
+  font-weight:700;
+  margin-bottom:6px;
+}
+.cell-muted{
+  color:var(--muted);
+}
+.timeline{
+  display:grid;
+  gap:14px;
+}
+.step{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:18px;
+  align-items:start;
+}
+.step-no{
+  width:56px;
+  height:56px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,var(--accent),#14a27c);
+  color:#fff;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.7rem;
+  box-shadow:0 14px 24px rgba(13,122,95,.18);
+}
+.step ul{
+  margin:10px 0 0 1.2rem;
+  color:var(--muted);
+}
+.step li + li{margin-top:6px}
+.section-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.detail-list{
+  display:grid;
+  gap:10px;
+}
+.detail-item{
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(217,210,200,.96);
+  background:rgba(255,253,247,.88);
+}
+.detail-item strong{
+  display:block;
+  margin-bottom:4px;
+}
+.detail-item span{
+  color:var(--muted);
+}
+.footer-note{
+  margin-top:30px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-family:'DM Mono',monospace;
+  padding:1.5rem 1rem 2rem;
+  border-top:1px solid var(--border);
+}
+@media(max-width:1080px){
+  .hero-grid,
+  .grid-4,
+  .grid-3,
+  .rule-row,
+  .section-grid{
+    grid-template-columns:1fr;
+  }
+  .table-row{
+    grid-template-columns:1fr;
+  }
+  .table-row > div{
+    border-left:none;
+    border-top:1px solid rgba(217,210,200,.7);
+  }
+  .table-row > div:first-child{
+    border-top:none;
+  }
+}
+@media(max-width:768px){
+  nav{padding:0 1rem}
+  .wrap{width:min(100%,calc(100% - 24px))}
+  .panel{padding:24px}
+  .hero{padding:24px 0 20px}
+  .step{
+    grid-template-columns:1fr;
+  }
+  .step-no{
+    width:48px;
+    height:48px;
+    font-size:1.5rem;
+  }
+  .hero-stats{
+    grid-template-columns:1fr;
+  }
+  .btn{
+    width:100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -44,30 +463,410 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-fi
     Back to Projects
   </a>
 </nav>
+
 <div class="wrap">
   <section class="hero">
-    <div class="project-meta">
-      <span class="project-tag">Presentation</span>
-      <span class="dot"></span>
-      <span class="project-date">Agile</span>
-      <span class="dot"></span>
-      <span class="project-date">Scrum · Ceremonies</span>
+    <div class="hero-grid">
+      <div class="panel">
+        <div class="eyebrow">Project note</div>
+        <h1>Scrum Ceremonies, explained as a real working model</h1>
+        <p class="lead">
+          This is a practical didactic project for understanding how Scrum ceremonies fit together, how long they should take,
+          how to keep them useful, and how a small team stays healthy enough to deliver value instead of just attending meetings.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#ceremonies" class="btn btn-primary">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14m-7-7h14"/></svg>
+            See the ceremony map
+          </a>
+          <a href="#timeboxes" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24"><path d="M12 8v5l3 3m7-4a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"/></svg>
+            Review the timeboxes
+          </a>
+        </div>
+
+        <div class="hero-stats" aria-label="Project summary">
+          <div class="metric">
+            <strong>10 or fewer</strong>
+            <span>Scrum Team size guidance from the Scrum Guide. Small enough to stay nimble.</span>
+          </div>
+          <div class="metric">
+            <strong>2 pizzas</strong>
+            <span>A classic rule of thumb: if the team cannot be fed by two pizzas, it is probably too large.</span>
+          </div>
+          <div class="metric">
+            <strong>15 min Daily Scrum</strong>
+            <span>Short, focused, and centered on adaptation, not reporting.</span>
+          </div>
+          <div class="metric">
+            <strong>1 sprint rhythm</strong>
+            <span>The full cycle shows how planning, inspection, and adaptation connect.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="callout">
+          <div class="callout-title">Why this matters</div>
+          <h3>Meetings should create direction, not drain energy.</h3>
+          <p>
+            The point of Scrum ceremonies is to make work visible, inspect reality, and adjust quickly. If a meeting does not
+            improve focus, clarity, or delivery, it needs a redesign.
+          </p>
+          <div class="quote">
+            "If the team is too big to fit in two pizzas, the ceremony overhead usually starts eating the delivery speed."
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-box">
+            <div class="detail-label">Reference</div>
+            <p>Official Scrum Guide principles: transparency, inspection, and adaptation.</p>
+          </div>
+          <div class="detail-box">
+            <div class="detail-label">Focus</div>
+            <p>Make ceremonies shorter, clearer, and outcome-oriented. The meeting ends when the team can act.</p>
+          </div>
+        </div>
+      </aside>
     </div>
-    <h1 class="project-title">Example to Structure Scrum Ceremonies</h1>
-    <div class="coming-soon">
-      <div class="coming-soon-label">Em breve</div>
-      <h2>More examples will appear here soon.</h2>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Frameworks used in this project</h2>
+      <p>
+        Scrum is the backbone, but a good didactic project also borrows simple supporting frameworks that make the ceremonies easier to run
+        and easier to teach.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <article class="card">
+        <h3>Scrum</h3>
+        <p>The main framework. It gives the cadence, accountability, and event structure that keeps the team aligned.</p>
+        <div class="mini-badge-row">
+          <span class="mini-badge">Sprint</span>
+          <span class="mini-badge">Inspection</span>
+          <span class="mini-badge">Adaptation</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Kanban</h3>
+        <p>Useful for visualizing the flow of work and spotting bottlenecks before they become invisible problems.</p>
+        <div class="mini-badge-row">
+          <span class="mini-badge">Flow</span>
+          <span class="mini-badge">WIP</span>
+          <span class="mini-badge">Visibility</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>SMART</h3>
+        <p>Good for defining sprint goals and improvement actions so the team knows what success looks like.</p>
+        <div class="mini-badge-row">
+          <span class="mini-badge">Goal setting</span>
+          <span class="mini-badge">Clarity</span>
+          <span class="mini-badge">Focus</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>INVEST</h3>
+        <p>Helpful for shaping user stories so the backlog is easier to refine, estimate, and discuss in planning.</p>
+        <div class="mini-badge-row">
+          <span class="mini-badge">Stories</span>
+          <span class="mini-badge">Acceptance</span>
+          <span class="mini-badge">Backlog</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="timeboxes">
+    <div class="section-head">
+      <h2>Team size and timeboxes</h2>
+      <p>
+        The Scrum Guide says the Scrum Team is small enough to remain nimble and large enough to complete significant work within a Sprint,
+        typically 10 or fewer people. A popular practical rule of thumb is the two-pizza team: if the team cannot be fed with two pizzas,
+        it is probably too large to stay lightweight.
+      </p>
+    </div>
+
+    <div class="rule-row">
+      <div class="rule-card">
+        <h3>Use the team size to protect communication.</h3>
+        <p>
+          Smaller teams reduce handoffs, speed up decision-making, and make ceremonies more productive. Scrum ceremonies work best when
+          everyone can speak, understand the context, and act on what was learned.
+        </p>
+        <div class="rule-pills">
+          <span class="pill">Small enough to stay nimble</span>
+          <span class="pill">Large enough to finish meaningful work</span>
+          <span class="pill">Two-pizza rule of thumb</span>
+        </div>
+      </div>
+      <div class="rule-card">
+        <h3>Use timeboxes to protect focus.</h3>
+        <p>
+          For a one-month Sprint, the official reference timeboxes are:
+          Sprint Planning up to 8 hours, Daily Scrum 15 minutes, Sprint Review up to 4 hours, and Sprint Retrospective up to 3 hours.
+        </p>
+        <div class="rule-pills">
+          <span class="pill">1 month = reference</span>
+          <span class="pill">Shorter sprint = shorter events</span>
+          <span class="pill">Keep discussion outcome-driven</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ceremonies">
+    <div class="section-head">
+      <h2>Ceremony map</h2>
+      <p>
+        This table is meant to be used as a quick teaching aid. Each ceremony should answer one question, create one outcome, and avoid
+        becoming a status meeting in disguise.
+      </p>
+    </div>
+
+    <div class="table-shell">
+      <div class="table-row table-head">
+        <div>Ceremony</div>
+        <div>Purpose</div>
+        <div>Timebox</div>
+        <div>Good output</div>
+      </div>
+
+      <div class="table-row">
+        <div>
+          <div class="ceremony-name">Sprint Planning</div>
+          <div class="cell-muted">What will we deliver, and how will we get there?</div>
+        </div>
+        <div>
+          Define the Sprint Goal, choose backlog items, and sketch the plan to reach the goal.
+        </div>
+        <div>
+          Up to 8 hours for a one-month Sprint.
+        </div>
+        <div>
+          Clear goal, selected work, shared plan, realistic commitment.
+        </div>
+      </div>
+
+      <div class="table-row">
+        <div>
+          <div class="ceremony-name">Daily Scrum</div>
+          <div class="cell-muted">How is the team progressing today?</div>
+        </div>
+        <div>
+          Inspect progress toward the Sprint Goal and adapt the plan for the next 24 hours.
+        </div>
+        <div>
+          15 minutes.
+        </div>
+        <div>
+          Fast alignment, blockers exposed, next actions clear.
+        </div>
+      </div>
+
+      <div class="table-row">
+        <div>
+          <div class="ceremony-name">Sprint Review</div>
+          <div class="cell-muted">What did we complete, and what did we learn?</div>
+        </div>
+        <div>
+          Demonstrate the Increment, gather feedback, and discuss how the product direction should evolve.
+        </div>
+        <div>
+          Up to 4 hours for a one-month Sprint.
+        </div>
+        <div>
+          Stakeholder feedback, updated backlog, clearer product direction.
+        </div>
+      </div>
+
+      <div class="table-row">
+        <div>
+          <div class="ceremony-name">Sprint Retrospective</div>
+          <div class="cell-muted">How do we improve as a team?</div>
+        </div>
+        <div>
+          Inspect people, process, tools, and collaboration, then choose one or two concrete improvements.
+        </div>
+        <div>
+          Up to 3 hours for a one-month Sprint.
+        </div>
+        <div>
+          Specific improvement actions that can be tested in the next Sprint.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>A simple 2-week cadence</h2>
+      <p>
+        This is an example structure you can adapt for a teaching project or a lightweight team. It keeps the ceremonies tight and easy to
+        remember while still giving enough space for discussion.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <article class="step">
+        <div class="step-no">1</div>
+        <div>
+          <h3>Start with a focused Sprint Goal</h3>
+          <p>
+            Before Planning, define the problem the Sprint should solve. A good goal reduces random discussion and helps the team make tradeoffs
+            quickly.
+          </p>
+          <ul>
+            <li>Keep the goal short and outcome-oriented.</li>
+            <li>Link every selected item back to the goal.</li>
+            <li>Prefer fewer items with stronger clarity over many weak items.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-no">2</div>
+        <div>
+          <h3>Plan only the work that fits the team capacity</h3>
+          <p>
+            Capacity should include holidays, support tasks, and any known interruptions. The team should leave planning with a believable
+            plan, not a wish list.
+          </p>
+          <ul>
+            <li>Use the backlog to support decisions, not to create noise.</li>
+            <li>Slice work thin enough to finish inside the Sprint.</li>
+            <li>Check dependencies early so they do not surprise the team later.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-no">3</div>
+        <div>
+          <h3>Use the Daily Scrum for adaptation, not reporting</h3>
+          <p>
+            The meeting should help the Developers adjust their plan. It is not a manager update, a blocker review, or a long technical debate.
+          </p>
+          <ul>
+            <li>Keep it at 15 minutes.</li>
+            <li>Make impediments visible as soon as possible.</li>
+            <li>If a topic is deep, move it outside the Daily Scrum.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-no">4</div>
+        <div>
+          <h3>Use the Review to validate value with stakeholders</h3>
+          <p>
+            Show the Increment, collect feedback, and listen for business changes. This is where the team checks whether the work still matches
+            the real need.
+          </p>
+          <ul>
+            <li>Demo working software or a real deliverable.</li>
+            <li>Discuss what changed in the market or the business.</li>
+            <li>Update the backlog with the feedback that matters.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-no">5</div>
+        <div>
+          <h3>Finish with one improvement that can actually happen</h3>
+          <p>
+            Retrospectives work best when the team chooses one or two concrete changes that can be tested in the next Sprint. If everything is
+            important, nothing gets improved.
+          </p>
+          <ul>
+            <li>Use facts from the Sprint, not assumptions.</li>
+            <li>Pick a small improvement with a clear owner.</li>
+            <li>Review the improvement in the next retrospective.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-grid">
+      <div class="card">
+        <h3>Best practices</h3>
+        <p>
+          Keep the ceremonies outcome-driven, timeboxed, and visible. Make sure the team understands the purpose of each event before the
+          meeting starts.
+        </p>
+        <div class="detail-list" style="margin-top:14px">
+          <div class="detail-item">
+            <strong>Prepare the inputs</strong>
+            <span>Clean backlog items, clear objectives, and enough context to make decisions quickly.</span>
+          </div>
+          <div class="detail-item">
+            <strong>Protect the timebox</strong>
+            <span>Short meetings force clarity. If a topic is complex, split it into a separate working session.</span>
+          </div>
+          <div class="detail-item">
+            <strong>End with action</strong>
+            <span>Every ceremony should produce an updated plan, a shared decision, or a real improvement.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What to avoid</h3>
+        <p>
+          A ceremony loses value when it becomes a status report, a debate with no decision, or a meeting that runs without a clear outcome.
+        </p>
+        <div class="detail-list" style="margin-top:14px">
+          <div class="detail-item">
+            <strong>Too many attendees</strong>
+            <span>Invite only the people who can decide, contribute, or learn from the event.</span>
+          </div>
+          <div class="detail-item">
+            <strong>No agenda</strong>
+            <span>Even a simple agenda keeps the team focused on the outcome.</span>
+          </div>
+          <div class="detail-item">
+            <strong>Vague outputs</strong>
+            <span>If nobody knows what changed at the end, the ceremony was probably too abstract.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Why this version works as a teaching project</h2>
+      <p>
+        The page is designed to be used as a study reference or a portfolio note. It explains the Scrum rhythm, gives practical limits,
+        and turns the ceremonies into a repeatable learning model.
+      </p>
+    </div>
+
+    <div class="detail-box">
+      <div class="detail-label">Learning value</div>
+      <p>
+        This project shows how to structure a team around a clear cadence, how to size the team to keep communication light, and how to use
+        each ceremony for a real purpose instead of just “having a meeting.”
+      </p>
     </div>
   </section>
 
   <div class="cta-row">
     <a href="agile-practices.html" class="btn btn-outline">Back to Projects</a>
+    <a href="https://scrumguides.org/scrum-guide.html" class="btn btn-secondary" target="_blank" rel="noopener">
+      Official Scrum Guide
+    </a>
   </div>
 
   <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
 </div>
 </body>
 </html>
-
-
-
