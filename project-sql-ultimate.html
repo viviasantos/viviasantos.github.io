@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Ultimate - Viviane Santos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f3f1ed;--surface:#fbfaf7;--surface2:#f2efe9;--border:#d9d5ce;--border2:#bfb8ae;--text:#111111;--muted:#5f5a53;--accent:#67d98f;--accent2:#67d98f}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:radial-gradient(circle at top left,rgba(0,0,0,0.05),transparent 28%),radial-gradient(circle at top right,rgba(0,0,0,0.03),transparent 24%),var(--bg);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid #00000014;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:0.05em;color:#ffffff;text-decoration:none}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:#d9d9d9;text-decoration:none;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;transition:color .2s}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.nav-back:hover{color:#ffffff}
+.nav-back:hover svg{transform:translateX(-3px)}
+.wrap{max-width:980px;margin:0 auto;padding:72px 2rem 100px;flex:1 0 auto}
+.hero{padding-bottom:1.25rem}
+.project-meta{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.project-tag{font-family:'DM Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:#2f8b57;background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 9px;border-radius:2px}
+.project-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--border2)}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,62px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1rem}
+.project-title span{color:var(--accent)}
+.project-subtitle{font-size:15px;color:var(--muted);line-height:1.8;max-width:640px}
+.mini-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1.25rem}
+.mini-tag{font-family:'DM Mono',monospace;font-size:11px;color:#2f8b57;background:rgba(103,217,143,0.1);border:1px solid rgba(103,217,143,0.24);padding:4px 10px;border-radius:999px}
+.section{padding-top:2rem}
+.section h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--text);margin-bottom:0.85rem}
+.section p{color:var(--muted);font-size:15px;line-height:1.85;margin-bottom:1rem}
+.soft-panel{background:linear-gradient(180deg,rgba(255,255,255,0.7),rgba(255,255,255,0.45));border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.25rem}
+.soft-panel + .soft-panel{margin-top:0.8rem}
+.soft-panel-title{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:0.45rem}
+.soft-panel p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.simple-list{margin:0.7rem 0 0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.55rem}
+.simple-list li{color:var(--text);line-height:1.7}
+.simple-list li::marker{color:var(--accent)}
+.stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
+.stack-item{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:0.9rem 1rem}
+.stack-item-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.stack-item-desc{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace}
+.project-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.project-tags-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;align-self:center;margin-right:0.25rem}
+.ptag{background:rgba(103,217,143,0.12);border:1px solid rgba(103,217,143,0.32);padding:3px 10px;border-radius:2px;font-size:11px;color:#2f8b57;font-family:'DM Mono',monospace}
+.cta-row{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{padding:10px 24px;border-radius:2px;font-size:13px;letter-spacing:0.06em;text-decoration:none;cursor:pointer;border:none;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.btn-primary{background:var(--accent);color:#f3f1ed;font-weight:500}
+.btn-primary:hover{background:#222222;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.footer-note{margin-top:auto;text-align:center;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;padding:1.5rem 1rem 2rem;border-top:1px solid var(--border)}
+@media(max-width:768px){nav{padding:0 1rem}.wrap{padding:48px 1rem 80px}.stack-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="data-projects.html" class="nav-logo">VS.</a>
+  <a href="data-projects.html" class="nav-back"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Projects</a>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="project-meta">
+      <span class="project-tag">Data Analysis</span>
+      <span class="dot"></span>
+      <span class="project-date">SQL Ultimate</span>
+      <span class="dot"></span>
+      <span class="project-date">Exploratory Exercises</span>
+    </div>
+
+    <h1 class="project-title">SQL <span>Ultimate</span></h1>
+    <p class="project-subtitle">A small practice space for exploring SQL patterns, checking results, and building confidence with querying step by step.</p>
+
+    <div class="cta-row">
+      <a href="https://github.com/viviasantos/data-manipulation-practice/tree/master/sql_ultimate" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        View on GitHub
+      </a>
+    </div>
+
+    <div class="mini-tags">
+      <span class="mini-tag">Practice</span>
+      <span class="mini-tag">Exploration</span>
+      <span class="mini-tag">SQL</span>
+      <span class="mini-tag">PostgreSQL</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Practice Log</h2>
+    <div class="soft-panel">
+      <div class="soft-panel-title">Query exploration</div>
+      <p>Trying out SQL patterns, checking outputs, and understanding how filtering, grouping, and joins behave in practice.</p>
+    </div>
+    <div class="soft-panel">
+      <div class="soft-panel-title">What I kept</div>
+      <p>Simple query patterns that are readable, repeatable, and easy to adapt when I need them later.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quick notes</h2>
+    <ul class="simple-list">
+      <li>It is intentionally exploratory, not a formal delivery project.</li>
+      <li>The goal is to practice logic, not to present a final business outcome.</li>
+      <li>It helps me test ideas before I use them in a more polished solution.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Tools</h2>
+    <div class="soft-panel">
+      <p>SQL, PostgreSQL, and data manipulation practice.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What this exercise shows</h2>
+    <div class="soft-panel">
+      <p><strong>Value:</strong> it shows how I think through logic, validate ideas safely, and build useful query habits without treating the work like a finished project.</p>
+    </div>
+  </section>
+
+  <div class="project-tags">
+    <span class="project-tags-label">Tags</span>
+    <span class="ptag">SQL</span><span class="ptag">PostgreSQL</span><span class="ptag">Practice</span><span class="ptag">Exercises</span><span class="ptag">Exploration</span>
+  </div>
+
+  <div class="cta-row">
+    <a href="data-projects.html" class="btn btn-outline">Back to Projects</a>
+  </div>
+
+  <div class="footer-note">2026 Viviane Santos - Business Analyst</div>
+</div>
+</body>
+</html>
+
+
